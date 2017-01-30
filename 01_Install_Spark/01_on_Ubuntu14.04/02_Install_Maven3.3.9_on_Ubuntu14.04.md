@@ -1,4 +1,4 @@
-# Install JDK8 on Ubuntu14.04
+# Install Maven3.3.9 on Ubuntu14.04
 ```{bash}
 $ mvn -v
 The program 'mvn' can be found in the following packages:
