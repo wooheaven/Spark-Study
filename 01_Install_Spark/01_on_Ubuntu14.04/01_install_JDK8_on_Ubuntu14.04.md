@@ -1,4 +1,4 @@
-# install JDK8 on Ubuntu14.04
+# Install JDK8 on Ubuntu14.04
 ```{bash}
 sudo apt-add-repository ppa:webupd8team/java
 sudo apt-get update
