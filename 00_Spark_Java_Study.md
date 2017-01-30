@@ -11,3 +11,5 @@
 [Install ssh on Ubuntu14.04](01_Install_Spark/01_on_Ubuntu14.04/05_Install_ssh_on_Ubuntu14.04.md)
 
 [Install Hadoop2.7.3 on Ubuntu14.04](01_Install_Spark/01_on_Ubuntu14.04/06_Install_Hadoop2.7.3_on_Ubuntu14.04.md)
+
+[Install Spark2.1.0 on Ubuntu14.04](01_Install_Spark/01_on_Ubuntu14.04/07_Install_Spark2.1.0_on_Ubuntu14.04.md)
