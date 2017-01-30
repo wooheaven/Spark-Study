@@ -9,3 +9,5 @@
 [Install Sbt0.13.13 on Ubuntu14.04](01_Install_Spark/01_on_Ubuntu14.04/04_Install_Sbt0.13.13_on_Ubuntu14.04.md)
 
 [Install ssh on Ubuntu14.04](01_Install_Spark/01_on_Ubuntu14.04/05_Install_ssh_on_Ubuntu14.04.md)
+
+[Install Hadoop2.7.3 on Ubuntu14.04](01_Install_Spark/01_on_Ubuntu14.04/06_Install_Hadoop2.7.3_on_Ubuntu14.04.md)
