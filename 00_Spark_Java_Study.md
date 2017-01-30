@@ -8,4 +8,4 @@
 
 [Install Sbt0.13.13 on Ubuntu14.04](01_Install_Spark/01_on_Ubuntu14.04/04_Install_Sbt0.13.13_on_Ubuntu14.04.md)
 
-[Install ssh on Ubuntu14.04](01_Install_Spark/01_on_Ubuntu14.04/04_Install_ssh_on_Ubuntu14.04.md)
+[Install ssh on Ubuntu14.04](01_Install_Spark/01_on_Ubuntu14.04/05_Install_ssh_on_Ubuntu14.04.md)
