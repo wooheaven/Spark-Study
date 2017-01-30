@@ -16,4 +16,4 @@
 
 # Sample of Spark
 
-[List<Tuple2<String,String>> to JavaPairRDD<String,String>](02_Spark_Java_Workspace/spark2WithJDK7/src/test/java/ListTupleToJavaPairRDDTest.java)
+[List\<Tuple2\<String,String\>\> to JavaPairRDD\<String,String\>](02_Spark_Java_Workspace/spark2WithJDK7/src/test/java/ListTupleToJavaPairRDDTest.java)
