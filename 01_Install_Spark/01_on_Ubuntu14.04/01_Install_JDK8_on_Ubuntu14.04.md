@@ -3,7 +3,7 @@
 $ sudo apt-add-repository ppa:webupd8team/java
 $ sudo apt-get update
 $ sudo apt-get install oracle-java8-installer
-$ sudo dpkg -l oracle-java8-installer
+$ sudo apt-get install oracle-java8-set-default
 $ sudo update-alternatives --config java
 $ sudo update-alternatives --config javac
 
