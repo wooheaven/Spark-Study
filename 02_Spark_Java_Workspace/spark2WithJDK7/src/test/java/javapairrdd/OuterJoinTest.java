@@ -6,6 +6,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.Optional;
 import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.VoidFunction;
+import org.junit.Before;
 import org.junit.Test;
 import scala.Tuple2;
 
@@ -14,22 +15,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OuterJoinTest implements Serializable {
-    @Test
-    public void testOuterJoin() {
-        JavaSparkContext sc = new JavaSparkContext(new SparkConf().setMaster("local[*]").setAppName("LeftOuterJoin"));
-        List<Tuple2<String, Integer>> left = new ArrayList<Tuple2<String, Integer>>();
+    private List<Tuple2<String, Integer>> left = new ArrayList<Tuple2<String, Integer>>();
+    private List<Tuple2<String, Integer>> right = new ArrayList<Tuple2<String, Integer>>();
+
+    @Before
+    public void setUp() {
         left.add(new Tuple2<String, Integer>("A", 2));
         left.add(new Tuple2<String, Integer>("B", 2));
         left.add(new Tuple2<String, Integer>("C", 2));
         left.add(new Tuple2<String, Integer>("D", 2));
         left.add(new Tuple2<String, Integer>("E", 2));
 
-        List<Tuple2<String, Integer>> right = new ArrayList<Tuple2<String, Integer>>();
         right.add(new Tuple2<String, Integer>("B", 3));
         right.add(new Tuple2<String, Integer>("C", 3));
         right.add(new Tuple2<String, Integer>("D", 3));
         right.add(new Tuple2<String, Integer>("F", 3));
+    }
 
+    @Test
+    public void testLeftOuterJoin() {
+        // JavaSparkContext
+        JavaSparkContext sc = new JavaSparkContext(new SparkConf()
+                .setMaster("local[*]")
+                .setAppName("LeftOuterJoin")
+                .set("spark.driver.allowMultipleContexts", "true"));
+
+        // input JavaPairRDD
         JavaPairRDD<String, Integer> leftRdd = sc.parallelizePairs(left);
         JavaPairRDD<String, Integer> rightRdd = sc.parallelizePairs(right);
 
@@ -47,6 +58,19 @@ public class OuterJoinTest implements Serializable {
                 System.out.println(t._1() + " " + t._2());
             }
         });
+    }
+
+    @Test
+    public void testRightOuterJoin() {
+        // JavaSparkContext
+        JavaSparkContext sc = new JavaSparkContext(new SparkConf()
+                        .setMaster("local[*]")
+                        .setAppName("RightOuterJoin")
+                        .set("spark.driver.allowMultipleContexts", "true"));
+
+        // input JavaPairRDD
+        JavaPairRDD<String, Integer> leftRdd = sc.parallelizePairs(left);
+        JavaPairRDD<String, Integer> rightRdd = sc.parallelizePairs(right);
 
         // right outer join
         JavaPairRDD<String, Tuple2<Optional<Integer>, Integer>> rightJoin = leftRdd.rightOuterJoin(rightRdd);
@@ -59,7 +83,42 @@ public class OuterJoinTest implements Serializable {
         rightJoinResult.foreach(new VoidFunction<Tuple2<String, Integer>>() {
             @Override
             public void call(Tuple2<String, Integer> t) throws Exception {
-                System.out.println(t._1 + " " + t._2());
+                System.out.println(t._1() + " " + t._2());
+            }
+        });
+    }
+
+    @Test
+    public void testFullOuterJoin() {
+        // JavaSparkContext
+        JavaSparkContext sc = new JavaSparkContext(new SparkConf()
+                .setMaster("local[*]")
+                .setAppName("FullOuterJoin")
+                .set("spark.driver.allowMultipleContexts", "true"));
+
+        // input JavaPairRDD
+        JavaPairRDD<String, Integer> leftRdd = sc.parallelizePairs(left);
+        JavaPairRDD<String, Integer> rightRdd = sc.parallelizePairs(right);
+
+        // full outer join
+        JavaPairRDD<String, Tuple2<Optional<Integer>, Optional<Integer>>> fullOuterJoin = leftRdd.fullOuterJoin(rightRdd);
+        JavaPairRDD<String, Integer> fullOuterJoinResult = fullOuterJoin.mapValues(new Function<Tuple2<Optional<Integer>, Optional<Integer>>, Integer>() {
+            @Override
+            public Integer call(Tuple2<Optional<Integer>, Optional<Integer>> t) throws Exception {
+                Integer sum = 0;
+                if (t._1().isPresent()) {
+                    sum += t._1().get();
+                }
+                if (t._2().isPresent()) {
+                    sum += t._2().get();
+                }
+                return sum;
+            }
+        });
+        fullOuterJoinResult.foreach(new VoidFunction<Tuple2<String, Integer>>() {
+            @Override
+            public void call(Tuple2<String, Integer> t) throws Exception {
+                System.out.println(t._1() + " " + t._2());
             }
         });
     }
