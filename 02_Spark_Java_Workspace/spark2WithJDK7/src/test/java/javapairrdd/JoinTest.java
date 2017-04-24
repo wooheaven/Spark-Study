@@ -14,7 +14,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OuterJoinTest implements Serializable {
+public class JoinTest implements Serializable {
     private List<Tuple2<String, Integer>> left = new ArrayList<Tuple2<String, Integer>>();
     private List<Tuple2<String, Integer>> right = new ArrayList<Tuple2<String, Integer>>();
 
@@ -30,6 +30,34 @@ public class OuterJoinTest implements Serializable {
         right.add(new Tuple2<String, Integer>("C", 3));
         right.add(new Tuple2<String, Integer>("D", 3));
         right.add(new Tuple2<String, Integer>("F", 3));
+    }
+
+    @Test
+    public void testJoin() {
+        // JavaSparkContext
+        JavaSparkContext sc = new JavaSparkContext(new SparkConf()
+                .setMaster("local[*]")
+                .setAppName("Join")
+                .set("spark.driver.allowMultipleContexts", "true"));
+
+        // input JavaPairRDD
+        JavaPairRDD<String, Integer> leftRdd = sc.parallelizePairs(left);
+        JavaPairRDD<String, Integer> rightRdd = sc.parallelizePairs(right);
+
+        // join
+        JavaPairRDD<String, Tuple2<Integer, Integer>> join = leftRdd.join(rightRdd);
+        JavaPairRDD<String, Integer> joinResult = join.mapValues(new Function<Tuple2<Integer, Integer>, Integer>() {
+            @Override
+            public Integer call(Tuple2<Integer, Integer> t) throws Exception {
+                return t._1() + t._2();
+            }
+        });
+        joinResult.foreach(new VoidFunction<Tuple2<String, Integer>>() {
+            @Override
+            public void call(Tuple2<String, Integer> t) throws Exception {
+                System.out.println(t._1() + " " + t._2());
+            }
+        });
     }
 
     @Test
@@ -64,9 +92,9 @@ public class OuterJoinTest implements Serializable {
     public void testRightOuterJoin() {
         // JavaSparkContext
         JavaSparkContext sc = new JavaSparkContext(new SparkConf()
-                        .setMaster("local[*]")
-                        .setAppName("RightOuterJoin")
-                        .set("spark.driver.allowMultipleContexts", "true"));
+                .setMaster("local[*]")
+                .setAppName("RightOuterJoin")
+                .set("spark.driver.allowMultipleContexts", "true"));
 
         // input JavaPairRDD
         JavaPairRDD<String, Integer> leftRdd = sc.parallelizePairs(left);
