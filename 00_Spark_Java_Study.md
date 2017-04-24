@@ -18,4 +18,4 @@
 
 [List\<Tuple2\<String,String\>\> to JavaPairRDD\<String,String\>](02_Spark_Java_Workspace/spark2WithJDK7/src/test/java/javapairrdd/ListTupleToJavaPairRDDTest.java)
 
-[Left, Right, Full Outer Join with List\<Tuple2\<String,Integer\>\>](02_Spark_Java_Workspace/spark2WithJDK7/src/test/java/javapairrdd/OuterJoinTest.java)
+[Join, Left, Right, Full Outer Join with List\<Tuple2\<String,Integer\>\>](02_Spark_Java_Workspace/spark2WithJDK7/src/test/java/javapairrdd/JoinTest.java)
