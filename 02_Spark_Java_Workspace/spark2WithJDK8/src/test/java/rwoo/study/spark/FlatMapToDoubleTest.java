@@ -35,9 +35,6 @@ public class FlatMapToDoubleTest {
         JavaPairRDD<Double, Double> inputRDD = sc.parallelizePairs(input);
 
         // run
-        JavaDoubleRDD mapRDD = inputRDD.mapToDouble(t -> t._1() * t._2());
-        System.out.println(mapRDD.collect());
-
         JavaDoubleRDD flatMapRDD = inputRDD.flatMapToDouble(t -> Arrays.asList(t._1(), t._2()).iterator());
         System.out.println(flatMapRDD.collect());
     }
