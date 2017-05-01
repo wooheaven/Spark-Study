@@ -9,15 +9,14 @@ import org.junit.Test;
 import scala.Tuple2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class FlatMapToDoubleTest {
+public class MapToDoubleTest {
     private JavaSparkContext sc;
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "FlatMapToDouble");
+        sc = new JavaSparkContext("local", "MapToDouble");
     }
 
     @After
@@ -26,7 +25,7 @@ public class FlatMapToDoubleTest {
     }
 
     @Test
-    public void testFlatMapToDouble() {
+    public void testMapToDouble() {
         // input
         List<Tuple2<Double, Double>> input = new ArrayList<Tuple2<Double, Double>>();
         input.add(new Tuple2<Double, Double>(1.0, 11.0));
@@ -35,7 +34,7 @@ public class FlatMapToDoubleTest {
         JavaPairRDD<Double, Double> inputRDD = sc.parallelizePairs(input);
 
         // run
-        JavaDoubleRDD flatMapRDD = inputRDD.flatMapToDouble(t -> Arrays.asList(t._1(), t._2()).iterator());
-        System.out.println(flatMapRDD.collect());
+        JavaDoubleRDD mapRDD = inputRDD.mapToDouble(t -> t._1() * t._2());
+        System.out.println(mapRDD.collect());
     }
 }
