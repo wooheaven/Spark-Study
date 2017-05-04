@@ -14,7 +14,7 @@
 
 [Install Spark2.1.0 on Ubuntu14.04](01_Install_Spark/01_on_Ubuntu14.04/07_Install_Spark2.1.0_on_Ubuntu14.04.md)
 
-# Sample of Spark
+# Example of Spark
 
 [List\<Tuple2\<String,String\>\> to JavaPairRDD\<String,String\>](02_Spark_Java_Workspace/spark2WithJDK7/src/test/java/javapairrdd/ListTupleToJavaPairRDDTest.java)
 
@@ -25,3 +25,5 @@
 [FlatMapToDouble with List\<Tuple2\<Double,Double\>\>](02_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/FlatMapToDoubleTest.java)
 
 [WordCount](02_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/WordCountTest.java)
+
+[Column to Rows as Pivot](02_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/ColumnToRowsTest.java)
