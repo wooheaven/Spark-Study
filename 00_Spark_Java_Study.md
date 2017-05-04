@@ -25,3 +25,5 @@
 [FlatMapToDouble with List\<Tuple2\<Double,Double\>\>](02_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/FlatMapToDoubleTest.java)
 
 [WordCount](02_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/WordCountTest.java)
+
+[Column to Rows as Pivot](02_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/ColumnToRowsTest.java)
