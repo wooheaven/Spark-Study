@@ -7,14 +7,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class MapTest {
+public class FlatMapTest {
     private JavaSparkContext sc;
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "Map");
+        sc = new JavaSparkContext("local", "FlatMap");
     }
 
     @After
@@ -23,7 +24,7 @@ public class MapTest {
     }
 
     @Test
-    public void testMap() {
+    public void testFlatMap() {
         // inputList
         List<String> inputList = new ArrayList<>();
         inputList.add("I am a boy");
@@ -33,7 +34,7 @@ public class MapTest {
         JavaRDD<String> inputRDD = sc.parallelize(inputList);
 
         // run map
-        JavaRDD<String> outputRDD = inputRDD.map(e -> e.toLowerCase());
+        JavaRDD<String> outputRDD = inputRDD.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
 
         // print
         System.out.println(outputRDD.count());
