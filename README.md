@@ -2,6 +2,8 @@
 
 [Transformation + Narrow RDD Operation 1st : Map](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/MapTest.java)
 
+[Transformation + Narrow RDD Operation 2nd : FlatMap](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/FlatMapTest.java)
+
 [List\<Tuple2\<String,String\>\> to JavaPairRDD\<String,String\>](01_Spark_Java_Workspace/spark2WithJDK7/src/test/java/javapairrdd/ListTupleToJavaPairRDDTest.java)
 
 [Join, Left, Right, Full Outer Join with List\<Tuple2\<String,Integer\>\>](01_Spark_Java_Workspace/spark2WithJDK7/src/test/java/javapairrdd/JoinTest.java)
