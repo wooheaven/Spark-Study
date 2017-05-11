@@ -26,14 +26,8 @@ public class MapTest {
     public void testMap() {
         // inputList
         List<String> inputList = new ArrayList<>();
-        inputList.add("I");
-        inputList.add("am");
-        inputList.add("a");
-        inputList.add("boy");
-        inputList.add("You");
-        inputList.add("are");
-        inputList.add("a");
-        inputList.add("girl");
+        inputList.add("I am a boy");
+        inputList.add("You are a girl");
 
         // input RDD
         JavaRDD<String> inputRDD = sc.parallelize(inputList);
@@ -42,6 +36,7 @@ public class MapTest {
         JavaRDD<String> outputRDD = inputRDD.map(e -> e.toLowerCase());
 
         // print
+        System.out.println(outputRDD.count());
         System.out.println(outputRDD.collect());
     }
 }
