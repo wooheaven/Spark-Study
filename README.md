@@ -6,6 +6,7 @@ RDD Operation | Transformation / Action | Narrow / Wide
 [2nd FlatMap](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/FlatMapTest.java) | T | N
 [3rd Filter](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/FilterTest.java) | T | N
 [4th Reduce](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/ReduceTest.java) | A | W
+[5th ReduceByKey](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/ReduceByKeyTest.java) | T | W
 
 [List\<Tuple2\<String,String\>\> to JavaPairRDD\<String,String\>](01_Spark_Java_Workspace/spark2WithJDK7/src/test/java/javapairrdd/ListTupleToJavaPairRDDTest.java)
 
