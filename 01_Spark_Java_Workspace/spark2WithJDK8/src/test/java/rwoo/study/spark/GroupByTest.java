@@ -46,7 +46,7 @@ public class GroupByTest {
 
         // print
         for (Tuple2<Character, Iterable<String>> myTyuple : outputRDD.collect()) {
-            System.out.println("[" + myTyuple._2() + " in " + myTyuple._1() + "]");
+            System.out.println("(" + myTyuple._1() + "," + myTyuple._2() + ")");
         }
     }
 }
