@@ -9,6 +9,7 @@ RDD Operation | Transformation / Action | Narrow / Wide
 [5th ReduceByKey](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/ReduceByKeyTest.java) | T | W
 [6th GroupBy](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/GroupByTest.java) | T | W
 [7th GroupByKey](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/GroupByKeyTest.java) | T | W
+[8th Join](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/JoinTest.java) | T | N
 
 [List\<Tuple2\<String,String\>\> to JavaPairRDD\<String,String\>](01_Spark_Java_Workspace/spark2WithJDK7/src/test/java/javapairrdd/ListTupleToJavaPairRDDTest.java)
 
