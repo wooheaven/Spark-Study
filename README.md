@@ -32,7 +32,7 @@ RDD Operation | Transformation / Action | Narrow / Wide
 
 [3 Install Maven3.3.9 on CentOS6.9 on Docker](02_Install_Spark/02_on_CentOS6.9/03_Install_Maven3.3.9_on_CentOS6.9_on_docker.md)
 
-[4 Install JDK8 on CentOS6.9 on Docker](02_Install_Spark/02_on_CentOS6.9/04_Install_JDK8_on_CentOS6.9_on_docker.md)
+[4 Install Scala2.12.1 on CentOS6.9 on Docker](02_Install_Spark/02_on_CentOS6.9/04_Install_Scala2.12.1_on_CentOS6.9_on_docker.md)
 
 # Install of Spark on Ubuntu14.04
 
