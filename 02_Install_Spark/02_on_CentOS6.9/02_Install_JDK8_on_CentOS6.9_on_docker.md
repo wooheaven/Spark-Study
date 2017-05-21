@@ -120,6 +120,17 @@ lrwxrwxrwx 1 root root 27 May 14 16:55 /etc/alternatives/javac -> /opt/jdk1.8.0_
 [root@febc1daa88f8 opt]# ll /etc/alternatives/javaws
 lrwxrwxrwx 1 root root 28 May 14 16:56 /etc/alternatives/javaws -> /opt/jdk1.8.0_121/bin/javaws
 
+[root@febc1daa88f8 ~]# vi ~/.bashrc 
+
+[root@febc1daa88f8 ~]# tail -2 ~/.bashrc 
+# JDK8
+export JAVA_HOME=/opt/jdk1.8.0_121
+
+[root@febc1daa88f8 ~]# source ~/.bashrc 
+
+[root@febc1daa88f8 ~]# echo $JAVA_HOME 
+/opt/jdk1.8.0_121
+
 [root@febc1daa88f8 opt]# java -version
 java version "1.8.0_121"
 Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
