@@ -1,4 +1,4 @@
-# Install JDK8 on CentOS6.9
+# Install Scala2.12.1 on CentOS6.9
 ```{bash}
 [root@febc1daa88f8 /]# cd home/
 
