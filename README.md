@@ -32,6 +32,8 @@ RDD Operation | Transformation / Action | Narrow / Wide
 
 [3 Install Maven3.3.9 on CentOS6.9 on Docker](02_Install_Spark/02_on_CentOS6.9/03_Install_Maven3.3.9_on_CentOS6.9_on_docker.md)
 
+[4 Install JDK8 on CentOS6.9 on Docker](02_Install_Spark/02_on_CentOS6.9/04_Install_JDK8_on_CentOS6.9_on_docker.md)
+
 # Install of Spark on Ubuntu14.04
 
 [1 Install Ubuntu14.04 on Docker](02_Install_Spark/01_on_Ubuntu14.04/01_Run_Ubuntu14.04_on_docker.md)
