@@ -45,7 +45,7 @@ RDD Operation | Transformation / Action | Narrow / Wide
 
 [4 Install Scala2.12.1 on Ubuntu14.04](02_Install_Spark/01_on_Ubuntu14.04/04_Install_Scala2.12.1_on_Ubuntu14.04.md)
 
-[5 Install Sbt0.13.13 on Ubuntu14.04](02_Install_Spark/01_on_Ubuntu14.04/05_Install_Sbt0.13.13_on_Ubuntu14.04.md)
+[5 Install Sbt0.13.15 on Ubuntu14.04](02_Install_Spark/01_on_Ubuntu14.04/05_Install_Sbt0.13.15_on_Ubuntu14.04.md)
 
 [6 Install ssh on Ubuntu14.04](02_Install_Spark/01_on_Ubuntu14.04/06_Install_ssh_on_Ubuntu14.04.md)
 
