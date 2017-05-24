@@ -27,13 +27,15 @@ RDD Operation | Transformation / Action | Narrow / Wide
 
 # Install of Spark on CentOS6.9
 
-[1 Install CentOS6.8 on Docker](02_Install_Spark/02_on_CentOS6.9/01_Run_CentOS6.8_on_docker.md)
+[1 Install CentOS6.9 on docker](02_Install_Spark/02_on_CentOS6.9/01_Run_CentOS6.9_on_docker.md)
 
-[2 Install JDK8 on CentOS6.9 on Docker](02_Install_Spark/02_on_CentOS6.9/02_Install_JDK8_on_CentOS6.9_on_docker.md)
+[2 Install JDK8 on CentOS6.9 on docker container](02_Install_Spark/02_on_CentOS6.9/02_Install_JDK8_on_CentOS6.9_docker_container.md)
 
-[3 Install Maven3.3.9 on CentOS6.9 on Docker](02_Install_Spark/02_on_CentOS6.9/03_Install_Maven3.3.9_on_CentOS6.9_on_docker.md)
+[3 Install Maven3.3.9 on CentOS6.9 on docker container](02_Install_Spark/02_on_CentOS6.9/03_Install_Maven3.3.9_on_CentOS6.9_docker_container.md)
 
-[4 Install Scala2.12.1 on CentOS6.9 on Docker](02_Install_Spark/02_on_CentOS6.9/04_Install_Scala2.12.1_on_CentOS6.9_on_docker.md)
+[4 Install Scala2.12.1 on CentOS6.9 docker container](02_Install_Spark/02_on_CentOS6.9/04_Install_Scala2.12.1_on_CentOS6.9_docker_container.md)
+
+[5_Install Sbt0.13.15 on CentOS6.9 docker container](02_Install_Spark/02_on_CentOS6.9/05_Install_Sbt0.13.15_on_CentOS6.9_docker_container.md)
 
 # Install of Spark on Ubuntu14.04
 
