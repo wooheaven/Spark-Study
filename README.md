@@ -62,3 +62,7 @@ RDD Operation | Transformation / Action | Narrow / Wide
 # Config of Spark
 
 [Config of IntelliJ IBus](03_Config_Spark/01_IBus_Config_for_IntelliJ.md)
+
+# Spark Document 
+
+[RDD paper](04_Spark_Document/01_Resilient_Distributed_Datasets_Essay_to_Korean.md)
