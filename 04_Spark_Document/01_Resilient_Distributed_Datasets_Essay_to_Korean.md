@@ -23,4 +23,11 @@ In both cases, keeping data in memory can improve performance by an order of mag
 
 To achieve fault tolerance efficiently, RDDs provide a restricted form of shared memory, based on coarse-grained transformations rather than fine-grained updates to shared state. 
 내고장성을 효율적으로 달성하기 위해서, RDDS는 공유된 메모리의 제한적인 형태를 제공하는데, 제한적인 형태란 공유된 상태에 세분화된 업데이트를 하기보다는 뭉쳐진 변형을 적용하는 것이다.
+
+However, we show that RDDs are expressive enough to capture a wide class of computations, 
+including recent specialized programming models for iterative jobs, such as Pregel, and new applications that these models do not capture.
+그러나, 우리는 RDD가 Pregel처럼 반복적인 작업을 위한 최신 전문화된 프로그램밍 모델과 이런 모델들이 포착하지 못하는 새로운 응용프로그램을 포함하는 다양한 종류의 연산을 포착할 만큼 충분히 표현적이라는 것을 보여줍니다. 
+
+We have implemented RDDs in a system called Spark, which we evaluate through a variety of user applications and benchmarks.
+우리는 다양한 사용자 응용프로그램과 상대평가를 수행한 스파크라고 불리는 시스템에서 RDD를 구현해왔다.
 ```
