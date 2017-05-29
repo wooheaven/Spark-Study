@@ -12,6 +12,7 @@ RDD Operation | Transformation / Action | Narrow / Wide
 [8th Join](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/JoinTest.java) | T | W
 [9th CoGroup](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/CoGroupTest.java) | T | W
 [10th Union](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/UnionTest.java) | T | N
+[11th Collect](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/CollectTest.java) | A | 
 
 [List\<Tuple2\<String,String\>\> to JavaPairRDD\<String,String\>](01_Spark_Java_Workspace/spark2WithJDK7/src/test/java/javapairrdd/ListTupleToJavaPairRDDTest.java)
 
