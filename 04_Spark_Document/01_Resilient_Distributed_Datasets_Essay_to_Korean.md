@@ -3,8 +3,8 @@
 Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing
 탄력적인 분산 데이터셋 : 클러스터 메모리 안에서 연산을 하기 위한 내고장성의 추상체
 
-resilient adj able to return quickly to usual health or good spirits after going through difficulty, disease, change etc.
-abstraction noun the act of consifering something as as general quality or characteristic, apart from concrete realities, specific objects, or actual instances.
+(resilient adj able to return quickly to usual health or good spirits after going through difficulty, disease, change etc.)
+(abstraction noun the act of consifering something as as general quality or characteristic, apart from concrete realities, specific objects, or actual instances.)
 
 Matei Zaharia, Mosharaf Chowdhury, Tathagata Das, Ankur Dave, Justin Ma, Murphy McCauley, Michael J. Franklin, Scott Shenker, Ion Stoica
 University of California, Berkeley
@@ -39,4 +39,12 @@ Cluster computing frameworks like MapReduce [10] and Dryad [19] have been widely
 
 These systems let users write parallel computations using a set of high-level operators, without having to worry about work distribution and fault tolerance.
 이런 시스템들은 사용자가 분산처리와 내고장성에 대해서 걱정할 필요없이 상위-레벨 연산자들을 이용하여 병렬연산을 작성할 수 있게 한다.
+
+Although current frameworks provide numerous abstractions for accessing a cluster’s computational resources, they lack abstractions for leveraging distributed memory.
+현재 프레임워크는 클러스터의 계산 리소스에 접근하기위한 수많은 추상화를 제공하지만, 분산 메모리를 활용하는 추상화는 부족합니다.
+
+This makes them inefficient for an important class of emerging applications: those that reuse intermediate results across multiple computations.
+이것(현재 프레임워크)는 개발하고 있는 응용프로그램들의 중요한 클래스에 있어서 그들(추상화들)을 비효율적으로 만든다. : 그것들(개발하고 있는 응용프로그램들)은 여러 계산에 걸쳐 중간 결과를 사용한다.
+
+(emerge verb to come into existence; develop)
 ```
