@@ -31,3 +31,12 @@ including recent specialized programming models for iterative jobs, such as Preg
 We have implemented RDDs in a system called Spark, which we evaluate through a variety of user applications and benchmarks.
 우리는 다양한 사용자 응용프로그램과 상대평가를 수행한 스파크라고 불리는 시스템에서 RDD를 구현해왔다.
 ```
+
+# 1 Introduction
+```
+Cluster computing frameworks like MapReduce [10] and Dryad [19] have been widely adopted for large-scale data analytics.
+맵리듀스와 드레이드 같은 클러스터 컴퓨팅 프레임워크들은 대규모 데이터 분석에서 널리 채택되어 왔다.
+
+These systems let users write parallel computations using a set of high-level operators, without having to worry about work distribution and fault tolerance.
+이런 시스템들은 사용자가 분산처리와 내고장성에 대해서 걱정할 필요없이 상위-레벨 연산자들을 이용하여 병렬연산을 작성할 수 있게 한다.
+```
