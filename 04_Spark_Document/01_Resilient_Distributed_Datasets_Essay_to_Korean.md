@@ -47,4 +47,10 @@ This makes them inefficient for an important class of emerging applications: tho
 이것(현재 프레임워크)는 개발하고 있는 응용프로그램들의 중요한 클래스에 있어서 그들(추상화들)을 비효율적으로 만든다. : 그것들(개발하고 있는 응용프로그램들)은 여러 계산에 걸쳐 중간 결과를 사용한다.
 
 (emerge verb to come into existence; develop)
+
+Data reuse is common in many iterative machine learning and graph algorithms, including PageRank, K-means clustering, and logistic regression.
+페이지 랭크와 K평균 클러스터링과 로지스틱 회귀를 포함하는 반복 머신 러닝과 그래프 알고리즘에서 데이터 재사용은 일반적입니다.
+
+Another compelling use case is interactive data mining, where a user runs multiple adhoc queries on the same subset of the data.
+(데이터를 재사용하는) 또 다른 강력한 사용 사례는 사용자가 데이터의 같은 부분집합상에서 다양한 일회성 쿼리들을 실행하는 대화형 데이터 마이닝입니다.
 ```
