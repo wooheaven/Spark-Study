@@ -53,4 +53,19 @@ Data reuse is common in many iterative machine learning and graph algorithms, in
 
 Another compelling use case is interactive data mining, where a user runs multiple adhoc queries on the same subset of the data.
 (데이터를 재사용하는) 또 다른 강력한 사용 사례는 사용자가 데이터의 같은 부분집합상에서 다양한 일회성 쿼리들을 실행하는 대화형 데이터 마이닝입니다.
+
+Unfortunately, in most current frameworks, the only way to reuse data between computations (e.g., between two MapReduce jobs) is to write it to an external stable storage system, e.g., a distributed file system.
+불행하게도, 대부분의 최신 프레임워크에서는, (예를 들어, 2 개의 MapReduce 작업들 사이에서 처럼) 연산들 사이의 데이터를 재사용하는 유일한 방법은 외부의 안정적인 저장 시스템, 예를 들어 분산 파일 시스템에 저장하는 것이다.
+
+This incurs substantial overheads due to data replication, disk I/O, and serialization, which can dominate application execution times.
+이것은 데이터 중복, 디스크 I/O 그리고 응용프로그램 실행 시간을 점유할 수 있는 직렬화 때문에 잠재적인 오버해드를 발생시킨다.
+
+Recognizing this problem, researchers have developed specialized frameworks for some applications that require data reuse
+이 문제를 인식하면서, 연구자들은 데이터 재사용이 필요한 일부 응용프로그램을 위한 특화된 프레임워크들을 개발해왔다.
+
+For example, Pregel [22] is a system for iterative graph computations that keeps intermediate data in memory, while HaLoop [7] offers an iterative MapReduce interface.
+예를 들어, Pregel은 중간 데이터를 메모리에 보관하는 반복 그래프 연산을 위한 시스템이며, HaLoop은 반복적인 MapReduce 인터페이스를 제공한다.
+
+However, these frameworks only support specific computation patterns (e.g., looping a series of MapReduce steps), and perform data sharing implicitly for these patterns.
+그러나, 이러한 프레임워크들은 특별한 연산 패턴들(예를 들어, 일련의 MapReduce 단계 반복) 만 지원하고, 이런 패턴들을 위해서 데이터 공유를 암묵적으로 수행한다.
 ```
