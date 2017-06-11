@@ -68,4 +68,10 @@ For example, Pregel [22] is a system for iterative graph computations that keeps
 
 However, these frameworks only support specific computation patterns (e.g., looping a series of MapReduce steps), and perform data sharing implicitly for these patterns.
 그러나, 이러한 프레임워크들은 특별한 연산 패턴들(예를 들어, 일련의 MapReduce 단계 반복) 만 지원하고, 이런 패턴들을 위해서 데이터 공유를 암묵적으로 수행한다.
+
+They do not provide abstractions for more general reuse, e.g., to let a user load several datasets into memory and run ad-hoc queries across them.
+그들은 예를 들어, 사용자가 여러 데이터 세트를 메모리에 로드하고 데이터세트 사이에서 임시 퀴리를 실행하는 것처럼 더 일반적인 재사용을 위한 추상화를 제공하지 않는다.
+
+In this paper, we propose a new abstraction called re-silient distributed datasets (RDDs) that enables efficient data  reuse  in  a  broad  range  of  applications.
+이 논문에서는 우리는 다양한 응용프로그램들에서 데이터 재사용을 효율적으로 할 수 있는 RDDs라고하는 새로운 추상화를 제안한다.
 ```
