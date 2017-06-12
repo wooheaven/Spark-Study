@@ -74,4 +74,7 @@ They do not provide abstractions for more general reuse, e.g., to let a user loa
 
 In this paper, we propose a new abstraction called re-silient distributed datasets (RDDs) that enables efficient data  reuse  in  a  broad  range  of  applications.
 이 논문에서는 우리는 다양한 응용프로그램들에서 데이터 재사용을 효율적으로 할 수 있는 RDDs라고하는 새로운 추상화를 제안한다.
+
+RDDs are fault-tolerant, parallel data structures that let users explicitly persist intermediate results in memory, control their partitioning to optimize data placement, and manipulate them using a rich set of operators.
+RDDs는 내고장성인 병렬 데이터구조로써 사용자들이 명시적으로 중간 결과를 메모리에 유지시키고, 데이터 배치를 최적화하기 위해 RDDs의 분할을 조절하고, 풍부한 연산자 집합을 사용함으로써 RDDs를 조작할 수 있게한다.
 ```
