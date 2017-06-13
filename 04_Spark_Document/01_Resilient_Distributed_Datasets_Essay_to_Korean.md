@@ -77,4 +77,10 @@ In this paper, we propose a new abstraction called re-silient distributed datase
 
 RDDs are fault-tolerant, parallel data structures that let users explicitly persist intermediate results in memory, control their partitioning to optimize data placement, and manipulate them using a rich set of operators.
 RDDs는 내고장성인 병렬 데이터구조로써 사용자들이 명시적으로 중간 결과를 메모리에 유지시키고, 데이터 배치를 최적화하기 위해 RDDs의 분할을 조절하고, 풍부한 연산자 집합을 사용함으로써 RDDs를 조작할 수 있게한다.
+
+The main challenge in designing RDDs is defining a programming interface that can provide fault tolerance efficiently.
+RDDs 설계에서 주된 도전은 내고장성을 효율적으로 제공하는 인터페이스 프로그래밍을 정의하는 것입니다.
+
+Existing abstractions for in-memory storage on clusters, such as distributed shared memory [24], keyvalue stores [25], databases, and Piccolo [27], offer an interface based on fine-grained updates to mutable state (e.g., cells in a table).
+클러스터의 메모리 저장을 위해 존재하는 추상화들은 예를 들면 분산공유된 메모리, 키값 저장 데이터베이스들, Piccolo 처럼 변경가능한 상태(예를 들면, 테이블의 셀)에 세분화된 업데이트를 기반으로하는 인터페이스를 제공한다.
 ```
