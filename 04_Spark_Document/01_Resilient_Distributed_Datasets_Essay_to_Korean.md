@@ -83,4 +83,7 @@ RDDs 설계에서 주된 도전은 내고장성을 효율적으로 제공하는 
 
 Existing abstractions for in-memory storage on clusters, such as distributed shared memory [24], keyvalue stores [25], databases, and Piccolo [27], offer an interface based on fine-grained updates to mutable state (e.g., cells in a table).
 클러스터의 메모리 저장을 위해 존재하는 추상화들은 예를 들면 분산공유된 메모리, 키값 저장 데이터베이스들, Piccolo 처럼 변경가능한 상태(예를 들면, 테이블의 셀)에 세분화된 업데이트를 기반으로하는 인터페이스를 제공한다.
+
+With this interface, the only ways to provide fault tolerance are to replicate the data across machines or to log updates across machines.
+이런 인터페이스로는 내고장성을 제공하는 유일한 방법은 컴퓨터간에 데이터를 복제하거나 컴퓨터간에 업데이트를 로깅하는 것이다.
 ```
