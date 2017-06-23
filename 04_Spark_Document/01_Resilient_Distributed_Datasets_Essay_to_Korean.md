@@ -86,4 +86,13 @@ Existing abstractions for in-memory storage on clusters, such as distributed sha
 
 With this interface, the only ways to provide fault tolerance are to replicate the data across machines or to log updates across machines.
 이런 인터페이스로는 내고장성을 제공하는 유일한 방법은 컴퓨터간에 데이터를 복제하거나 컴퓨터간에 업데이트를 로깅하는 것이다.
+
+Both approaches are expensive for data-intensive workloads, as they require copying large amounts of data over the cluster network, whose bandwidth is far lower than that of RAM, and they incur substantial storage overhead.
+2가지 접근들 모두 클러스터 네트워크상에서 대용략의 데이터 복사를 요구하고, 클러스터 네트워크의 대역폭은 클러스터의 메모미보다 훨씬 적기 때문에 데이터 집약적인 작업에 많은 비용이 소용되며, 잠재적인 저장공간 부족을 발생시킨다.
+
+In contrast to these systems, RDDs provide an interface based on coarse-grained transformations (e.g., map, filter and join) that apply the same operation to many data items.
+이런 시스템과는 대조적으로, RDDs는 많은 데이터 아이템에 동일한 동작을 적용하는 뭉쳐진 변형(예를 들어, map filter join)을 기반으로 인터페이스를 제공한다.
+
+This allows them to efficiently provide fault tolerance by logging the transformations used to build a dataset (its lineage) rather than the actual data.
+이것은 그들(RDDs)이 실제 데이터보다 데이터집합(과 데이터집합의 연결)을 만드는데 사용되는 변환들을 기록함으로써 효율적으로 내고장성을 제공하도록 한다.
 ```
