@@ -27,6 +27,11 @@
 
 [Column to Rows as Pivot](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/ColumnToRowsTest.java)
 
+# Spark Official examples 
+| RDD API Examples                                                                           |
+|--------------------------------------------------------------------------------------------|
+| [ Word Count by Scala](01_Spark_Workspace/01_spark-shell/01_master-spark/01_Word_Count.md) |
+
 # Version of Spark
 
 [Version of Spark and packages](02_Install_Spark/01_Spark_version/01_Spark_Java_Hadoop_Scala_Python_R_version.md)
