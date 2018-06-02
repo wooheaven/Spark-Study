@@ -23,15 +23,15 @@
 
 [FlatMapToDouble with List\<Tuple2\<Double,Double\>\>](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/FlatMapToDoubleTest.java)
 
-[WordCount](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/WordCountTest.java)
-
 [Column to Rows as Pivot](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/ColumnToRowsTest.java)
 
 # Spark Official examples 
-| RDD API Examples                                                                           |
-|--------------------------------------------------------------------------------------------|
-| [ Word Count by Scala on spark-shell --master spark](01_Spark_Workspace/01_spark-shell/01_master_spark/01_Word_Count.md) |
-| [ Word Count by Scala on spark-shell --master yarn](01_Spark_Workspace/01_spark-shell/02_master_yarn/01_Word_Count.md)  |
+| RDD API Examples | Link                                                                                                         |
+|------------------|--------------------------------------------------------------------------------------------------------------|
+| Word Count       | [Scala on spark-shell --master spark](01_Spark_Workspace/01_spark-shell/01_master_spark/01_Word_Count.md)    |
+|                  | [Scala on spark-shell --master yarn](01_Spark_Workspace/01_spark-shell/02_master_yarn/01_Word_Count.md)      |
+|                  | [Java8 on spark-submit --master yarn](01_Spark_Workspace/spark2WithJDK8/01_Spark-submit_WordCount.md)        |
+|                  | [Java8 source code](01_Spark_Workspace/spark2WithJDK8/src/main/java/rwoo/study/spark/example/WordCount.java) |
 
 # Version of Spark
 
