@@ -30,7 +30,8 @@
 # Spark Official examples 
 | RDD API Examples                                                                           |
 |--------------------------------------------------------------------------------------------|
-| [ Word Count by Scala](01_Spark_Workspace/01_spark-shell/01_master-spark/01_Word_Count.md) |
+| [ Word Count by Scala on spark-shell --master spark](01_Spark_Workspace/01_spark-shell/01_master_spark/01_Word_Count.md) |
+| [ Word Count by Scala on spark-shell --master yarn](01_Spark_Workspace/01_spark-shell/02_master_yarn/01_Word_Count.md)  |
 
 # Version of Spark
 
