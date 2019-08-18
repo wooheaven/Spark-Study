@@ -60,6 +60,12 @@
 | 7     | [Install Hadoop2.7.3 on Ubuntu14.04](02_Install_Spark/02_on_Ubuntu14.04/07_Install_Hadoop2.7.3_on_Ubuntu14.04.md) |
 | 8     | [Install Spark2.1.0 on Ubuntu14.04](02_Install_Spark/02_on_Ubuntu14.04/08_Install_Spark2.1.0_on_Ubuntu14.04.md)   |
 
+# Install of Spark on Ubuntu16.04
+| Order | Contents                                                                                                          |
+|-------|-------------------------------------------------------------------------------------------------------------------|
+| 1     | [docker pull](02_Install_Spark/04_on_Ubuntu16.04/01_docker_pull/01_docker_pull.md)                                |
+| 2     | [install jdk8](02_Install_Spark/04_on_Ubuntu16.04/02_install_jdk8/00_install_jdk8.md)                             |
+
 # Config of Spark
 
 [Config of IntelliJ IBus](03_Config_Spark/01_IBus_Config_for_IntelliJ.md)
