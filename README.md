@@ -65,6 +65,7 @@
 |-------|-------------------------------------------------------------------------------------------------------------------|
 | 1     | [install ssh](02_Install_Spark/04_on_Ubuntu16.04/01_install_ssh/00_install_ssh.md)                                |
 | 2     | [install jdk8](02_Install_Spark/04_on_Ubuntu16.04/02_install_jdk8/00_install_jdk8.md)                             |
+| 3     | [install hadoop2](02_Install_Spark/04_on_Ubuntu16.04/03_install_hadoop2/00_install_hadoop2.md)                    |
 
 # Config of Spark
 
