@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:16.04_1st_ssh
 
 RUN mkdir /usr/lib/jvm
 ADD jdk-8u221-linux-x64.tar.gz /usr/lib/jvm

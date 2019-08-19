@@ -1,6 +1,6 @@
 ```
 $ cat Dockerfile 
-FROM ubuntu:16.04
+FROM ubuntu:16.04_1st_ssh
 
 RUN mkdir /usr/lib/jvm
 ADD jdk-8u221-linux-x64.tar.gz /usr/lib/jvm
@@ -13,14 +13,15 @@ RUN echo "" >> ~/.bashrc && \
     cat -n ~/.bashrc | tail -3
 
 $ cat 01_docker_build.sh 
-docker build --rm -t ubuntu:16.04_1st_jdk8 . 
+docker build --rm -t ubuntu:16.04_2nd_jdk8 . 
 
 $ cat 02_docker_run.sh 
-docker run -it --name spark ubuntu:16.04_1st_jdk8
+docker run -it --name spark ubuntu:16.04_2nd_jdk8
 
 $ ./01_docker_build.sh 
 $ ./02_docker_run.sh
 
+ * Starting OpenBSD Secure Shell server sshd                             [ OK ]
 root@139f7e8400c0:/# which java
 /usr/lib/jvm/jdk1.8.0_221/bin/java
 

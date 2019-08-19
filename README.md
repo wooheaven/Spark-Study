@@ -63,7 +63,7 @@
 # Install of Spark on Ubuntu16.04
 | Order | Contents                                                                                                          |
 |-------|-------------------------------------------------------------------------------------------------------------------|
-| 1     | [docker pull](02_Install_Spark/04_on_Ubuntu16.04/01_docker_pull/01_docker_pull.md)                                |
+| 1     | [install ssh](02_Install_Spark/04_on_Ubuntu16.04/01_install_ssh/00_install_ssh.md)                                |
 | 2     | [install jdk8](02_Install_Spark/04_on_Ubuntu16.04/02_install_jdk8/00_install_jdk8.md)                             |
 
 # Config of Spark
