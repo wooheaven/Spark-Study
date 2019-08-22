@@ -61,11 +61,12 @@
 | 8     | [Install Spark2.1.0 on Ubuntu14.04](02_Install_Spark/02_on_Ubuntu14.04/08_Install_Spark2.1.0_on_Ubuntu14.04.md)   |
 
 # Install of Spark on Ubuntu16.04
-| Order | Contents                                                                                                          |
-|-------|-------------------------------------------------------------------------------------------------------------------|
-| 1     | [install ssh](02_Install_Spark/04_on_Ubuntu16.04/01_install_ssh/00_install_ssh.md)                                |
-| 2     | [install jdk8](02_Install_Spark/04_on_Ubuntu16.04/02_install_jdk8/00_install_jdk8.md)                             |
-| 3     | [install hadoop2](02_Install_Spark/04_on_Ubuntu16.04/03_install_hadoop2/00_install_hadoop2.md)                    |
+| Order | Contents                                                                                                                                          |
+|-------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1     | [install ssh](02_Install_Spark/04_on_Ubuntu16.04/01_install_ssh/00_install_ssh.md)                                                                |
+| 2     | [install jdk8](02_Install_Spark/04_on_Ubuntu16.04/02_install_jdk8/00_install_jdk8.md)                                                             |
+| 3     | [install hadoop2.8.5](02_Install_Spark/04_on_Ubuntu16.04/03_install_hadoop2.8.5/00_install_hadoop2.8.5.md)                                        |
+| 4     | [install spark2.4.3 with spark standalone](02_Install_Spark/04_on_Ubuntu16.04/04_install_spark2.4.3/01_spark_standalone/00_install_spark2.4.3.md) |
 
 # Config of Spark
 
