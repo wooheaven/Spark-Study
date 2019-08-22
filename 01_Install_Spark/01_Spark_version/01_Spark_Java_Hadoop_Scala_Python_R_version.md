@@ -21,12 +21,12 @@ http://spark.apache.org/downloads.html
 https://spark.apache.org/docs/
 ```
 
-# fixed Java7 with latest packages
+# If Java7 is choosed, then compatibility like belows 
 | Time       | Spark | Java | Hadoop | Scala  | Python | R    |
 |------------|-------|------|--------|--------|--------|------|
 | 2017 10 09 | 2.1.2 | 7    | 2.9.0  | 2.11.x | 3.6.5  | 3.1+ |
 
-# fixed Java8 with latest packages
+# If Java8 is choosed, then compatibility like belows
 | Time       | Spark | Java | Hadoop | Scala  | Python | R    |
 |------------|-------|------|--------|--------|--------|------|
 | 2018 02 28 | 2.3.0 | 8    | 3.1.0  | 2.11.x | 3.6.5  | 3.1+ |
