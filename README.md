@@ -7,20 +7,15 @@
 ║░║░╠═3 [Install Maven3.3.9](01_Install_Spark/02_on_CentOS6.9/03_Install_Maven3.3.9_on_CentOS6.9_docker_container.md)  
 ║░║░╠═4 [Install Scala2.12.1](01_Install_Spark/02_on_CentOS6.9/04_Install_Scala2.12.1_on_CentOS6.9_docker_container.md)  
 ║░║░╚═5 [Install Sbt0.13.15](01_Install_Spark/02_on_CentOS6.9/05_Install_Sbt0.13.15_on_CentOS6.9_docker_container.md)  
-
-# Install of Spark on Ubuntu14.04
-| Order | Contents                                                                                                          |
-|-------|-------------------------------------------------------------------------------------------------------------------|
-| 1     | [Dockerfile](02_Install_Spark/02_on_Ubuntu14.04/Dockerfile)                                                       |
-| 2     | [Docer Build](02_Install_Spark/02_on_Ubuntu14.04/DockerBuild.md)                                                  |
-| 3     | [Install Ubuntu14.04 on Docker](02_Install_Spark/02_on_Ubuntu14.04/01_Run_Ubuntu14.04_on_docker.md)               |
-| 2     | [Install JDK8 on Ubuntu14.04](02_Install_Spark/02_on_Ubuntu14.04/02_Install_JDK8_on_Ubuntu14.04.md)               |
-| 3     | [Install Maven3.3.9 on Ubuntu14.04](02_Install_Spark/02_on_Ubuntu14.04/03_Install_Maven3.3.9_on_Ubuntu14.04.md)   |
-| 4     | [Install Scala2.12.1 on Ubuntu14.04](02_Install_Spark/02_on_Ubuntu14.04/04_Install_Scala2.12.1_on_Ubuntu14.04.md) |
-| 5     | [Install Sbt0.13.15 on Ubuntu14.04](02_Install_Spark/02_on_Ubuntu14.04/05_Install_Sbt0.13.15_on_Ubuntu14.04.md)   |
-| 6     | [Install ssh on Ubuntu14.04](02_Install_Spark/02_on_Ubuntu14.04/06_Install_ssh_on_Ubuntu14.04.md)                 |
-| 7     | [Install Hadoop2.7.3 on Ubuntu14.04](02_Install_Spark/02_on_Ubuntu14.04/07_Install_Hadoop2.7.3_on_Ubuntu14.04.md) |
-| 8     | [Install Spark2.1.0 on Ubuntu14.04](02_Install_Spark/02_on_Ubuntu14.04/08_Install_Spark2.1.0_on_Ubuntu14.04.md)   |
+║░╠═2 on Ubuntu 14.04  
+║░║░╠═1 [docker pull ubuntu:14.04](01_Install_Spark/03_on_Ubuntu14.04/01_Run_Ubuntu14.04_on_docker.md)  
+║░║░╠═2 [Install JDK8](01_Install_Spark/03_on_Ubuntu14.04/02_Install_JDK8_on_Ubuntu14.04.md)  
+║░║░╠═3 [Install Maven3.3.9](01_Install_Spark/03_on_Ubuntu14.04/03_Install_Maven3.3.9_on_Ubuntu14.04.md)  
+║░║░╠═4 [Install Scala2.12.1](01_Install_Spark/03_on_Ubuntu14.04/04_Install_Scala2.12.1_on_Ubuntu14.04.md)  
+║░║░╠═5 [Install Sbt0.13.15](01_Install_Spark/03_on_Ubuntu14.04/05_Install_Sbt0.13.15_on_Ubuntu14.04.md)  
+║░║░╠═6 [Install ssh](01_Install_Spark/03_on_Ubuntu14.04/06_Install_ssh_on_Ubuntu14.04.md)  
+║░║░╠═7 [Install hadoop2.7.3](01_Install_Spark/03_on_Ubuntu14.04/07_Install_Hadoop2.7.3_on_Ubuntu14.04.md)  
+║░║░╚═8 [Install spark2.1.0](01_Install_Spark/03_on_Ubuntu14.04/08_Install_Spark2.1.0_on_Ubuntu14.04.md)  
 
 # Install of Spark on Ubuntu16.04
 | Order | Contents                                                                                                                                          |
