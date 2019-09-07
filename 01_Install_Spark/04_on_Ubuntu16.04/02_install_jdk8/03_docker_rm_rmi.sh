@@ -12,3 +12,13 @@ docker rmi $image
 docker images
 fi
 unset image
+
+image=`docker images | grep "<none>" | awk '{print $3}'`
+if [ $image ] ; then
+echo ""
+echo "docker image ["$image"] will be removed"
+echo ""
+docker rmi $image
+docker images
+fi
+unset image
