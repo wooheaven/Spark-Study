@@ -1,0 +1,43 @@
+1. YARN Components
+1.1 Client: 
+    It submits map-reduce jobs.
+1.2 Resource Manager: 
+    It is the master daemon of YARN and is responsible for resource assignment and management among all the applications. 
+    Whenever it receives a processing request, it forwards it to the corresponding node manager and allocates resources for the completion of the request accordingly. 
+    It has two major components:
+1.2.1 Scheduler: 
+      It performs scheduling based on the allocated application and available resources. 
+      It is a pure scheduler, means it does not perform other tasks such as monitoring or tracking and does not guarantee a restart if a task fails. 
+      The YARN scheduler supports plugins such as Capacity Scheduler and Fair Scheduler to partition the cluster resources.
+1.2.2 Application Manager: 
+      It is responsible for accepting the application and negotiating the first container from the resource manager. 
+      It also restarts the Application Manager container if a task fails.
+1.3 Node Manager: 
+    It take care of individual node on Hadoop cluster and manages application and workflow and that particular node. 
+    Its primary job is to keep-up with the Node Manager. 
+    It monitors resource usage, performs log management and also kills a container based on directions from the resource manager. 
+    It is also responsible for creating the container process and start it on the request of Application master.
+1.4 Application Master: 
+    An application is a single job submitted to a framework. 
+    It is responsible for negotiating resources with the resource manager, tracking the status and monitoring progress of a single application. 
+    It requests the container from the node manager by sending a Container Launch Context(CLC) which includes everything an application needs to run. 
+    Once the application is started, it sends the health report to the resource manager from time-to-time.
+1.5 Container: 
+    It is a collection of physical resources such as RAM, CPU cores and disk on a single node. 
+    The containers are invoked by Container Launch Context(CLC) which is a record that contains information such as environment variables, security tokens, dependencies etc.
+2. YARN Flow
+2.1 Client submits an application
+2.2 The Resource Manager allocates a container to start the Application Manager
+2.3 The Application Manager registers itself with the Resource Manager
+2.4 The Application Manager asks containers from the Resource Manager
+2.5 The Application Manager notifies the Node Manager to launch containers
+2.6 Application code is executed in the container
+2.7 Client contacts Resource Manager and Application Manager to monitor application’s status
+2.8 Once the processing is complete, the Application Manager un-registers with the Resource Manager
+
+# YARN Achitecture and Flow
+# ref : https://www.geeksforgeeks.org/hadoop-yarn-architecture/
+# ref : https://www.edureka.co/blog/hadoop-yarn-tutorial/
+# ref : https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html
+# YARN Memory
+# ref : https://www.linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster/

@@ -2,3 +2,5 @@
 *.iml
 target/
 .java-version
+*.tar.gz
+*.tgz
