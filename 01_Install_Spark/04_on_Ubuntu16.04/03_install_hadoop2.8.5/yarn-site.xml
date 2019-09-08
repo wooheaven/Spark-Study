@@ -34,7 +34,8 @@
     <!-- YARN Memory -->
     <property>
         <name>yarn.nodemanager.resource.memory-mb</name>
-        <value>1536</value>
+        <!-- <value>1536</value> --> <!-- Multi Cluster -->
+        <value>1792</value> <!-- Single Cluster -->
     </property>
     <property>
         <name>yarn.scheduler.maximum-allocation-mb</name>

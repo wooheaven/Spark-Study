@@ -5,6 +5,7 @@ RUN apt-get -y install software-properties-common \
     vim \
     tree \
     openssh-server \
+    net-tools \
     && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
