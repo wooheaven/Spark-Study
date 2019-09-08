@@ -64,7 +64,7 @@ RUN cd $HADOOP_$HADOOP_CONF/ && \
 
 ADD yarn-site.xml /usr/lib/hadoop/hadoop-2.8.5/etc/hadoop/
 RUN cd $HADOOP_$HADOOP_CONF/ && \ 
-    cat -n yarn-site.xml | tail -37
+    cat -n yarn-site.xml | tail -38
 
 RUN cat $HADOOP_$HADOOP_CONF/slaves && \ 
     cp $HADOOP_$HADOOP_CONF/slaves $HADOOP_CONF/master && \
@@ -99,13 +99,14 @@ RUN service ssh start && \
     /usr/lib/jvm/jdk1.8.0_221/bin/jps && \
     service ssh stop
 
-# ref : https://hadoop.apache.org/docs/r2.8.5/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml
-# ref : https://hadoop.apache.org/docs/r2.8.5/hadoop-yarn/hadoop-yarn-common/yarn-default.xml
-# ref : https://hadoop.apache.org/docs/r2.8.5/hadoop-project-dist/hadoop-common/ClusterSetup.html
-
 ENTRYPOINT service ssh start && \
     $HADOOP_HOME/sbin/start-dfs.sh && \
     $HADOOP_HOME/sbin/start-yarn.sh && \
     $HADOOP_HOME/sbin/mr-jobhistory-daemon.sh start historyserver && \
     /usr/lib/jvm/jdk1.8.0_221/bin/jps && \
     /bin/bash
+
+# ref : https://hadoop.apache.org/docs/r2.8.5/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml
+# ref : https://hadoop.apache.org/docs/r2.8.5/hadoop-yarn/hadoop-yarn-common/yarn-default.xml
+# ref : https://hadoop.apache.org/docs/r2.8.5/hadoop-project-dist/hadoop-common/ClusterSetup.html
+# ref : https://www.linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster/

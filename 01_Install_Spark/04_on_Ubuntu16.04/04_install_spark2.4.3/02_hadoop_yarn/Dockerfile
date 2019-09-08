@@ -42,7 +42,10 @@ RUN cd $SPARK_HOME && \
     echo "spark.history.fs.update.interval 10s" >> conf/spark-defaults.conf && \
     echo "spark.history.ui.port            18080" >> conf/spark-defaults.conf && \
     echo "spark.master                     yarn" >> conf/spark-defaults.conf && \
-    cat -n conf/spark-defaults.conf | tail -8
+    echo "spark.driver.memory              512m" >> conf/spark-defaults.conf && \
+    echo "spark.yarn.am.memory             512m" >> conf/spark-defaults.conf && \
+    echo "spark.executor.memory            512m" >> conf/spark-defaults.conf && \
+    cat -n conf/spark-defaults.conf | tail -11
 
 RUN service ssh start && \
     sleep 1 && echo "start-dfs" && \
@@ -59,8 +62,10 @@ RUN service ssh start && \
     /usr/lib/jvm/jdk1.8.0_221/bin/jps && \ 
     $HADOOP_HOME/bin/hdfs dfs -ls README.txt && \
     cd $SPARK_HOME/ && \
-    $SPARK_HOME/bin/spark-submit --deploy-mode cluster --class org.apache.spark.examples.JavaWordCount examples/jars/spark-examples*.jar README.txt > wordcount.log && \
+    $SPARK_HOME/bin/spark-submit --deploy-mode client --class org.apache.spark.examples.JavaWordCount examples/jars/spark-examples*.jar README.txt > wordcount.log && \
     cat wordcount.log 
+#   $SPARK_HOME/bin/spark-submit --deploy-mode cluster --class org.apache.spark.examples.JavaWordCount examples/jars/spark-examples*.jar README.txt > wordcount.log && \
+#   cat wordcount.log 
 
 RUN service ssh start && \
     sleep 5 && echo "stop-history-server" && \
