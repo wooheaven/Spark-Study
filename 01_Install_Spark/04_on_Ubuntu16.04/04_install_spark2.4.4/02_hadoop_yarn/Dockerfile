@@ -1,18 +1,18 @@
 FROM ubuntu:16.04_3rd_hadoop2
 
 RUN mkdir /usr/lib/spark
-ADD spark-2.4.3-bin-hadoop2.7.tgz /usr/lib/spark
+ADD spark-2.4.4-bin-hadoop2.7.tgz /usr/lib/spark
 RUN ls -als /usr/lib/spark
 
 ENV HADOOP_HOME /usr/lib/hadoop/hadoop-2.8.5
 ENV HADOOP_CONF $HADOOP_HOME/etc/hadoop
-ENV SPARK_HOME /usr/lib/spark/spark-2.4.3-bin-hadoop2.7
+ENV SPARK_HOME /usr/lib/spark/spark-2.4.4-bin-hadoop2.7
 RUN echo $HADOOP_HOME && echo $HADOOP_CONF && echo $SPARK_HOME
 
 RUN echo "" >> ~/.bashrc && \
     echo "# Spark" >> ~/.bashrc && \
     echo "export SPARK_HOME=$SPARK_HOME" >> ~/.bashrc && \
-    echo "export PATH=\$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin" >> ~/.bashrc && \
+    echo "export PATH=\$PATH:\$SPARK_HOME/bin:\$SPARK_HOME/sbin" >> ~/.bashrc && \
     cat -n ~/.bashrc | tail -3
 
 RUN cd $SPARK_HOME && \
@@ -23,6 +23,7 @@ RUN cd $SPARK_HOME && \
     echo "HADOOP_HOME=$HADOOP_HOME" >> conf/spark-env.sh && \
     echo "HADOOP_CONF_DIR=$HADOOP_CONF" >> conf/spark-env.sh && \
     echo "SPARK_MASTER_HOST=localhost" >> conf/spark-env.sh && \
+    echo "SPARK_HISTORY_OPTS=\"-Dspark.history.fs.logDirectory=hdfs://localhost:9000/tmp/hadoop-yarn\"" >> conf/spark-env.sh && \
     echo "LD_LIBRARY_PATH=$HADOOP_HOME/lib/native" >> conf/spark-env.sh && \
     cat -n conf/spark-env.sh | tail -6
 
@@ -31,20 +32,8 @@ RUN cd $SPARK_HOME && \
     cat $HADOOP_CONF/slaves > conf/slaves && \
     cat -n conf/slaves | tail -1
 
+ADD spark-defaults.conf $SPARK_HOME/conf/
 RUN cd $SPARK_HOME && \
-    cp conf/spark-defaults.conf.template conf/spark-defaults.conf && \
-    echo "" >> conf/spark-defaults.conf && \
-    echo "# Add" >> conf/spark-defaults.conf && \
-    echo "spark.eventLog.enabled           true" >> conf/spark-defaults.conf && \
-    echo "spark.eventLog.dir               hdfs://localhost:9000/tmp/spark-yarn" >> conf/spark-defaults.conf && \
-    echo "spark.history.provider           org.apache.spark.deploy.history.FsHistoryProvider" >> conf/spark-defaults.conf && \
-    echo "spark.history.fs.logDirectory    hdfs://localhost:9000/tmp/spark-yarn" >> conf/spark-defaults.conf && \
-    echo "spark.history.fs.update.interval 10s" >> conf/spark-defaults.conf && \
-    echo "spark.history.ui.port            18080" >> conf/spark-defaults.conf && \
-    echo "spark.master                     yarn" >> conf/spark-defaults.conf && \
-    echo "spark.driver.memory              512m" >> conf/spark-defaults.conf && \
-    echo "spark.yarn.am.memory             512m" >> conf/spark-defaults.conf && \
-    echo "spark.executor.memory            512m" >> conf/spark-defaults.conf && \
     cat -n conf/spark-defaults.conf | tail -11
 
 RUN service ssh start && \

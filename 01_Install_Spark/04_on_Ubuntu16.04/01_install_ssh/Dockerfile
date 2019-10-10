@@ -6,6 +6,7 @@ RUN apt-get -y install software-properties-common \
     tree \
     openssh-server \
     net-tools \
+    iputils-ping \
     && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config

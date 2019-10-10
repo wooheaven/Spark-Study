@@ -20,9 +20,9 @@
 ║░║░╠═1 [install ssh](01_Install_Spark/04_on_Ubuntu16.04/01_install_ssh/00_install_ssh.md)  
 ║░║░╠═2 [install jdk8](01_Install_Spark/04_on_Ubuntu16.04/02_install_jdk8/00_install_jdk8.md)  
 ║░║░╠═3 [install hadoop2.8.5](01_Install_Spark/04_on_Ubuntu16.04/03_install_hadoop2.8.5/00_install_hadoop2.8.5.md)  
-║░║░╠═4 install spark2.4.3 with resource manager  
-║░║░║░╠═1 [with spark standalone](01_Install_Spark/04_on_Ubuntu16.04/04_install_spark2.4.3/01_spark_standalone/00_install_spark2.4.3.md)  
-║░║░║░╚═2 [with hadoop yarn](01_Install_Spark/04_on_Ubuntu16.04/04_install_spark2.4.3/02_hadoop_yarn/00_install_spark2.4.3.md)  
+║░║░╠═4 install spark2.4.4 with resource manager  
+║░║░║░╠═1 [with spark standalone](01_Install_Spark/04_on_Ubuntu16.04/04_install_spark2.4.4/01_spark_standalone/00_install_spark2.4.3.md)  
+║░║░║░╚═2 [with hadoop yarn](01_Install_Spark/04_on_Ubuntu16.04/04_install_spark2.4.4/02_hadoop_yarn/00_install_spark2.4.4.md)  
 
 # Example of Spark
 
