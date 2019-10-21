@@ -46,7 +46,7 @@ class Rename():
             f.writelines('\n')
             for folder in folder_list:
                 pre_str = 'git mv '
-                if folder[1] == folder[2]:
+                if folder[1] == folder[2] or folder[1] == '99_Utility':
                     pre_str = "# " + pre_str
                 f.writelines(pre_str + folder[0] + folder[1] + ' ' + folder[0] + folder[2] + '\n')
         os.chmod('git-move.sh', 0o755)

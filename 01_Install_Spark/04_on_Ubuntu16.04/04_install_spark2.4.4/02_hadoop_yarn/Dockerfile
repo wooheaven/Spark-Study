@@ -15,17 +15,8 @@ RUN echo "" >> ~/.bashrc && \
     echo "export PATH=\$PATH:\$SPARK_HOME/bin:\$SPARK_HOME/sbin" >> ~/.bashrc && \
     cat -n ~/.bashrc | tail -3
 
-RUN cd $SPARK_HOME && \
-    cp $SPARK_HOME/conf/spark-env.sh.template $SPARK_HOME/conf/spark-env.sh && \
-    echo "" >> conf/spark-env.sh && \
-    echo "# Add" >> conf/spark-env.sh && \
-    echo "JAVA_HOME=/usr/lib/jvm/jdk1.8.0_221" >> conf/spark-env.sh && \
-    echo "HADOOP_HOME=$HADOOP_HOME" >> conf/spark-env.sh && \
-    echo "HADOOP_CONF_DIR=$HADOOP_CONF" >> conf/spark-env.sh && \
-    echo "SPARK_MASTER_HOST=localhost" >> conf/spark-env.sh && \
-    echo "SPARK_HISTORY_OPTS=\"-Dspark.history.fs.logDirectory=hdfs://localhost:9000/tmp/hadoop-yarn\"" >> conf/spark-env.sh && \
-    echo "LD_LIBRARY_PATH=$HADOOP_HOME/lib/native" >> conf/spark-env.sh && \
-    cat -n conf/spark-env.sh | tail -6
+ADD spark-env.sh $SPARK_HOME/conf/
+RUN cat -n $SPARK_HOME/conf/spark-env.sh | tail -7
 
 RUN cd $SPARK_HOME && \
     cp conf/slaves.template conf/slaves && \
@@ -33,8 +24,7 @@ RUN cd $SPARK_HOME && \
     cat -n conf/slaves | tail -1
 
 ADD spark-defaults.conf $SPARK_HOME/conf/
-RUN cd $SPARK_HOME && \
-    cat -n conf/spark-defaults.conf | tail -11
+RUN cat -n $SPARK_HOME/conf/spark-defaults.conf | tail -11
 
 RUN service ssh start && \
     sleep 1 && echo "start-dfs" && \
