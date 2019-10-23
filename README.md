@@ -24,13 +24,17 @@
 ║░║░║░╠═1 [with spark standalone](01_Spark_Installation/04_on_Ubuntu16.04/04_install_spark2.4.4/01_spark_standalone/00_install_spark2.4.3.md)  
 ║░║░║░╚═2 [with hadoop yarn](01_Spark_Installation/04_on_Ubuntu16.04/04_install_spark2.4.4/02_hadoop_yarn/00_install_spark2.4.4.md)  
 ╠═2 Spark Workspace  
-║░╠═1 on Spark-shell  
-║░║░╠═1 Word Count  
+║░╠═1 spark-shell  
+║░║░╠═1 WordCount  
 ║░║░║░╠═1 [on spark](02_Spark_Workspace/01_spark-shell/01_WordCount/01_on_spark.md)  
 ║░║░║░╚═2 [on yarn](02_Spark_Workspace/01_spark-shell/01_WordCount/02_on_yarn.md)  
-║░║░╠═2 PageRank   
+║░║░╠═2 PageRank  
 ║░║░║░╚═1 [on yarn with graphframes](02_Spark_Workspace/01_spark-shell/02_PageRank/01_on_yarn_with_graphframes.md)  
-║░╠═2  
+║░╠═2 spark-submit  
+║░║░╠═1 WordCount  
+║░║░║░╚═1 with JDK8  
+║░║░║░░░╠═1 [Console Log](02_Spark_Workspace/02_spark-submit/02_with_JDK8/01_Spark-submit_WordCount.md)  
+║░║░║░░░╚═2 [Source code](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/example/WordCount.java)  
 ║░╚═3  
 
 # Example of Spark
@@ -59,12 +63,6 @@
 [FlatMapToDouble with List\<Tuple2\<Double,Double\>\>](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/FlatMapToDoubleTest.java)
 
 [Column to Rows as Pivot](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/ColumnToRowsTest.java)
-
-# Spark Official examples 
-| RDD API Examples | Link                                                                                                         |
-|------------------|--------------------------------------------------------------------------------------------------------------|
-| Word Count       | [Java8 on spark-submit --master yarn](02_Spark_Workspace/spark2WithJDK8/01_Spark-submit_WordCount.md)        |
-|                  | [Java8 source code](02_Spark_Workspace/spark2WithJDK8/src/main/java/rwoo/study/spark/example/WordCount.java) |
 
 # Config of Spark
 
