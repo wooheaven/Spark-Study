@@ -15,13 +15,13 @@ public class WordCountTest {
     public void setUp() throws Exception {
         wordCount = new WordCount();
         args = new String[3];
-        args[2] = "local[*]";
         args[0] = "src/test/resources/input";
+        args[1] = "src/test/resources/output";
+        args[2] = "local[*]";
     }
 
     @Test
     public void testWordCountResultFile() throws Exception {
-        args[1] = "src/test/resources/output";
         this.deleteDirectory(new File(args[1]));
         wordCount.main(args);
     }
