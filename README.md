@@ -37,6 +37,14 @@
 ║░║░║░░░╠═1 [Console Log](02_Spark_Workspace/02_spark-submit/02_with_JDK8/01_Spark-submit_WordCount.md)  
 ║░║░║░░░╚═2 [Source code](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/example/WordCount.java)  
 ║░╚═3  
+╚═3 Spark Document  
+░░╠═1 RDD paper  
+░░║░╚═1 [RDD paper in Korean](03_Spark_Document/01_RDD_paper/01_Resilient_Distributed_Datasets_Essay_to_Korean.md)  
+░░╠═2 RDD API doc  
+░░╚═3 pair RDD functions doc  
+░░░░╚═1 mapValues  
+░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@mapValues[U](f:V=%3EU):org.apache.spark.rdd.RDD[(K,U)])  
+░░░░░░╚═2 [example](03_Spark_Document/03_pair_RDD_functions_doc/01_mapValues_example.md)  
 
 # Example of Spark
 
@@ -69,6 +77,3 @@
 
 [Config of IntelliJ IBus](03_Config_Spark/01_IBus_Config_for_IntelliJ.md)
 
-# Spark Document 
-
-[RDD paper](04_Spark_Document/01_Resilient_Distributed_Datasets_Essay_to_Korean.md)
