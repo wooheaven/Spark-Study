@@ -60,6 +60,8 @@ scala>
 
 # PageRank
 ```
+scala> // 1. Initialize each page’s rank to 1.0.
+
 scala> val links_list = List(("A",List("C","D")),("C", List("A")),("D",List("B","C")),("B", List("A")))
 links_list: List[(String, List[String])] = List((A,List(C, D)), (C,List(A)), (D,List(B, C)), (B,List(A)))
 
@@ -78,11 +80,15 @@ ranks: org.apache.spark.rdd.RDD[(String, Double)] = MapPartitionsRDD[1] at mapVa
 scala> ranks.collect
 res2: Array[(String, Double)] = Array((A,1.0), (C,1.0), (D,1.0), (B,1.0))
 
+scala> // 2. On each iteration, have page p send a contribution of rank(p)/numNeighbors(p) to its neighbors (the pages it has links to)
+
 scala> val contributions = links.join(ranks).flatMap { case (url, (links, rank)) => links.map(dest => (dest, rank / links.size)) }
 contributions: org.apache.spark.rdd.RDD[(String, Double)] = MapPartitionsRDD[5] at flatMap at <console>:27
 
 scala> contributions.collect
 res3: Array[(String, Double)] = Array((A,1.0), (B,0.5), (C,0.5), (C,0.5), (D,0.5), (A,1.0))
+
+scala> //  3. Set each page???s rank to 0.15 + 0.85 * contributionsReceived.
 
 scala> val ranks = contributions.reduceByKey((x, y) => x + y).mapValues(v => 0.15 + 0.85*v)
 ranks: org.apache.spark.rdd.RDD[(String, Double)] = MapPartitionsRDD[7] at mapValues at <console>:25
@@ -90,3 +96,6 @@ ranks: org.apache.spark.rdd.RDD[(String, Double)] = MapPartitionsRDD[7] at mapVa
 scala> ranks.collect
 res4: Array[(String, Double)] = Array((B,0.575), (D,0.575), (A,1.8499999999999999), (C,1.0))
 ```
+
+# Ref
+[Understanding PageRank algorithm in scala on Spark : Link](http://www.openkb.info/2016/03/understanding-pagerank-algorithm-in.html)
