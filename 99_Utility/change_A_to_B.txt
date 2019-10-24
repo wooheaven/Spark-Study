@@ -1,1 +1,2 @@
-04_Spark_Document/01_Resilient_Distributed_Datasets_Essay_to_Korean.md -> 03_Spark_Document/01_Resilient_Distributed_Datasets_Essay_to_Korean.md
+03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/02_join_example.md -> 03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/03_join_example.md
+03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/03_mapValues_example.md -> 03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/04_mapValues_example.md
