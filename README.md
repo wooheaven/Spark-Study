@@ -44,12 +44,15 @@
 ░░╠═2 RDD API doc  
 ░░╚═3 pair RDD functions doc  
 ░░░░╠═1 Scala  
-░░░░║░╠═1 mapValues  
-░░░░║░║░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@mapValues[U](f:V=%3EU):org.apache.spark.rdd.RDD[(K,U)])  
-░░░░║░║░╚═2 [example on spark-shell](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/01_mapValues_example.md)  
-░░░░║░╚═2 join  
-░░░░║░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@join[W](other:org.apache.spark.rdd.RDD[(K,W)]):org.apache.spark.rdd.RDD[(K,(V,W))])  
-░░░░║░░░╚═2 [example on spark-shell](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/02_join_example.md)  
+░░░░║░╠═1 flatMapValues  
+░░░░║░║░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@flatMapValues[U](f:V=%3ETraversableOnce[U]):org.apache.spark.rdd.RDD[(K,U)])  
+░░░░║░║░╚═2 [example on spark-shell](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/01_flatMapValues_example.md)  
+░░░░║░╠═2 join  
+░░░░║░║░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@join[W](other:org.apache.spark.rdd.RDD[(K,W)]):org.apache.spark.rdd.RDD[(K,(V,W))])  
+░░░░║░║░╚═2 [example on spark-shell](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/02_join_example.md)  
+░░░░║░╚═3 mapValues  
+░░░░║░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@mapValues[U](f:V=%3EU):org.apache.spark.rdd.RDD[(K,U)])  
+░░░░║░░░╚═2 [example on spark-shell](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/03_mapValues_example.md)  
 ░░░░╚═2 Java  
 ░░░░░░╚═1 join  
 ░░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#join-org.apache.spark.api.java.JavaPairRDD-)  
