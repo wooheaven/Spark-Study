@@ -36,15 +36,24 @@
 ║░║░║░╚═1 with JDK8  
 ║░║░║░░░╠═1 [Console Log](02_Spark_Workspace/02_spark-submit/02_with_JDK8/01_Spark-submit_WordCount.md)  
 ║░║░║░░░╚═2 [Source code](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/example/WordCount.java)  
+║░║░╚═2 PageRank  
 ║░╚═3  
 ╚═3 Spark Document  
 ░░╠═1 RDD paper  
 ░░║░╚═1 [RDD paper in Korean](03_Spark_Document/01_RDD_paper/01_Resilient_Distributed_Datasets_Essay_to_Korean.md)  
 ░░╠═2 RDD API doc  
 ░░╚═3 pair RDD functions doc  
-░░░░╚═1 mapValues  
-░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@mapValues[U](f:V=%3EU):org.apache.spark.rdd.RDD[(K,U)])  
-░░░░░░╚═2 [example](03_Spark_Document/03_pair_RDD_functions_doc/01_mapValues_example.md)  
+░░░░╠═1 Scala  
+░░░░║░╠═1 mapValues  
+░░░░║░║░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@mapValues[U](f:V=%3EU):org.apache.spark.rdd.RDD[(K,U)])  
+░░░░║░║░╚═2 [example on spark-shell](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/01_mapValues_example.md)  
+░░░░║░╚═2 join  
+░░░░║░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@join[W](other:org.apache.spark.rdd.RDD[(K,W)]):org.apache.spark.rdd.RDD[(K,(V,W))])  
+░░░░║░░░╚═2 [example on spark-shell](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/02_join_example.md)  
+░░░░╚═2 Java  
+░░░░░░╚═1 join  
+░░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#join-org.apache.spark.api.java.JavaPairRDD-)  
+░░░░░░░░╚═2 [JoinTest : source code](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/JoinTest.java)  
 
 # Example of Spark
 
@@ -72,8 +81,3 @@
 [FlatMapToDouble with List\<Tuple2\<Double,Double\>\>](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/FlatMapToDoubleTest.java)
 
 [Column to Rows as Pivot](01_Spark_Java_Workspace/spark2WithJDK8/src/test/java/rwoo/study/spark/ColumnToRowsTest.java)
-
-# Config of Spark
-
-[Config of IntelliJ IBus](03_Config_Spark/01_IBus_Config_for_IntelliJ.md)
-
