@@ -53,9 +53,19 @@
 ░░░░║░╠═3 join  
 ░░░░║░║░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@join[W](other:org.apache.spark.rdd.RDD[(K,W)]):org.apache.spark.rdd.RDD[(K,(V,W))])  
 ░░░░║░║░╚═2 [example on spark-shell](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/03_join_example.md)  
-░░░░║░╚═4 mapValues  
-░░░░║░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@mapValues[U](f:V=%3EU):org.apache.spark.rdd.RDD[(K,U)])  
-░░░░║░░░╚═2 [example on spark-shell](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/04_mapValues_example.md)  
+░░░░║░╠═4 mapValues  
+░░░░║░║░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@mapValues[U](f:V=%3EU):org.apache.spark.rdd.RDD[(K,U)])  
+░░░░║░║░╚═2 [example on spark-shell](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/04_mapValues_example.md)  
+░░░░║░╚═5 reduceByKey  
+░░░░║░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@reduceByKey(func:(V,V)=%3EV):org.apache.spark.rdd.RDD[(K,V)])  
+░░░░║░░░╚═2 [example on spark-shell](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/05_reduceByKey_example.md)  
+░░░░╚═2 Java  
+░░░░░░╚═1 join  
+░░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#join-org.apache.spark.api.java.JavaPairRDD-)  
+░░░░░░░░╚═2 [JoinTest : source code](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/JoinTest.java)  
+
+# Example of Spark
+
 ░░░░╚═2 Java  
 ░░░░░░╚═1 join  
 ░░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#join-org.apache.spark.api.java.JavaPairRDD-)  
