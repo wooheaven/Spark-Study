@@ -42,6 +42,10 @@
 ░░╠═1 RDD paper  
 ░░║░╚═1 [RDD paper in Korean](03_Spark_Document/01_RDD_paper/01_Resilient_Distributed_Datasets_Essay_to_Korean.md)  
 ░░╠═2 RDD API doc  
+░░║░╠═1 Scala  
+░░║░║░╚═1 map  
+░░║░║░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@map[U](f:T=%3EU)(implicitevidence$3:scala.reflect.ClassTag[U]):org.apache.spark.rdd.RDD[U])  
+░░║░║░░░╚═2 [example on spark-shell](03_Spark_Document/02_RDD_API_doc/01_map_example.md)  
 ░░╚═3 pair RDD functions doc  
 ░░░░╠═1 Scala  
 ░░░░║░╠═1 flatMapValues  
@@ -59,13 +63,6 @@
 ░░░░║░╚═5 reduceByKey  
 ░░░░║░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@reduceByKey(func:(V,V)=%3EV):org.apache.spark.rdd.RDD[(K,V)])  
 ░░░░║░░░╚═2 [example on spark-shell](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/05_reduceByKey_example.md)  
-░░░░╚═2 Java  
-░░░░░░╚═1 join  
-░░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#join-org.apache.spark.api.java.JavaPairRDD-)  
-░░░░░░░░╚═2 [JoinTest : source code](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/JoinTest.java)  
-
-# Example of Spark
-
 ░░░░╚═2 Java  
 ░░░░░░╚═1 join  
 ░░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#join-org.apache.spark.api.java.JavaPairRDD-)  
