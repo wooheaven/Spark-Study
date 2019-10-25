@@ -28,9 +28,9 @@
 ║░║░╠═1 WordCount  
 ║░║░║░╠═1 [on spark](02_Spark_Workspace/01_spark-shell/01_WordCount/01_on_spark.md)  
 ║░║░║░╚═2 [on yarn](02_Spark_Workspace/01_spark-shell/01_WordCount/02_on_yarn.md)  
-║░║░╠═2 PageRank  
-║░║░║░╠═1 [on yarn](02_Spark_Workspace/01_spark-shell/02_PageRank/01_on_yarn.md)  
-║░║░║░╚═2 [on yarn with graphframes](02_Spark_Workspace/01_spark-shell/02_PageRank/02_on_yarn_with_graphframes.md)  
+║░║░╚═2 PageRank  
+║░║░░░╠═1 [on yarn](02_Spark_Workspace/01_spark-shell/02_PageRank/01_on_yarn.md)  
+║░║░░░╚═2 [on yarn with graphframes](02_Spark_Workspace/01_spark-shell/02_PageRank/02_on_yarn_with_graphframes.md)  
 ║░╠═2 spark-submit  
 ║░║░╠═1 WordCount  
 ║░║░║░╚═1 with JDK8  
@@ -39,32 +39,38 @@
 ║░║░╚═2 PageRank  
 ║░║░░░╠═1 [Console Log](02_Spark_Workspace/02_spark-submit/02_with_JDK8/02_Spark-submit_PageRank.md)  
 ║░║░░░╚═2 [Source code](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/example/PageRank.java)  
-║░╚═3  
+║░╚═3 PySpark  
 ╚═3 Spark Document  
-░░╠═1 RDD paper  
-░░║░╚═1 [RDD paper in Korean](03_Spark_Document/01_RDD_paper/01_Resilient_Distributed_Datasets_Essay_to_Korean.md)  
-░░╠═2 RDD API doc  
+░░╠═1 RDD API doc  
 ░░║░╠═1 Scala  
 ░░║░║░╠═1 [flatMap](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@flatMap[U](f:T=%3ETraversableOnce[U])(implicitevidence$4:scala.reflect.ClassTag[U]):org.apache.spark.rdd.RDD[U])  
-░░║░║░║░╠═1 [example on spark-shell : flatMap case map](03_Spark_Document/02_RDD_API_doc/01_flatMap/01_flatMap_case_map_example.md)  
-░░║░║░║░╚═2 [example on spark-shell : flatMap](03_Spark_Document/02_RDD_API_doc/01_flatMap/02_flatMap_example.md)  
+░░║░║░║░╠═1 [example on spark-shell : flatMap case map](03_Spark_Document/01_RDD_API_doc/01_Scala/01_flatMap/01_flatMap_case_map_example.md)  
+░░║░║░║░╚═2 [example on spark-shell : flatMap](03_Spark_Document/01_RDD_API_doc/01_Scala/01_flatMap/02_flatMap_example.md)  
 ░░║░║░╚═2 [map](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@map[U](f:T=%3EU)(implicitevidence$3:scala.reflect.ClassTag[U]):org.apache.spark.rdd.RDD[U])  
-░░║░║░░░╚═1 [example on spark-shell : map](03_Spark_Document/02_RDD_API_doc/02_map/01_map_example.md)  
-░░╚═3 pair RDD functions doc  
+░░║░║░░░╚═1 [example on spark-shell : map](03_Spark_Document/01_RDD_API_doc/01_Scala/02_map/01_map_example.md)  
+░░║░╚═2 Java  
+░░║░░░╚═1 [Partitioner](https://spark.apache.org/docs/latest/api/java/org/apache/spark/Partitioner.html)  
+░░║░░░░░╚═1 [example : CustomPartitioner](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/partitioner/CustomPartitioner.java)  
+░░╠═2 RDD paper  
+░░║░╚═1 [RDD paper in Korean](03_Spark_Document/02_RDD_paper/01_Resilient_Distributed_Datasets_Essay_to_Korean.md)  
+░░╠═3 [RDD programming guide](https://spark.apache.org/docs/latest/rdd-programming-guide.html)  
+░░╚═4 Pair RDD functions doc  
 ░░░░╠═1 Scala  
 ░░░░║░╠═1 [flatMapValues](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@flatMapValues[U](f:V=%3ETraversableOnce[U]):org.apache.spark.rdd.RDD[(K,U)])  
-░░░░║░║░╚═1 [example on spark-shell : flatMapValues](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/01_flatMapValues_example.md)  
+░░░░║░║░╚═1 [example on spark-shell : flatMapValues](03_Spark_Document/04_Pair_RDD_functions_doc/01_for_Scala/01_flatMapValues_example.md)  
 ░░░░║░╠═2 [groupByKey](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@groupByKey():org.apache.spark.rdd.RDD[(K,Iterable[V])])  
-░░░░║░║░╚═1 [example on spark-shell : groupByKey](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/02_groupByKey_example.md)  
+░░░░║░║░╚═1 [example on spark-shell : groupByKey](03_Spark_Document/04_Pair_RDD_functions_doc/01_for_Scala/02_groupByKey_example.md)  
 ░░░░║░╠═3 [join](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@join[W](other:org.apache.spark.rdd.RDD[(K,W)]):org.apache.spark.rdd.RDD[(K,(V,W))])  
-░░░░║░║░╚═1 [example on spark-shell : join](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/03_join_example.md)  
+░░░░║░║░╚═1 [example on spark-shell : join](03_Spark_Document/04_Pair_RDD_functions_doc/01_for_Scala/03_join_example.md)  
 ░░░░║░╠═4 [mapValues](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@mapValues[U](f:V=%3EU):org.apache.spark.rdd.RDD[(K,U)])  
-░░░░║░║░╚═1 [example on spark-shell : mapValues](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/04_mapValues_example.md)  
+░░░░║░║░╚═1 [example on spark-shell : mapValues](03_Spark_Document/04_Pair_RDD_functions_doc/01_for_Scala/04_mapValues_example.md)  
 ░░░░║░╚═5 [reduceByKey](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@reduceByKey(func:(V,V)=%3EV):org.apache.spark.rdd.RDD[(K,V)])  
-░░░░║░░░╚═1 [example on spark-shell : reduceByKey](03_Spark_Document/03_pair_RDD_functions_doc/01_for_Scala/05_reduceByKey_example.md)  
+░░░░║░░░╚═1 [example on spark-shell : reduceByKey](03_Spark_Document/04_Pair_RDD_functions_doc/01_for_Scala/05_reduceByKey_example.md)  
 ░░░░╚═2 Java  
-░░░░░░╚═1 [join](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#join-org.apache.spark.api.java.JavaPairRDD-)  
-░░░░░░░░╚═1 [source code : join](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/JoinTest.java)  
+░░░░░░╠═1 [join](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#join-org.apache.spark.api.java.JavaPairRDD-)  
+░░░░░░║░╚═1 [source code : join](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/JoinTest.java)  
+░░░░░░╚═2 [partitionBy](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#partitionBy-org.apache.spark.Partitioner-)  
+░░░░░░░░╚═1 [source code : partitionBy](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/PartitionByTest.java)  
 
 # Example of Spark
 

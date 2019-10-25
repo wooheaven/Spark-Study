@@ -5,6 +5,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import rwoo.study.spark.partitioner.CustomPartitioner;
 import scala.Tuple2;
 
 import java.util.ArrayList;
@@ -43,8 +44,9 @@ public class PageRank {
         JavaPairRDD<String, Iterable<String>> links = lines.mapToPair(s -> {
             String[] parts = s.split(" ");
             return new Tuple2<String, String>(parts[0], parts[1]);
-        }).groupByKey().cache();
-        JavaPairRDD<String, Double> ranks = links.mapValues(link -> 1.0);
+        }).groupByKey().partitionBy(new CustomPartitioner(4)).cache();
+
+    JavaPairRDD<String, Double> ranks = links.mapValues(link -> 1.0);
         Integer iteration = Integer.parseInt(args[2]);
         for (int i = 0; i < iteration; i++) {
             JavaPairRDD<String, Tuple2<Iterable<String>, Double>> joins = links.join(ranks);
