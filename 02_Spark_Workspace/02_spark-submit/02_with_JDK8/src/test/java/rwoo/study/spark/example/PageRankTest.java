@@ -1,5 +1,6 @@
 package rwoo.study.spark.example;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,23 +8,24 @@ import java.io.File;
 
 import static org.junit.Assert.*;
 
-public class WordCountTest {
-    private WordCount wordCount;
+public class PageRankTest {
+    private PageRank pageRank;
     private String[] args;
 
     @Before
     public void setUp() throws Exception {
-        wordCount = new WordCount();
-        args = new String[3];
-        args[0] = "src/test/resources/input/sample.txt";
-        args[1] = "src/test/resources/output/WordCount";
-        args[2] = "local[*]";
+        pageRank = new PageRank();
+        args = new String[4];
+        args[0] = "src/test/resources/input/pageLinks.txt";
+        args[1] = "src/test/resources/output/pageRanks";
+        args[2] = "2";
+        args[3] = "local[*]";
     }
 
     @Test
-    public void testWordCountResultFile() throws Exception {
+    public void testPageRanks() throws Exception {
         this.deleteDirectory(new File(args[1]));
-        wordCount.main(args);
+        pageRank.main(args);
     }
 
     private void deleteDirectory(File file) {
