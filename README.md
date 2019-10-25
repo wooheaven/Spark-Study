@@ -43,9 +43,12 @@
 ░░║░╚═1 [RDD paper in Korean](03_Spark_Document/01_RDD_paper/01_Resilient_Distributed_Datasets_Essay_to_Korean.md)  
 ░░╠═2 RDD API doc  
 ░░║░╠═1 Scala  
-░░║░║░╚═1 map  
+░░║░║░╠═1 flatMap  
+░░║░║░║░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@flatMap[U](f:T=%3ETraversableOnce[U])(implicitevidence$4:scala.reflect.ClassTag[U]):org.apache.spark.rdd.RDD[U])  
+░░║░║░║░╚═2 [example on spark-shell](03_Spark_Document/02_RDD_API_doc/01_flatMap_example.md)  
+░░║░║░╚═2 map  
 ░░║░║░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@map[U](f:T=%3EU)(implicitevidence$3:scala.reflect.ClassTag[U]):org.apache.spark.rdd.RDD[U])  
-░░║░║░░░╚═2 [example on spark-shell](03_Spark_Document/02_RDD_API_doc/01_map_example.md)  
+░░║░║░░░╚═2 [example on spark-shell](03_Spark_Document/02_RDD_API_doc/02_map_example.md)  
 ░░╚═3 pair RDD functions doc  
 ░░░░╠═1 Scala  
 ░░░░║░╠═1 flatMapValues  
