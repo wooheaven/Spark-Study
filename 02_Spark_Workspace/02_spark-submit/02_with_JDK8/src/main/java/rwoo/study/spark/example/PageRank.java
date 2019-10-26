@@ -52,9 +52,9 @@ public class PageRank {
             JavaPairRDD<String, Tuple2<Iterable<String>, Double>> joins = links.join(ranks);
             JavaPairRDD<String , Double> contributions = joins.values().flatMapToPair(items -> {
                 int items_count = Iterables.size(items._1());
-                List<Tuple2<String, Double>> contribution = new ArrayList<>();
-                items._1().forEach(dest -> contribution.add(new Tuple2<>(dest, items._2() / items_count)));
-                return contribution.iterator();
+                List<Tuple2<String, Double>> myContributions = new ArrayList<>();
+                items._1().forEach(dest -> myContributions.add(new Tuple2<>(dest, items._2() / items_count)));
+                return myContributions.iterator();
             });
             ranks = contributions.reduceByKey((x, y) -> x + y).mapValues(x -> 0.15 + x * 0.85);
         }
