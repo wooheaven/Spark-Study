@@ -41,8 +41,8 @@ public class PageRank {
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         JavaRDD<String> lines = sc.textFile(args[0]);
-        JavaPairRDD<String, Iterable<String>> links = lines.mapToPair(s -> {
-            String[] parts = s.split(" ");
+        JavaPairRDD<String, Iterable<String>> links = lines.mapToPair(line -> {
+            String[] parts = line.split(" ");
             return new Tuple2<String, String>(parts[0], parts[1]);
         }).groupByKey().partitionBy(new CustomPartitioner(4)).cache();
 

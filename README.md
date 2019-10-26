@@ -37,8 +37,9 @@
 ║░║░║░░░╠═1 [Console Log](02_Spark_Workspace/02_spark-submit/02_with_JDK8/01_Spark-submit_WordCount.md)  
 ║░║░║░░░╚═2 [Source code](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/example/WordCount.java)  
 ║░║░╚═2 PageRank  
-║░║░░░╠═1 [Console Log](02_Spark_Workspace/02_spark-submit/02_with_JDK8/02_Spark-submit_PageRank.md)  
-║░║░░░╚═2 [Source code](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/example/PageRank.java)  
+║░║░░░╚═1 with JDK8  
+║░║░░░░░╠═1 [Console Log](02_Spark_Workspace/02_spark-submit/02_with_JDK8/02_Spark-submit_PageRank.md)  
+║░║░░░░░╚═2 [Source code](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/example/PageRank.java)  
 ║░╚═3 PySpark  
 ╚═3 Spark Document  
 ░░╠═1 RDD API doc  
@@ -49,7 +50,9 @@
 ░░║░║░╚═2 [map](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@map[U](f:T=%3EU)(implicitevidence$3:scala.reflect.ClassTag[U]):org.apache.spark.rdd.RDD[U])  
 ░░║░║░░░╚═1 [example on spark-shell : map](03_Spark_Document/01_RDD_API_doc/01_Scala/02_map/01_map_example.md)  
 ░░║░╚═2 Java  
-░░║░░░╚═1 [Partitioner](https://spark.apache.org/docs/latest/api/java/org/apache/spark/Partitioner.html)  
+░░║░░░╠═1 [mapToPair](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#mapToPair-org.apache.spark.api.java.function.PairFunction-)  
+░░║░░░║░╚═1 [example : mapToPair](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/MapToPairTest.java)  
+░░║░░░╚═2 [Partitioner](https://spark.apache.org/docs/latest/api/java/org/apache/spark/Partitioner.html)  
 ░░║░░░░░╚═1 [example : CustomPartitioner](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/partitioner/CustomPartitioner.java)  
 ░░╠═2 RDD paper  
 ░░║░╚═1 [RDD paper in Korean](03_Spark_Document/02_RDD_paper/01_Resilient_Distributed_Datasets_Essay_to_Korean.md)  
