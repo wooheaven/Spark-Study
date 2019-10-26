@@ -1,4 +1,4 @@
-package rwoo.study.spark;
+package rwoo.study.spark.pairrdd;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
