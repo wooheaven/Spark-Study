@@ -22,7 +22,7 @@ public class MapValuesTest implements Serializable {
                 .setMaster("local[*]")
                 .setAppName("PartitionByTest")
                 .set("spark.driver.allowMultipleContexts", "true"));
-        JavaRDD<String> lines = sc.textFile("src/test/resources/input/PartitionByTest/");
+        JavaRDD<String> lines = sc.textFile("src/test/resources/input/MapValuesTest/");
         links = lines.mapToPair(line -> {
             String[] parts = line.split(" ");
             return new Tuple2<String, String>(parts[0], parts[1]);
@@ -52,7 +52,7 @@ public class MapValuesTest implements Serializable {
     }
 
     @Test
-    public void test_MapValues_with_Explicit_Function() {
+    public void test_MapValues_with_CustomFunction() {
         JavaPairRDD<String, Tuple2<String, Double>> ranks = links.mapValues(new CustomFunction());
         ranks.foreach(rank -> System.out.println(rank));
     }
