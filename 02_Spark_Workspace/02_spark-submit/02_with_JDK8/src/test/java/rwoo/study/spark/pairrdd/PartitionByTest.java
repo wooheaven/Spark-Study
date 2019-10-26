@@ -1,4 +1,4 @@
-package rwoo.study.spark;
+package rwoo.study.spark.pairrdd;
 
 import org.apache.spark.HashPartitioner;
 import org.apache.spark.SparkConf;
@@ -20,7 +20,6 @@ public class PartitionByTest implements Serializable {
 
     @Before
     public void setUp() {
-        // JavaSparkContext
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
                 .setAppName("PartitionByTest")
