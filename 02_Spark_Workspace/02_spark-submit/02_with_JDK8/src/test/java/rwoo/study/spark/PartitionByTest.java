@@ -5,7 +5,6 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.Optional;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,8 +12,6 @@ import rwoo.study.spark.partitioner.CustomPartitioner;
 import scala.Tuple2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class PartitionByTest implements Serializable {
     private JavaSparkContext sc;
@@ -62,5 +59,4 @@ public class PartitionByTest implements Serializable {
         }).groupByKey().partitionBy(new CustomPartitioner(4)).cache();
         System.out.println(links.glom().collect());
     }
-
 }
