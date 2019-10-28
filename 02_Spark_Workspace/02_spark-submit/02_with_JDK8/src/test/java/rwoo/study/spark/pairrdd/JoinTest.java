@@ -4,8 +4,6 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.Optional;
-import org.apache.spark.api.java.function.Function;
-import org.apache.spark.api.java.function.VoidFunction;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -52,46 +50,48 @@ public class JoinTest implements Serializable {
     }
 
     @Test
-    public void testJoin() {
+    public void test_Join() {
         // join
         JavaPairRDD<String, Tuple2<Integer, Integer>> join = leftRdd.join(rightRdd);
-
-        // print
-        for (Tuple2<String, Tuple2<Integer, Integer>> myTuple : join.collect()) {
-            System.out.println(myTuple);
-        }
+        join.foreach(v -> System.out.println(v));
+//        (C,(2,3))
+//        (D,(2,3))
+//        (E,(2,3))
     }
 
     @Test
-    public void testLeftOuterJoin() {
+    public void test_LeftOuterJoin() {
         // left outer join
         JavaPairRDD<String, Tuple2<Integer, Optional<Integer>>> leftJoin = leftRdd.leftOuterJoin(rightRdd);
-
-        // print
-        for (Tuple2<String, Tuple2<Integer, Optional<Integer>>> myTuple : leftJoin.collect()) {
-            System.out.println(myTuple);
-        }
+        leftJoin.foreach(v -> System.out.println(v));
+//        (B,(2,Optional.empty))
+//        (D,(2,Optional[3]))
+//        (A,(2,Optional.empty))
+//        (E,(2,Optional[3]))
+//        (C,(2,Optional[3]))
     }
 
     @Test
-    public void testRightOuterJoin() {
+    public void test_RightOuterJoin() {
         // right outer join
         JavaPairRDD<String, Tuple2<Optional<Integer>, Integer>> rightJoin = leftRdd.rightOuterJoin(rightRdd);
-
-        // print
-        for (Tuple2<String, Tuple2<Optional<Integer>, Integer>> myTuple : rightJoin.collect()) {
-            System.out.println(myTuple);
-        }
+        rightJoin.foreach(v -> System.out.println(v));
+//        (C,(Optional[2],3))
+//        (D,(Optional[2],3))
+//        (E,(Optional[2],3))
+//        (F,(Optional.empty,3))
     }
 
     @Test
-    public void testFullOuterJoin() {
+    public void test_FullOuterJoin() {
         // full outer join
         JavaPairRDD<String, Tuple2<Optional<Integer>, Optional<Integer>>> fullOuterJoin = leftRdd.fullOuterJoin(rightRdd);
-
-        // print
-        for (Tuple2<String, Tuple2<Optional<Integer>, Optional<Integer>>> myTuple : fullOuterJoin.collect()) {
-            System.out.println(myTuple);
-        }
+        fullOuterJoin.foreach(v -> System.out.println(v));
+//        (A,(Optional[2],Optional.empty))
+//        (F,(Optional.empty,Optional[3]))
+//        (B,(Optional[2],Optional.empty))
+//        (C,(Optional[2],Optional[3]))
+//        (E,(Optional[2],Optional[3]))
+//        (D,(Optional[2],Optional[3]))
     }
 }

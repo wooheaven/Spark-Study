@@ -17,6 +17,7 @@ import java.util.List;
 public class MapToPairTest {
     private JavaSparkContext sc;
     private JavaPairRDD<String, Iterable<String>> links;
+    private JavaPairRDD<String, Tuple2<Iterable<String>, Double>> ranks;
 
     @Before
     public void setUp() {
@@ -42,8 +43,9 @@ public class MapToPairTest {
 
     @Test
     public void test_MapToPair_with_Implicit() {
-        JavaPairRDD<String, Tuple2<Iterable<String>, Double>> ranks = links.mapToPair(items ->
-                new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2()))));
+        ranks = links.mapToPair(items ->
+            new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())))
+        );
         ranks.foreach(rank -> System.out.println(rank));
 //        (B,([A],1.0))
 //        (A,([C, D],0.5))
@@ -53,16 +55,24 @@ public class MapToPairTest {
 
     @Test
     public void test_MapToPair_with_Explicit() {
-        JavaPairRDD<String, Tuple2<Iterable<String>, Double>> ranks = links.mapToPair(items -> {
+        ranks = links.mapToPair(items -> {
             return new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())));
         });
         ranks.foreach(rank -> System.out.println(rank));
+//        (B,([A],1.0))
+//        (A,([C, D],0.5))
+//        (D,([B, C],0.5))
+//        (C,([A],1.0)
     }
 
     @Test
     public void test_MapToPair_with_CustomPairFunction() {
-        JavaPairRDD<String, Tuple2<Iterable<String>, Double>> ranks = links.mapToPair(new CustomPairFunction());
+        ranks = links.mapToPair(new CustomPairFunction());
         ranks.foreach(rank -> System.out.println(rank));
+//        (B,([A],1.0))
+//        (A,([C, D],0.5))
+//        (D,([B, C],0.5))
+//        (C,([A],1.0)
     }
 
     @Test

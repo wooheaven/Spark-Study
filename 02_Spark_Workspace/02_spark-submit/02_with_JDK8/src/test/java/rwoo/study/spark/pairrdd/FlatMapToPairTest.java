@@ -5,7 +5,6 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.codehaus.jackson.map.ser.std.IterableSerializer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +17,7 @@ import java.util.List;
 public class FlatMapToPairTest {
     private JavaSparkContext sc;
     private JavaPairRDD<String, Iterable<String>> links;
+    private JavaPairRDD<String, Tuple2<String, Double>> ranks;
 
     @Before
     public void setUp() {
@@ -43,7 +43,7 @@ public class FlatMapToPairTest {
 
     @Test
     public void test_FlatMapToPair_with_Explicit() {
-        JavaPairRDD<String, Tuple2<String, Double>> ranks = links.flatMapToPair(items -> {
+        ranks = links.flatMapToPair(items -> {
             List<Tuple2<String, Tuple2<String, Double>>> myContributions = new ArrayList<>();
             items._2().forEach(dest ->
                 myContributions.add(new Tuple2<>(items._1(), new Tuple2<>(dest, 1.0 / Iterables.size(items._2()))))
@@ -61,22 +61,25 @@ public class FlatMapToPairTest {
 
     @Test
     public void test_FlatMapToPair_with_CustomPairFlatMapFunction() {
-        JavaPairRDD<String, Tuple2<String, Double>> ranks = links.flatMapToPair(new CustomPairFlatMapFunction());
+        ranks = links.flatMapToPair(new CustomPairFlatMapFunction());
         ranks.foreach(rank -> System.out.println(rank));
+//        (A,(C,0.5))
+//        (B,(A,1.0))
+//        (A,(D,0.5))
+//        (D,(B,0.5))
+//        (C,(A,1.0))
+//        (D,(C,0.5))
     }
 
     @Test
     public void test_MapToPair() {
-        JavaPairRDD<String, Tuple2<Iterable<String>, Double>> ranks = links.mapToPair(items -> {
-            return new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())));
-        });
+        JavaPairRDD<String, Tuple2<Iterable<String>, Double>> ranks = links.mapToPair(items ->
+            new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())))
+        );
         ranks.foreach(rank -> System.out.println(rank));
 //        (B,([A],1.0))
 //        (A,([C, D],0.5))
 //        (D,([B, C],0.5))
 //        (C,([A],1.0))
-        ranks = links.mapToPair(items ->
-            new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2()))));
-        ranks.foreach(rank -> System.out.println(rank));
     }
 }
