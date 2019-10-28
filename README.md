@@ -52,11 +52,13 @@
 ░░║░╚═2 Java  
 ░░║░░░╠═1 [Function](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function.html)  
 ░░║░░░║░╚═1 [example : CustomFunction](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunction.java)  
-░░║░░░╠═2 [PairFlatMapFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFlatMapFunction.html)  
+░░║░░░╠═2 [Function2](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function2.html)  
+░░║░░░║░╚═1 [example : CustomFunction2](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunction2.java)  
+░░║░░░╠═3 [PairFlatMapFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFlatMapFunction.html)  
 ░░║░░░║░╚═1 [example : CustomPairFlatMapFunction](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/pairflatmapfunction/CustomPairFlatMapFunction.java)  
-░░║░░░╠═3 [PairFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFunction.html)  
+░░║░░░╠═4 [PairFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFunction.html)  
 ░░║░░░║░╚═1 [example : CustomPairFunction](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/pairfunction/CustomPairFunction.java)  
-░░║░░░╚═4 [Partitioner](https://spark.apache.org/docs/latest/api/java/org/apache/spark/Partitioner.html)  
+░░║░░░╚═5 [Partitioner](https://spark.apache.org/docs/latest/api/java/org/apache/spark/Partitioner.html)  
 ░░║░░░░░╚═1 [example : CustomPartitioner](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/partitioner/CustomPartitioner.java)  
 ░░╠═2 RDD paper  
 ░░║░╚═1 [RDD paper in Korean](03_Spark_Document/02_RDD_paper/01_Resilient_Distributed_Datasets_Essay_to_Korean.md)  
@@ -84,8 +86,10 @@
 ░░░░░░║░╚═1 [example : mapToPair](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/MapToPairTest.java)  
 ░░░░░░╠═5 [mapValues](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#mapValues-org.apache.spark.api.java.function.Function-)  
 ░░░░░░║░╚═1 [source code : mapValues](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/MapValuesTest.java)  
-░░░░░░╚═6 [partitionBy](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#partitionBy-org.apache.spark.Partitioner-)  
-░░░░░░░░╚═1 [source code : partitionBy](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/PartitionByTest.java)  
+░░░░░░╠═6 [partitionBy](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#partitionBy-org.apache.spark.Partitioner-)  
+░░░░░░║░╚═1 [source code : partitionBy](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/PartitionByTest.java)  
+░░░░░░╚═7 [reduceByKey](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#reduceByKey-org.apache.spark.api.java.function.Function2-)  
+░░░░░░░░╚═1 [source code : reduceByKey](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/ReduceByKeyTest.java)  
 
 # Example of Spark
 

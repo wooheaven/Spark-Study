@@ -4,6 +4,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.Function;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,6 +16,7 @@ import java.io.Serializable;
 public class MapValuesTest implements Serializable {
     private JavaSparkContext sc;
     private JavaPairRDD<String, Iterable<String>> links;
+    private JavaPairRDD<String, Tuple2<String, Double>> ranks;
 
     @Before
     public void setUp() {
@@ -41,9 +43,7 @@ public class MapValuesTest implements Serializable {
 
     @Test
     public void test_MapValues_with_Implicit_Function() {
-        JavaPairRDD<String, Tuple2<String, Double>> ranks = links.mapValues(v ->
-            new Tuple2<>(v.toString(), 1.0)
-        );
+        ranks = links.mapValues(v -> new Tuple2<>(v.toString(), 1.0));
         ranks.foreach(rank -> System.out.println(rank));
 //        (B,([A],1.0))
 //        (A,([C, D],1.0))
@@ -52,8 +52,15 @@ public class MapValuesTest implements Serializable {
     }
 
     @Test
+    public void test_MapValues_with_Explicit_Function() {
+        Function<Iterable<String>, Tuple2<String, Double>> f = (v -> new Tuple2<>(v.toString(), 1.0));
+        ranks = links.mapValues(f);
+        ranks.foreach(rank -> System.out.println(rank));
+    }
+
+    @Test
     public void test_MapValues_with_CustomFunction() {
-        JavaPairRDD<String, Tuple2<String, Double>> ranks = links.mapValues(new CustomFunction());
+        ranks = links.mapValues(new CustomFunction());
         ranks.foreach(rank -> System.out.println(rank));
     }
 }
