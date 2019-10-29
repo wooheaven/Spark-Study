@@ -1,12 +1,9 @@
 package rwoo.study.spark.example;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
-
-import static org.junit.Assert.*;
 
 public class PageRankTest {
     private PageRank pageRank;

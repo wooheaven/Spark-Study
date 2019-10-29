@@ -25,10 +25,25 @@ public class PartitionByTest implements Serializable {
                 .setAppName("PartitionByTest")
                 .set("spark.driver.allowMultipleContexts", "true"));
         lines = sc.textFile("src/test/resources/input/PartitionByTest/");
+        lines.foreach(v -> System.out.println(v));
+//        A C
+//        C A
+//        A D
+//        D B
+//        B A
+//        D C
     }
 
     @After
     public void after() {
+        links.glom().foreach(v -> System.out.println(v));
+//        [(A,[C, D]), (C,[A])]
+//        [(B,[A]), (D,[B, C])]
+//
+//        [(A,[C, D])]
+//        [(B,[A])]
+//        [(D,[B, C])]
+//        [(C,[A])]
         sc.close();
     }
 
@@ -37,8 +52,7 @@ public class PartitionByTest implements Serializable {
         links = lines.mapToPair(line -> {
             String[] parts = line.split(" ");
             return new Tuple2<String, String>(parts[0], parts[1]);
-        }).groupByKey().cache();
-        System.out.println(links.glom().collect());
+        }).groupByKey();
     }
 
     @Test
@@ -46,8 +60,7 @@ public class PartitionByTest implements Serializable {
         links = lines.mapToPair(line -> {
             String[] parts = line.split(" ");
             return new Tuple2<String, String>(parts[0], parts[1]);
-        }).groupByKey().partitionBy(new HashPartitioner(4)).cache();
-        System.out.println(links.glom().collect());
+        }).groupByKey().partitionBy(new HashPartitioner(4));
     }
 
     @Test
@@ -55,7 +68,6 @@ public class PartitionByTest implements Serializable {
         links = lines.mapToPair(line -> {
             String[] parts = line.split(" ");
             return new Tuple2<String, String>(parts[0], parts[1]);
-        }).groupByKey().partitionBy(new CustomPartitioner(4)).cache();
-        System.out.println(links.glom().collect());
+        }).groupByKey().partitionBy(new CustomPartitioner(4));
     }
 }
