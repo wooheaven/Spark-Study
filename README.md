@@ -28,9 +28,11 @@
 ║░║░╠═1 WordCount  
 ║░║░║░╠═1 [on spark](02_Spark_Workspace/01_spark-shell/01_WordCount/01_on_spark.md)  
 ║░║░║░╚═2 [on yarn](02_Spark_Workspace/01_spark-shell/01_WordCount/02_on_yarn.md)  
-║░║░╚═2 PageRank  
-║░║░░░╠═1 [on yarn](02_Spark_Workspace/01_spark-shell/02_PageRank/01_on_yarn.md)  
-║░║░░░╚═2 [on yarn with graphframes](02_Spark_Workspace/01_spark-shell/02_PageRank/02_on_yarn_with_graphframes.md)  
+║░║░╠═2 PageRank  
+║░║░║░╠═1 [on yarn](02_Spark_Workspace/01_spark-shell/02_PageRank/01_on_yarn.md)  
+║░║░║░╚═2 [on yarn with graphframes](02_Spark_Workspace/01_spark-shell/02_PageRank/02_on_yarn_with_graphframes.md)  
+║░║░╚═3 Pi Estimation  
+║░║░░░╚═1 [on yarn](02_Spark_Workspace/01_spark-shell/03_Pi_Estimation/01_on_yarn.md)  
 ║░╠═2 spark-submit  
 ║░║░╠═1 WordCount  
 ║░║░║░╚═1 with JDK8  
