@@ -38,6 +38,13 @@ public class FlatMapToPairTest {
 
     @After
     public void after() {
+        ranks.foreach(rank -> System.out.println(rank));
+//        (A,(C,0.5))
+//        (B,(A,1.0))
+//        (A,(D,0.5))
+//        (D,(B,0.5))
+//        (C,(A,1.0))
+//        (D,(C,0.5))
         sc.close();
     }
 
@@ -50,33 +57,19 @@ public class FlatMapToPairTest {
             );
             return myContributions.iterator();
         });
-        ranks.foreach(rank -> System.out.println(rank));
-//        (A,(C,0.5))
-//        (B,(A,1.0))
-//        (A,(D,0.5))
-//        (D,(B,0.5))
-//        (C,(A,1.0))
-//        (D,(C,0.5))
     }
 
     @Test
     public void test_FlatMapToPair_with_CustomPairFlatMapFunction() {
         ranks = links.flatMapToPair(new CustomPairFlatMapFunction());
-        ranks.foreach(rank -> System.out.println(rank));
-//        (A,(C,0.5))
-//        (B,(A,1.0))
-//        (A,(D,0.5))
-//        (D,(B,0.5))
-//        (C,(A,1.0))
-//        (D,(C,0.5))
     }
 
     @Test
     public void test_MapToPair() {
-        JavaPairRDD<String, Tuple2<Iterable<String>, Double>> ranks = links.mapToPair(items ->
+        JavaPairRDD<String, Tuple2<Iterable<String>, Double>> ranks_compare = links.mapToPair(items ->
             new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())))
         );
-        ranks.foreach(rank -> System.out.println(rank));
+        ranks_compare.foreach(rank -> System.out.println(rank));
 //        (B,([A],1.0))
 //        (A,([C, D],0.5))
 //        (D,([B, C],0.5))

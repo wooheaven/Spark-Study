@@ -16,6 +16,7 @@ import java.util.List;
 public class GroupByKeyTest {
     private JavaSparkContext sc;
     private JavaPairRDD<String, Integer> wordPair;
+    private JavaPairRDD<String, Iterable<Integer>> wordMergedRDD;
 
     @Before
     public void setUp() {
@@ -28,16 +29,32 @@ public class GroupByKeyTest {
         JavaRDD<String> inputRDD = sc.parallelize(inputList);
         JavaRDD<String> wordRDD = inputRDD.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
         wordPair = wordRDD.mapToPair(word -> new Tuple2<String, Integer>(word, 1));
+        wordPair.foreach(v -> System.out.println(v));
+//        (I,1)
+//        (You,1)
+//        (am,1)
+//        (are,1)
+//        (a,1)
+//        (a,1)
+//        (boy,1)
+//        (girl,1)
     }
 
     @After
     public void after() {
+        wordMergedRDD.foreach(v -> System.out.println(v));
+//        (You,[1])
+//        (a,[1, 1])
+//        (I,[1])
+//        (are,[1])
+//        (am,[1])
+//        (girl,[1])
+//        (boy,[1])
         sc.close();
     }
 
     @Test
     public void testGroupByKey() {
-        JavaPairRDD<String, Iterable<Integer>> wordMergedRDD = wordPair.groupByKey();
-        wordMergedRDD.foreach(wordMerge -> System.out.println(wordMerge));
+        wordMergedRDD = wordPair.groupByKey();
     }
 }

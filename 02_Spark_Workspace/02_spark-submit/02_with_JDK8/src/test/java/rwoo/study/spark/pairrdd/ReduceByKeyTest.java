@@ -13,7 +13,6 @@ import rwoo.study.spark.function.CustomFunction2;
 import scala.Tuple2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ReduceByKeyTest {
@@ -50,37 +49,27 @@ public class ReduceByKeyTest {
 
     @After
     public void after() {
+        ranks.foreach(rank -> System.out.println(rank));
+//        (B,0.5)
+//        (A,2.0)
+//        (D,0.5)
+//        (C,1.0)
         sc.close();
     }
 
     @Test
     public void test_ReduceByKey_with_Implicit_Function() {
         ranks = contributions.reduceByKey((x, y) -> x + y);
-        ranks.foreach(rank -> System.out.println(rank));
-//        (B,0.5)
-//        (A,2.0)
-//        (D,0.5)
-//        (C,1.0)
     }
 
     @Test
     public void test_ReduceByKey_with_Explicit_Function() {
         Function2<Double, Double, Double> f = (x, y) -> x + y;
         ranks = contributions.reduceByKey(f);
-        ranks.foreach(rank -> System.out.println(rank));
-//        (B,0.5)
-//        (A,2.0)
-//        (D,0.5)
-//        (C,1.0)
     }
 
     @Test
     public void test_ReduceByKey_with_CustomFunction2() {
         ranks = contributions.reduceByKey(new CustomFunction2());
-        ranks.foreach(rank -> System.out.println(rank));
-//        (B,0.5)
-//        (A,2.0)
-//        (D,0.5)
-//        (C,1.0)
     }
 }

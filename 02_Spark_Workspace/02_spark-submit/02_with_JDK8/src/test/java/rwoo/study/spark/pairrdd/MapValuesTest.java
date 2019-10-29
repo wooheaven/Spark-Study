@@ -38,29 +38,27 @@ public class MapValuesTest implements Serializable {
 
     @After
     public void after() {
+        ranks.foreach(rank -> System.out.println(rank));
+//        (B,([A],1.0))
+//        (A,([C, D],1.0))
+//        (D,([B, C],1.0))
+//        (C,([A],1.0))
         sc.close();
     }
 
     @Test
     public void test_MapValues_with_Implicit_Function() {
         ranks = links.mapValues(v -> new Tuple2<>(v.toString(), 1.0));
-        ranks.foreach(rank -> System.out.println(rank));
-//        (B,([A],1.0))
-//        (A,([C, D],1.0))
-//        (D,([B, C],1.0))
-//        (C,([A],1.0))
     }
 
     @Test
     public void test_MapValues_with_Explicit_Function() {
         Function<Iterable<String>, Tuple2<String, Double>> f = (v -> new Tuple2<>(v.toString(), 1.0));
         ranks = links.mapValues(f);
-        ranks.foreach(rank -> System.out.println(rank));
     }
 
     @Test
     public void test_MapValues_with_CustomFunction() {
         ranks = links.mapValues(new CustomFunction());
-        ranks.foreach(rank -> System.out.println(rank));
     }
 }

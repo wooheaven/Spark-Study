@@ -38,6 +38,13 @@ public class MapToPairTest {
 
     @After
     public void after() {
+        if (null != ranks) {
+            ranks.foreach(rank -> System.out.println(rank));
+//            (B,([A],1.0))
+//            (A,([C, D],0.5))
+//            (D,([B, C],0.5))
+//            (C,([A],1.0)
+        }
         sc.close();
     }
 
@@ -46,11 +53,6 @@ public class MapToPairTest {
         ranks = links.mapToPair(items ->
             new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())))
         );
-        ranks.foreach(rank -> System.out.println(rank));
-//        (B,([A],1.0))
-//        (A,([C, D],0.5))
-//        (D,([B, C],0.5))
-//        (C,([A],1.0)
     }
 
     @Test
@@ -58,33 +60,23 @@ public class MapToPairTest {
         ranks = links.mapToPair(items -> {
             return new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())));
         });
-        ranks.foreach(rank -> System.out.println(rank));
-//        (B,([A],1.0))
-//        (A,([C, D],0.5))
-//        (D,([B, C],0.5))
-//        (C,([A],1.0)
     }
 
     @Test
     public void test_MapToPair_with_CustomPairFunction() {
         ranks = links.mapToPair(new CustomPairFunction());
-        ranks.foreach(rank -> System.out.println(rank));
-//        (B,([A],1.0))
-//        (A,([C, D],0.5))
-//        (D,([B, C],0.5))
-//        (C,([A],1.0)
     }
 
     @Test
     public void test_FlatMapToPair() {
-        JavaPairRDD<String, Tuple2<String, Double>> ranks = links.flatMapToPair(items -> {
+        JavaPairRDD<String, Tuple2<String, Double>> ranks_compare = links.flatMapToPair(items -> {
             List<Tuple2<String, Tuple2<String, Double>>> myContributions = new ArrayList<>();
             items._2().forEach(dest ->
                     myContributions.add(new Tuple2<>(items._1(), new Tuple2<>(dest, 1.0 / Iterables.size(items._2()))))
             );
             return myContributions.iterator();
         });
-        ranks.foreach(rank -> System.out.println(rank));
+        ranks_compare.foreach(rank -> System.out.println(rank));
 //        (A,(C,0.5))
 //        (B,(A,1.0))
 //        (A,(D,0.5))
