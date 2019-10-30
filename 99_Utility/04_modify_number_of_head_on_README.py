@@ -34,7 +34,7 @@ class Rename():
 
         # find field_num, head_num of head_numbers
         print('Read head_numbers')
-        for key, value in head_numbers.items():
+        for key, value in sorted(head_numbers.items()):
             tmp_field_num = 0
             tmp = str(value.get('line'))
             while not re.match('^[0-9]+$', tmp[0]):
@@ -66,7 +66,7 @@ class Rename():
 
         # edit lines
         print('\nEdit lines')
-        for key, value in head_numbers.items():
+        for key, value in sorted(head_numbers.items()):
             new_line = value['line']
             new_line = re.sub(str(value['head_num']), str(int(value['head_num'])+self.diff_num), new_line, count=1)
             print('line number = ' + self.digits_modify(key, 2), 'old_line = ' + lines[key-1], sep='\t')
