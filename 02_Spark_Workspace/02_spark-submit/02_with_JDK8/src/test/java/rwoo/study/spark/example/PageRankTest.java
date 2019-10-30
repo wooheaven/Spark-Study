@@ -2,10 +2,11 @@ package rwoo.study.spark.example;
 
 import org.junit.Before;
 import org.junit.Test;
+import rwoo.study.spark.util.FileUtil;
 
 import java.io.File;
 
-public class PageRankTest {
+public class PageRankTest extends FileUtil {
     private PageRank pageRank;
     private String[] args;
 
@@ -17,21 +18,11 @@ public class PageRankTest {
         args[1] = "src/test/resources/output/pageRanks";
         args[2] = "2";
         args[3] = "local[*]";
+        this.deleteDirectory(new File(args[1]));
     }
 
     @Test
     public void testPageRanks() throws Exception {
-        this.deleteDirectory(new File(args[1]));
         pageRank.main(args);
-    }
-
-    private void deleteDirectory(File file) {
-        File[] subFiles = file.listFiles();
-        if(null != subFiles) {
-            for (File subfile : subFiles) {
-                deleteDirectory(subfile);
-            }
-        }
-        file.delete();
     }
 }
