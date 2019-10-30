@@ -37,7 +37,7 @@ public class MapValuesTest implements Serializable {
     }
 
     @After
-    public void after() {
+    public void tearDown() {
         ranks.foreach(rank -> System.out.println(rank));
 //        (B,([A],1.0))
 //        (A,([C, D],1.0))

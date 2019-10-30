@@ -6,22 +6,22 @@ import rwoo.study.spark.util.FileUtil;
 
 import java.io.File;
 
-public class WordCountTest extends FileUtil {
-    private WordCount wordCount;
+public class PiEstimationTest extends FileUtil {
+    private PiEstimation piEstimation;
     private String[] args;
 
     @Before
     public void setUp() throws Exception {
-        wordCount = new WordCount();
+        piEstimation = new PiEstimation();
         args = new String[3];
-        args[0] = "src/test/resources/input/sample.txt";
-        args[1] = "src/test/resources/output/WordCount";
+        args[0] = "src/test/resources/input/PiEstimation/numbers.txt";
+        args[1] = "src/test/resources/output/PiEstimation";
         args[2] = "local[*]";
         this.deleteDirectory(new File(args[1]));
     }
 
     @Test
-    public void testWordCountResultFile() throws Exception {
-        wordCount.main(args);
+    public void test_PiEstimation() throws Exception {
+        piEstimation.main(args);
     }
 }

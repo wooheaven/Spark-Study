@@ -37,14 +37,16 @@ public class FlatMapToPairTest {
     }
 
     @After
-    public void after() {
-        ranks.foreach(rank -> System.out.println(rank));
-//        (A,(C,0.5))
-//        (B,(A,1.0))
-//        (A,(D,0.5))
-//        (D,(B,0.5))
-//        (C,(A,1.0))
-//        (D,(C,0.5))
+    public void tearDown() {
+        if (null != ranks) {
+            ranks.foreach(rank -> System.out.println(rank));
+//          (A,(C,0.5))
+//          (B,(A,1.0))
+//          (A,(D,0.5))
+//          (D,(B,0.5))
+//          (C,(A,1.0))
+//          (D,(C,0.5))
+        }
         sc.close();
     }
 

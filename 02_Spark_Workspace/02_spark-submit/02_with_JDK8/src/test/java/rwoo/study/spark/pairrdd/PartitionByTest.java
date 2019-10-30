@@ -35,7 +35,7 @@ public class PartitionByTest implements Serializable {
     }
 
     @After
-    public void after() {
+    public void tearDown() {
         links.glom().foreach(v -> System.out.println(v));
 //        [(A,[C, D]), (C,[A])]
 //        [(B,[A]), (D,[B, C])]

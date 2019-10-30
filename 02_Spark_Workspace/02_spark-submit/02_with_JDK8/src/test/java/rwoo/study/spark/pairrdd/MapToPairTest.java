@@ -37,7 +37,7 @@ public class MapToPairTest {
     }
 
     @After
-    public void after() {
+    public void tearDown() {
         if (null != ranks) {
             ranks.foreach(rank -> System.out.println(rank));
 //            (B,([A],1.0))

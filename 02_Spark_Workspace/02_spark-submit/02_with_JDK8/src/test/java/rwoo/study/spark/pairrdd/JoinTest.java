@@ -45,7 +45,7 @@ public class JoinTest implements Serializable {
     }
 
     @After
-    public void after() {
+    public void tearDown() {
         sc.close();
     }
 

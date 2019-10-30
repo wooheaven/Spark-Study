@@ -41,7 +41,7 @@ public class GroupByKeyTest {
     }
 
     @After
-    public void after() {
+    public void tearDown() {
         wordMergedRDD.foreach(v -> System.out.println(v));
 //        (You,[1])
 //        (a,[1, 1])

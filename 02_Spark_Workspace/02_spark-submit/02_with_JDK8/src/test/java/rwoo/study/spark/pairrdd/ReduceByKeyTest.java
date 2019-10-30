@@ -48,7 +48,7 @@ public class ReduceByKeyTest {
     }
 
     @After
-    public void after() {
+    public void tearDown() {
         ranks.foreach(rank -> System.out.println(rank));
 //        (B,0.5)
 //        (A,2.0)
