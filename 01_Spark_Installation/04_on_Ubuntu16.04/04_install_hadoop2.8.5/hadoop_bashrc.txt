@@ -1,0 +1,10 @@
+
+# Hadoop
+export HADOOP_HOME=/usr/lib/hadoop/hadoop-2.8.5
+export PATH=$PATH:/usr/lib/hadoop/hadoop-2.8.5/bin:/usr/lib/hadoop/hadoop-2.8.5/sbin
+export HADOOP_MAPRED_HOME=/usr/lib/hadoop/hadoop-2.8.5
+export HADOOP_COMMON_HOME=/usr/lib/hadoop/hadoop-2.8.5
+export HADOOP_HDFS_HOME=/usr/lib/hadoop/hadoop-2.8.5
+export YARN_HOME=/usr/lib/hadoop/hadoop-2.8.5
+export HADOOP_COMMON_LIB_NATIVE_DIR=/usr/lib/hadoop/hadoop-2.8.5/lib/native
+export HADOOP_OPTS="-Djava.library.path=/usr/lib/hadoop/hadoop-2.8.5/lib/native"

@@ -1,0 +1,4 @@
+
+# Spark
+export SPARK_HOME=/usr/lib/spark/spark-2.4.4-bin-hadoop2.7
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
