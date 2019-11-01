@@ -20,6 +20,12 @@ RUN service ssh start && \
     touch /root/.ssh/known_hosts && \
     ssh-keyscan -t rsa localhost >> /root/.ssh/known_hosts && \
     chmod 600 known_hosts && \
-    ls -als /root/.ssh
+    ls -als /root/.ssh && \
+    service ssh stop
 
-ENTRYPOINT service ssh start && bash
+ADD 99_Utility/01_start_ssh.sh /root/
+ADD 99_Utility/02_stop_ssh.sh /root/
+
+RUN chmod +x /root/*.sh
+
+WORKDIR /root

@@ -9,19 +9,17 @@ ENV HADOOP_CONF $HADOOP_HOME/etc/hadoop
 ENV SPARK_HOME /usr/lib/spark/spark-2.4.4-bin-hadoop2.7
 RUN echo $HADOOP_HOME && echo $HADOOP_CONF && echo $SPARK_HOME
 
-RUN echo "" >> ~/.bashrc && \
-    echo "# Spark" >> ~/.bashrc && \
-    echo "export SPARK_HOME=$SPARK_HOME" >> ~/.bashrc && \
-    echo "export PATH=\$PATH:\$SPARK_HOME/bin:\$SPARK_HOME/sbin" >> ~/.bashrc && \
+ADD 99_Utility/spark_bashrc.txt /root
+RUN cat /root/spark_bashrc.txt >> /root/.bashrc && \
     cat -n ~/.bashrc | tail -3
 
 ADD spark-env.sh $SPARK_HOME/conf/
 RUN cat -n $SPARK_HOME/conf/spark-env.sh | tail -7
 
-RUN cd $SPARK_HOME && \
-    cp conf/slaves.template conf/slaves && \
-    cat $HADOOP_CONF/slaves > conf/slaves && \
-    cat -n conf/slaves | tail -1
+RUN cat -n $HADOOP_CONF/slaves && \
+    cp $SPARK_HOME/conf/slaves.template $SPARK_HOME/conf/slaves && \
+    sed -i 's/localhost/localhost\n/' $SPARK_HOME/conf/slaves && \
+    cat -n $SPARK_HOME/conf/slaves | tail -2
 
 ADD spark-defaults.conf $SPARK_HOME/conf/
 RUN cat -n $SPARK_HOME/conf/spark-defaults.conf | tail -11
@@ -42,15 +40,14 @@ RUN service ssh start && \
     $HADOOP_HOME/bin/hdfs dfs -ls README.txt && \
     cd $SPARK_HOME/ && \
     $SPARK_HOME/bin/spark-submit --deploy-mode client --class org.apache.spark.examples.JavaWordCount examples/jars/spark-examples*.jar README.txt > wordcount.log && \
-    cat wordcount.log 
+    cat wordcount.log && \
+    $SPARK_HOME/sbin/stop-history-server.sh && \
+    $HADOOP_HOME/sbin/stop-yarn.sh && \
+    $HADOOP_HOME/sbin/stop-dfs.sh && \
+    /usr/lib/jvm/jdk1.8.0_221/bin/jps && \
+    service ssh stop
 #   $SPARK_HOME/bin/spark-submit --deploy-mode cluster --class org.apache.spark.examples.JavaWordCount examples/jars/spark-examples*.jar README.txt > wordcount.log && \
 #   cat wordcount.log 
 
-RUN service ssh start && \
-    sleep 5 && echo "stop-history-server" && \
-    $SPARK_HOME/sbin/stop-history-server.sh && \
-    sleep 5 && echo "stop-yarn" && \
-    $HADOOP_HOME/sbin/stop-yarn.sh && \
-    sleep 5 && echo "stop-dfs" && \
-    $HADOOP_HOME/sbin/stop-dfs.sh && \
-    /usr/lib/jvm/jdk1.8.0_221/bin/jps
+ADD 99_Utility/*.sh /root/
+RUN chmod +x /root/*.sh

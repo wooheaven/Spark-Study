@@ -7,7 +7,7 @@
 ║░║░╠═3 [install Maven3.3.9](01_Spark_Installation/02_on_CentOS6.9/03_Install_Maven3.3.9_on_CentOS6.9_docker_container.md)  
 ║░║░╠═4 [install Scala2.12.1](01_Spark_Installation/02_on_CentOS6.9/04_Install_Scala2.12.1_on_CentOS6.9_docker_container.md)  
 ║░║░╚═5 [install Sbt0.13.15](01_Spark_Installation/02_on_CentOS6.9/05_Install_Sbt0.13.15_on_CentOS6.9_docker_container.md)  
-║░╠═2 on Ubuntu 14.04  
+║░╠═3 on Ubuntu 14.04  
 ║░║░╠═1 [docker pull ubuntu:14.04](01_Spark_Installation/03_on_Ubuntu14.04/01_Run_Ubuntu14.04_on_docker.md)  
 ║░║░╠═2 [install JDK8](01_Spark_Installation/03_on_Ubuntu14.04/02_Install_JDK8_on_Ubuntu14.04.md)  
 ║░║░╠═3 [install Maven3.3.9](01_Spark_Installation/03_on_Ubuntu14.04/03_Install_Maven3.3.9_on_Ubuntu14.04.md)  
@@ -16,13 +16,15 @@
 ║░║░╠═6 [install ssh](01_Spark_Installation/03_on_Ubuntu14.04/06_Install_ssh_on_Ubuntu14.04.md)  
 ║░║░╠═7 [install hadoop2.7.3](01_Spark_Installation/03_on_Ubuntu14.04/07_Install_Hadoop2.7.3_on_Ubuntu14.04.md)  
 ║░║░╚═8 [install spark2.1.0](01_Spark_Installation/03_on_Ubuntu14.04/08_Install_Spark2.1.0_on_Ubuntu14.04.md)  
-║░╠═2 on Ubuntu 16.04  
-║░║░╠═1 [install ssh](01_Spark_Installation/04_on_Ubuntu16.04/01_install_ssh/00_install_ssh.md)  
-║░║░╠═2 [install jdk8](01_Spark_Installation/04_on_Ubuntu16.04/02_install_jdk8/00_install_jdk8.md)  
-║░║░╠═3 [install hadoop2.8.5](01_Spark_Installation/04_on_Ubuntu16.04/03_install_hadoop2.8.5/00_install_hadoop2.8.5.md)  
-║░║░╠═4 install spark2.4.4 with resource manager  
-║░║░║░╠═1 [with spark standalone](01_Spark_Installation/04_on_Ubuntu16.04/04_install_spark2.4.4/01_spark_standalone/00_install_spark2.4.3.md)  
-║░║░║░╚═2 [with hadoop yarn](01_Spark_Installation/04_on_Ubuntu16.04/04_install_spark2.4.4/02_hadoop_yarn/00_install_spark2.4.4.md)  
+║░╚═4 on Ubuntu 16.04  
+║░░░╠═1 [docker pull ubuntu:16.04](01_Spark_Installation/04_on_Ubuntu16.04/01_docker_pull/01_docker_pull_ubuntu_16.04.md)  
+║░░░╠═2 [install ssh](01_Spark_Installation/04_on_Ubuntu16.04/02_install_ssh/00_install_ssh.md)  
+║░░░╠═3 [install jdk8](01_Spark_Installation/04_on_Ubuntu16.04/03_install_jdk8/00_install_jdk8.md)  
+║░░░╠═4 [install hadoop2.8.5](01_Spark_Installation/04_on_Ubuntu16.04/04_install_hadoop2.8.5/00_install_hadoop2.8.5.md)  
+║░░░╠═5 install spark2.4.4 with resource manager  
+║░░░║░╠═1 [with spark standalone](01_Spark_Installation/04_on_Ubuntu16.04/05_install_spark2.4.4/01_spark_standalone/00_install_spark2.4.3.md)  
+║░░░║░╚═2 [with hadoop yarn](01_Spark_Installation/04_on_Ubuntu16.04/05_install_spark2.4.4/02_hadoop_yarn/00_install_spark2.4.4.md)  
+║░░░╚═6 [install jupyter and connect to pyspark](01_Spark_Installation/04_on_Ubuntu16.04/06_install_jupyter/00_install_jupyter_and_connect_pyspark.md)  
 ╠═2 Spark Workspace  
 ║░╠═1 spark-shell  
 ║░║░╠═1 WordCount  
@@ -46,7 +48,8 @@
 ║░║░░░╚═1 with JDK8  
 ║░║░░░░░╠═1 [Console Log](02_Spark_Workspace/02_spark-submit/02_with_JDK8/03_Spark-submit_PiEstimation.md)  
 ║░║░░░░░╚═2 [Source code](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/example/PiEstimation.java)  
-║░╚═3 PySpark  
+║░╚═3 pyspark  
+║░░░╚═1 [Pi Estimation](02_Spark_Workspace/03_pyspark/01_Pi_Estimation/01_Pi_Estimation.ipynb)  
 ╚═3 Spark Document  
 ░░╠═1 RDD API doc  
 ░░║░╠═1 Scala  
