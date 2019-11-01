@@ -15,11 +15,9 @@ RUN pip install six --upgrade
 
 RUN pip install findspark jupyter
 
-RUN echo "" >> /root/.bashrc \
-    && echo "#PySpark" >> /root/.bashrc \
-    && echo "export PYSPARK_DRIVER_PYTHON=jupyter" >> /root/.bashrc \
-    && echo "export PYSPARK_DRIVER_PYTHON_OPTS='notebook'" >> /root/.bashrc \
-    && cat -n /root/.bashrc
+ADD jupyter_bashrc.txt /root/
+RUN cat /root/jupyter_bashrc.txt >> /root/.bashrc && \
+    cat -n /root/.bashrc | tail -3
 
 ADD 99_Utility/30_jupyter_notebook.sh /root/
 RUN chmod +x /root/*.sh
