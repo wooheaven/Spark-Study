@@ -73,5 +73,4 @@ JAVA_HOME=/usr/lib/jvm/jdk1.8.0_221
 HADOOP_HOME=/usr/lib/hadoop/hadoop-2.8.5
 HADOOP_CONF_DIR=/usr/lib/hadoop/hadoop-2.8.5/etc/hadoop
 SPARK_MASTER_HOST=localhost
-SPARK_HISTORY_OPTS="-Dspark.history.fs.logDirectory=hdfs://localhost:9000/tmp/hadoop-yarn"
 LD_LIBRARY_PATH=/usr/lib/hadoop/hadoop-2.8.5/lib/native

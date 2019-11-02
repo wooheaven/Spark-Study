@@ -16,15 +16,17 @@
 ║░║░╠═6 [install ssh](01_Spark_Installation/03_on_Ubuntu14.04/06_Install_ssh_on_Ubuntu14.04.md)  
 ║░║░╠═7 [install hadoop2.7.3](01_Spark_Installation/03_on_Ubuntu14.04/07_Install_Hadoop2.7.3_on_Ubuntu14.04.md)  
 ║░║░╚═8 [install spark2.1.0](01_Spark_Installation/03_on_Ubuntu14.04/08_Install_Spark2.1.0_on_Ubuntu14.04.md)  
-║░╚═4 on Ubuntu 16.04  
-║░░░╠═1 [docker pull ubuntu:16.04](01_Spark_Installation/04_on_Ubuntu16.04/01_docker_pull/01_docker_pull_ubuntu_16.04.md)  
-║░░░╠═2 [install ssh](01_Spark_Installation/04_on_Ubuntu16.04/02_install_ssh/00_install_ssh.md)  
-║░░░╠═3 [install jdk8](01_Spark_Installation/04_on_Ubuntu16.04/03_install_jdk8/00_install_jdk8.md)  
-║░░░╠═4 [install hadoop2.8.5](01_Spark_Installation/04_on_Ubuntu16.04/04_install_hadoop2.8.5/00_install_hadoop2.8.5.md)  
-║░░░╠═5 install spark2.4.4 with resource manager  
-║░░░║░╠═1 [with spark standalone](01_Spark_Installation/04_on_Ubuntu16.04/05_install_spark2.4.4/01_spark_standalone/00_install_spark2.4.3.md)  
-║░░░║░╚═2 [with hadoop yarn](01_Spark_Installation/04_on_Ubuntu16.04/05_install_spark2.4.4/02_hadoop_yarn/00_install_spark2.4.4.md)  
-║░░░╚═6 [install jupyter and connect to pyspark](01_Spark_Installation/04_on_Ubuntu16.04/06_install_jupyter/00_install_jupyter_and_connect_pyspark.md)  
+║░╠═4 on Ubuntu 16.04  
+║░║░╠═1 [docker pull ubuntu:16.04](01_Spark_Installation/04_on_Ubuntu16.04/01_docker_pull/01_docker_pull_ubuntu_16.04.md)  
+║░║░╠═2 [install ssh](01_Spark_Installation/04_on_Ubuntu16.04/02_install_ssh/00_install_ssh.md)  
+║░║░╠═3 [install jdk8](01_Spark_Installation/04_on_Ubuntu16.04/03_install_jdk8/00_install_jdk8.md)  
+║░║░╠═4 [install hadoop2.8.5](01_Spark_Installation/04_on_Ubuntu16.04/04_install_hadoop2.8.5/00_install_hadoop2.8.5.md)  
+║░║░╠═5 install spark2.4.4 with resource manager  
+║░║░║░╠═1 [with spark standalone](01_Spark_Installation/04_on_Ubuntu16.04/05_install_spark2.4.4/01_spark_standalone/00_install_spark2.4.3.md)  
+║░║░║░╚═2 [with hadoop yarn](01_Spark_Installation/04_on_Ubuntu16.04/05_install_spark2.4.4/02_hadoop_yarn/00_install_spark2.4.4.md)  
+║░║░╚═6 [install jupyter and connect to pyspark](01_Spark_Installation/04_on_Ubuntu16.04/06_install_jupyter/00_install_jupyter_and_connect_pyspark.md)  
+║░╚═5 ETC  
+║░░░╚═1 [Solution : WARN spark.yarn.archive](01_Spark_Installation/05_ETC/01_Solution_of_WARN_spark_yarn_archive.md)  
 ╠═2 Spark Workspace  
 ║░╠═1 spark-shell  
 ║░║░╠═1 WordCount  
