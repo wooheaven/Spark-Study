@@ -21,26 +21,32 @@ RUN cat -n $HADOOP_CONF/slaves && \
     sed -i 's/localhost/localhost\n/' $SPARK_HOME/conf/slaves && \
     cat -n $SPARK_HOME/conf/slaves | tail -2
 
+RUN cd $SPARK_HOME && \
+    /usr/lib/jvm/jdk1.8.0_221/bin/jar cv0f spark-libs.jar -C $SPARK_HOME/jars/ . && \
+    ls -als $SPARK_HOME/spark-libs.jar
+
 ADD spark-defaults.conf $SPARK_HOME/conf/
-RUN cat -n $SPARK_HOME/conf/spark-defaults.conf | tail -11
+RUN cat -n $SPARK_HOME/conf/spark-defaults.conf | tail -12
 
 RUN service ssh start && \
     sleep 1 && echo "start-dfs" && \
     $HADOOP_HOME/sbin/start-dfs.sh && \
-    /usr/lib/jvm/jdk1.8.0_221/bin/jps && \ 
     $HADOOP_HOME/bin/hdfs dfsadmin -safemode leave && \
+    $HADOOP_HOME/bin/hdfs dfs -mkdir /user/root/spark_yarn_archive && \
+    $HADOOP_HOME/bin/hdfs dfs -put $SPARK_HOME/spark-libs.jar /user/root/spark_yarn_archive && \
+    $HADOOP_HOME/bin/hdfs dfs -ls /user/root/spark_yarn_archive && \
+    $HADOOP_HOME/bin/hdfs dfs -setrep -w 1 hdfs:///user/root/spark_yarn_archive/spark-libs.jar && \
     $HADOOP_HOME/bin/hdfs dfs -mkdir /tmp/spark-yarn && \
     $HADOOP_HOME/bin/hdfs dfs -ls /tmp && \
     sleep 1 && echo "start-yarn" && \
     $HADOOP_HOME/sbin/start-yarn.sh && \
-    /usr/lib/jvm/jdk1.8.0_221/bin/jps && \ 
     sleep 1 && echo "start-history-server" && \
     $SPARK_HOME/sbin/start-history-server.sh && \
     /usr/lib/jvm/jdk1.8.0_221/bin/jps && \ 
     $HADOOP_HOME/bin/hdfs dfs -ls README.txt && \
     cd $SPARK_HOME/ && \
     $SPARK_HOME/bin/spark-submit --deploy-mode client --class org.apache.spark.examples.JavaWordCount examples/jars/spark-examples*.jar README.txt > wordcount.log && \
-    cat wordcount.log && \
+    cat wordcount.log | head && \
     $SPARK_HOME/sbin/stop-history-server.sh && \
     $HADOOP_HOME/sbin/stop-yarn.sh && \
     $HADOOP_HOME/sbin/stop-dfs.sh && \
