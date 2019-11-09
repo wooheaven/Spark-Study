@@ -70,8 +70,10 @@
 ░░║░╠═2 Python  
 ░░║░║░╠═1 [cartesian](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.cartesian)  
 ░░║░║░║░╚═1 [example : cartesian](03_Spark_Document/01_RDD_API_doc/02_Python/01_cartesian.ipynb)  
-░░║░║░╚═2 [map](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.map)  
-░░║░║░░░╚═1 [example : map](03_Spark_Document/01_RDD_API_doc/02_Python/02_map.ipynb)  
+░░║░║░╠═2 [map](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.map)  
+░░║░║░║░╚═1 [example : map](03_Spark_Document/01_RDD_API_doc/02_Python/02_map.ipynb)  
+░░║░║░╚═3 [sortBy](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sortBy)  
+░░║░║░░░╚═1 [example : sortBy](03_Spark_Document/01_RDD_API_doc/02_Python/03_sortBy.ipynb)  
 ░░║░╚═3 Scala  
 ░░║░░░╠═1 [flatMap](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@flatMap[U](f:T=%3ETraversableOnce[U])(implicitevidence$4:scala.reflect.ClassTag[U]):org.apache.spark.rdd.RDD[U])  
 ░░║░░░║░╠═1 [example on spark-shell : flatMap case map](03_Spark_Document/01_RDD_API_doc/03_Scala/01_flatMap/01_flatMap_case_map_example.md)  
