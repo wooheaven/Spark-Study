@@ -1,6 +1,18 @@
 #!/bin/bash
 
-# for with file
+# renamed files save
+echo ""
+echo "renamed files save"
+git status | grep rena | sed 's/\trenamed:    //' > ./99_Utility/change_A_to_B.txt
+
+# cat renamed files
+echo ""
+echo "cat renamed files"
+cat -n ./99_Utility/change_A_to_B.txt
+
+# modify with for on renamed files
+echo ""
+echo "modify with for on renaemd files"
 while read line
 do
 	# echo
