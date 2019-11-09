@@ -51,7 +51,8 @@
 ║░║░░░░░╠═1 [Console Log](02_Spark_Workspace/02_spark-submit/02_with_JDK8/03_Spark-submit_PiEstimation.md)  
 ║░║░░░░░╚═2 [Source code](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/example/PiEstimation.java)  
 ║░╚═3 pyspark  
-║░░░╚═1 [Pi Estimation](02_Spark_Workspace/03_pyspark/01_Pi_Estimation/01_Pi_Estimation.ipynb)  
+║░░░╠═1 [Data Replication](02_Spark_Workspace/03_pyspark/01_Data_Replication/01_Data_Replication.ipynb)  
+║░░░╚═2 [Pi Estimation](02_Spark_Workspace/03_pyspark/02_Pi_Estimation/01_Pi_Estimation.ipynb)  
 ╚═3 Spark Document  
 ░░╠═1 RDD API doc  
 ░░║░╠═1 Java  
