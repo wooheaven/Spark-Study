@@ -1,6 +1,12 @@
 FROM ubuntu:16.04
 
-RUN apt-get update
+RUN sed -i 's/archive.ubuntu.com/ftp.daumkakao.com/g' /etc/apt/sources.list && \
+    sed -i 's/security.ubuntu.com/ftp.daumkakao.com/g' /etc/apt/sources.list
+RUN grep -v "#" /etc/apt/sources.list | grep -v '^$' 
+
+RUN apt-get clean && \
+    apt-get update
+
 RUN apt-get -y install software-properties-common \
     vim \
     tree \
@@ -23,9 +29,7 @@ RUN service ssh start && \
     ls -als /root/.ssh && \
     service ssh stop
 
-ADD 99_Utility/01_start_ssh.sh /root/
-ADD 99_Utility/02_stop_ssh.sh /root/
-
+ADD 99_Utility/*.sh /root/
 RUN chmod +x /root/*.sh
 
 WORKDIR /root
