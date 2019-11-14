@@ -19,5 +19,5 @@ ADD jupyter_bashrc.txt /root/
 RUN cat /root/jupyter_bashrc.txt >> /root/.bashrc && \
     cat -n /root/.bashrc | tail -3
 
-ADD 99_Utility/30_jupyter_notebook.sh /root/
+ADD 99_Utility/*.sh /root/
 RUN chmod +x /root/*.sh
