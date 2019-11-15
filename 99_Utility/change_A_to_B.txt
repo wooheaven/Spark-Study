@@ -1,4 +1,2 @@
-03_Spark_Document/01_RDD_API_doc/03_Scala/01_flatMap/01_flatMap_case_map_example.md -> 03_Spark_Document/01_RDD_API_doc/02_Scala/01_flatMap/01_flatMap_case_map_example.md
-03_Spark_Document/01_RDD_API_doc/03_Scala/01_flatMap/02_flatMap_example.md -> 03_Spark_Document/01_RDD_API_doc/02_Scala/01_flatMap/02_flatMap_example.md
-03_Spark_Document/01_RDD_API_doc/03_Scala/02_map/01_map_example.md -> 03_Spark_Document/01_RDD_API_doc/02_Scala/02_map/01_map_example.md
-03_Spark_Document/01_RDD_API_doc/02_Python/03_sortBy.ipynb -> 03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/03_RDD.sortBy_example.ipynb
+03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/02_RDD.map_example.ipynb -> 03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/03_RDD.map_example.ipynb
+03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/03_RDD.sortBy_example.ipynb -> 03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/04_RDD.sortBy_example.ipynb

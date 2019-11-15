@@ -77,6 +77,13 @@
 ░░╠═2 RDD paper  
 ░░║░╚═1 [RDD paper in Korean](03_Spark_Document/02_RDD_paper/01_Resilient_Distributed_Datasets_Essay_to_Korean.md)  
 ░░╠═3 [RDD programming guide](https://spark.apache.org/docs/latest/rdd-programming-guide.html)  
+░░║░╚═1 [RDD](https://spark.apache.org/docs/latest/rdd-programming-guide.html#resilient-distributed-datasets-rdds)  
+░░║░░░╚═1 [RDD Operations](https://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-operations)  
+░░║░░░░░╠═1 [Transformations](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations)  
+░░║░░░░░║░╠═1 map(func)  
+░░║░░░░░║░╚═2 flatMap(func)  
+░░║░░░░░╚═2 [Actions](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions)  
+░░║░░░░░░░╚═1 collect()  
 ░░╠═4 Pair RDD functions doc  
 ░░║░╠═1 Scala  
 ░░║░║░╠═1 [flatMapValues](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@flatMapValues[U](f:V=%3ETraversableOnce[U]):org.apache.spark.rdd.RDD[(K,U)])  
@@ -120,12 +127,14 @@
 ░░░░░░░░╠═2 [rdd.py source on github](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/rdd.py)  
 ░░░░░░░░╠═3 method  
 ░░░░░░░░║░╠═1 [RDD.cartesian on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.cartesian)  
-░░░░░░░░║░╠═2 [RDD.map on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.map)  
-░░░░░░░░║░╚═3 [RDD.sortBy on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sortBy)  
+░░░░░░░░║░╠═2 [RDD.flatMap on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.flatMap)  
+░░░░░░░░║░╠═3 [RDD.map on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.map)  
+░░░░░░░░║░╚═4 [RDD.sortBy on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sortBy)  
 ░░░░░░░░╚═4 example  
 ░░░░░░░░░░╠═1 [Jupyter notebook : RDD.cartesian](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/01_RDD.cartesian_example.ipynb)  
-░░░░░░░░░░╠═2 [Jupyter notebook : RDD.map](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/02_RDD.map_example.ipynb)  
-░░░░░░░░░░╚═3 [Jupyter notebook : RDD.sortBy](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/03_RDD.sortBy_example.ipynb)  
+░░░░░░░░░░╠═2 [Jupyter notebook : RDD.flatMap](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/02_RDD.flatMap_example.ipynb)  
+░░░░░░░░░░╠═3 [Jupyter notebook : RDD.map](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/03_RDD.map_example.ipynb)  
+░░░░░░░░░░╚═4 [Jupyter notebook : RDD.sortBy](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/04_RDD.sortBy_example.ipynb)  
 
 # Example of Spark
 
