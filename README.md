@@ -56,17 +56,15 @@
 ╚═3 Spark Document  
 ░░╠═1 RDD API doc  
 ░░║░╠═1 Java  
-░░║░║░╠═1 [Filter](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#filter-org.apache.spark.api.java.function.Function-)  
-░░║░║░║░╚═1 [source code : filter](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/FilterTest.java)  
-░░║░║░╠═2 [Function](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function.html)  
+░░║░║░╠═1 [Function](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function.html)  
 ░░║░║░║░╚═1 [example : CustomFunction](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunction.java)  
-░░║░║░╠═3 [Function2](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function2.html)  
+░░║░║░╠═2 [Function2](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function2.html)  
 ░░║░║░║░╚═1 [example : CustomFunction2](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunction2.java)  
-░░║░║░╠═4 [PairFlatMapFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFlatMapFunction.html)  
+░░║░║░╠═3 [PairFlatMapFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFlatMapFunction.html)  
 ░░║░║░║░╚═1 [example : CustomPairFlatMapFunction](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/pairflatmapfunction/CustomPairFlatMapFunction.java)  
-░░║░║░╠═5 [PairFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFunction.html)  
+░░║░║░╠═4 [PairFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFunction.html)  
 ░░║░║░║░╚═1 [example : CustomPairFunction](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/pairfunction/CustomPairFunction.java)  
-░░║░║░╚═6 [Partitioner](https://spark.apache.org/docs/latest/api/java/org/apache/spark/Partitioner.html)  
+░░║░║░╚═5 [Partitioner](https://spark.apache.org/docs/latest/api/java/org/apache/spark/Partitioner.html)  
 ░░║░║░░░╚═1 [example : CustomPartitioner](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/partitioner/CustomPartitioner.java)  
 ░░║░╚═2 Scala  
 ░░║░░░╠═1 [flatMap](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@flatMap[U](f:T=%3ETraversableOnce[U])(implicitevidence$4:scala.reflect.ClassTag[U]):org.apache.spark.rdd.RDD[U])  
@@ -81,9 +79,13 @@
 ░░║░░░╚═1 [RDD Operations](https://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-operations)  
 ░░║░░░░░╠═1 [Transformations](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations)  
 ░░║░░░░░║░╠═1 map(func)  
-░░║░░░░░║░╚═2 flatMap(func)  
+░░║░░░░░║░╠═2 flatMap(func)  
+░░║░░░░░║░╠═3 mapPartitions(func)  
+░░║░░░░░║░╠═4 mapPartitionsWithIndex(func)  
+░░║░░░░░║░╚═5 glom()  
 ░░║░░░░░╚═2 [Actions](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions)  
-░░║░░░░░░░╚═1 collect()  
+░░║░░░░░░░╠═1 collect()  
+░░║░░░░░░░╚═2 saveAsTextFile(path)  
 ░░╠═4 Pair RDD functions doc  
 ░░║░╠═1 Scala  
 ░░║░║░╠═1 [flatMapValues](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@flatMapValues[U](f:V=%3ETraversableOnce[U]):org.apache.spark.rdd.RDD[(K,U)])  
@@ -111,32 +113,42 @@
 ░░║░░░║░╚═1 [source code : partitionBy](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/PartitionByTest.java)  
 ░░║░░░╚═7 [reduceByKey](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#reduceByKey-org.apache.spark.api.java.function.Function2-)  
 ░░║░░░░░╚═1 [source code : reduceByKey](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/ReduceByKeyTest.java)  
-░░╠═5 Java  
-░░╚═6 Python  
-░░░░╚═1 [pyspark on Module code](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
-░░░░░░╠═1 [sql on Module code](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/)  
-░░░░░░║░╚═1 [session.py on Module code](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/session.html)  
-░░░░░░║░░░╠═1 [SparkSession on docs](https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.SparkSession)  
+░░╠═5 Java : [Spark Java API (JavaDoc)](https://spark.apache.org/docs/latest/api/java/index.html)  
+░░║░╚═1 [org.apache.spark.api.java on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/package-summary.html)  
+░░║░░░╚═1 [JavaRDD.class on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html)  
+░░║░░░░░╠═1 method  
+░░║░░░░░║░╠═1 [JavaRDD.filter on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#filter-org.apache.spark.api.java.function.Function-)  
+░░║░░░░░║░╚═2 [JavaRDD.map    on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#map-org.apache.spark.api.java.function.Function-)  
+░░║░░░░░╚═2 example  
+░░║░░░░░░░╠═1 [JavaRDD.filter example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/FilterTest.java)  
+░░║░░░░░░░╚═2 [JavaRDD.map example    on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapTest.java)  
+░░╚═6 Python : [Spark Python API (Sphinx)](https://spark.apache.org/docs/latest/api/python/index.html), [Spark Python API on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
+░░░░╚═1 [pyspark on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
+░░░░░░╠═1 [sql on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/)  
+░░░░░░║░╚═1 [session.py on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/session.html)  
+░░░░░░║░░░╠═1 [SparkSession on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.SparkSession)  
 ░░░░░░║░░░╠═2 [session.py source on github](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/sql/session.py)  
 ░░░░░░║░░░╠═3 method  
 ░░░░░░║░░░╠═4 [monkey patch RDD RDD.toDF source on github](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/sql/session.py#L44)  
 ░░░░░░║░░░╚═5 example  
-░░░░░░║░░░░░╚═1 [Jupyter notebook : RDD.toDF](03_Spark_Document/06_Python/01_package_pyspark/01_package_sql/01_file_session.py/05_example/01_RDD.toDF_example.ipynb)  
-░░░░░░╚═2 [rdd.py on Module code](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/rdd.html#RDD)  
-░░░░░░░░╠═1 [RDD on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD)  
+░░░░░░║░░░░░╚═1 [RDD.toDF on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/01_package_sql/01_file_session.py/05_example/01_RDD.toDF_example.ipynb)  
+░░░░░░╚═2 [rdd.py on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/rdd.html#RDD)  
+░░░░░░░░╠═1 [RDD on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD)  
 ░░░░░░░░╠═2 [rdd.py source on github](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/rdd.py)  
 ░░░░░░░░╠═3 method  
-░░░░░░░░║░╠═1 [RDD.cartesian on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.cartesian)  
-░░░░░░░░║░╠═2 [RDD.flatMap on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.flatMap)  
-░░░░░░░░║░╠═3 [RDD.map on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.map)  
-░░░░░░░░║░╠═4 [RDD.mapPartitions on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.mapPartitions)  
-░░░░░░░░║░╚═5 [RDD.sortBy on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sortBy)  
+░░░░░░░░║░╠═1 [RDD.cartesian              on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.cartesian)  
+░░░░░░░░║░╠═2 [RDD.flatMap                on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.flatMap)  
+░░░░░░░░║░╠═3 [RDD.map                    on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.map)  
+░░░░░░░░║░╠═4 [RDD.mapPartitions          on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.mapPartitions)  
+░░░░░░░░║░╠═5 [RDD.mapPartitionsWithIndex on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.mapPartitionsWithIndex)  
+░░░░░░░░║░╚═6 [RDD.sortBy                 on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sortBy)  
 ░░░░░░░░╚═4 example  
-░░░░░░░░░░╠═1 [Jupyter notebook : RDD.cartesian](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/01_RDD.cartesian_example.ipynb)  
-░░░░░░░░░░╠═2 [Jupyter notebook : RDD.flatMap](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/02_RDD.flatMap_example.ipynb)  
-░░░░░░░░░░╠═3 [Jupyter notebook : RDD.map](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/03_RDD.map_example.ipynb)  
-░░░░░░░░░░╠═4 [Jupyter notebook : RDD.mapPartitions](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/04_RDD.mapPartitions_example.ipynb)  
-░░░░░░░░░░╚═5 [Jupyter notebook : RDD.sortBy](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/05_RDD.sortBy_example.ipynb)  
+░░░░░░░░░░╠═1 [RDD.cartesian              on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/01_RDD.cartesian_example.ipynb)  
+░░░░░░░░░░╠═2 [RDD.flatMap                on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/02_RDD.flatMap_example.ipynb)  
+░░░░░░░░░░╠═3 [RDD.map                    on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/03_RDD.map_example.ipynb)  
+░░░░░░░░░░╠═4 [RDD.mapPartitions          on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/04_RDD.mapPartitions_example.ipynb)  
+░░░░░░░░░░╠═5 [RDD.mapPartitionsWithIndex on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/05_RDD.mapPartitionsWithIndex_example.ipynb)  
+░░░░░░░░░░╚═6 [RDD.sortBy                 on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/06_RDD.sortBy_example.ipynb)  
 
 # Example of Spark
 
