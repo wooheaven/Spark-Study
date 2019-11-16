@@ -129,12 +129,14 @@
 ░░░░░░░░║░╠═1 [RDD.cartesian on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.cartesian)  
 ░░░░░░░░║░╠═2 [RDD.flatMap on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.flatMap)  
 ░░░░░░░░║░╠═3 [RDD.map on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.map)  
-░░░░░░░░║░╚═4 [RDD.sortBy on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sortBy)  
+░░░░░░░░║░╠═4 [RDD.mapPartitions on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.mapPartitions)  
+░░░░░░░░║░╚═5 [RDD.sortBy on docs](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sortBy)  
 ░░░░░░░░╚═4 example  
 ░░░░░░░░░░╠═1 [Jupyter notebook : RDD.cartesian](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/01_RDD.cartesian_example.ipynb)  
 ░░░░░░░░░░╠═2 [Jupyter notebook : RDD.flatMap](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/02_RDD.flatMap_example.ipynb)  
 ░░░░░░░░░░╠═3 [Jupyter notebook : RDD.map](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/03_RDD.map_example.ipynb)  
-░░░░░░░░░░╚═4 [Jupyter notebook : RDD.sortBy](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/04_RDD.sortBy_example.ipynb)  
+░░░░░░░░░░╠═4 [Jupyter notebook : RDD.mapPartitions](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/04_RDD.mapPartitions_example.ipynb)  
+░░░░░░░░░░╚═5 [Jupyter notebook : RDD.sortBy](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/05_RDD.sortBy_example.ipynb)  
 
 # Example of Spark
 
