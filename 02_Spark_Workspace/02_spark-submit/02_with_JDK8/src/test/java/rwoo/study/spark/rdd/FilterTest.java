@@ -18,8 +18,8 @@ public class FilterTest {
     @Before
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
-            .setMaster("local[*]")
-            .setAppName("FilterTest"));
+                .setMaster("local[*]")
+                .setAppName("FilterTest"));
         JavaRDD<String> lines = sc.textFile("src/test/resources/input/FilterTest/");
         words = lines.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
         words.foreach(v -> System.out.println(v));
@@ -30,7 +30,7 @@ public class FilterTest {
     }
 
     @After
-    public void teadDown() {
+    public void after() {
         words_filtered.foreach(v -> System.out.println(v));
 //        I
 //        am
