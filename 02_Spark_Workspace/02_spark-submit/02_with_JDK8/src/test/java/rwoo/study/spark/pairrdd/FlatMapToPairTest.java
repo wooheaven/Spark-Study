@@ -37,7 +37,7 @@ public class FlatMapToPairTest {
     }
 
     @After
-    public void tearDown() {
+    public void after() {
         if (null != ranks) {
             ranks.foreach(rank -> System.out.println(rank));
 //          (A,(C,0.5))
@@ -51,7 +51,7 @@ public class FlatMapToPairTest {
     }
 
     @Test
-    public void test_FlatMapToPair_with_Explicit() {
+    public void test_FlatMapToPair_with_Implicit() {
         ranks = links.flatMapToPair(items -> {
             List<Tuple2<String, Tuple2<String, Double>>> myContributions = new ArrayList<>();
             items._2().forEach(dest ->
