@@ -8,7 +8,7 @@ import org.apache.spark.api.java.function.Function;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import rwoo.study.spark.function.CustomFunction;
+import rwoo.study.spark.function.CustomFunctionCountOne;
 import scala.Tuple2;
 
 import java.io.Serializable;
@@ -59,6 +59,6 @@ public class MapValuesTest implements Serializable {
 
     @Test
     public void test_MapValues_with_CustomFunction() {
-        ranks = links.mapValues(new CustomFunction());
+        ranks = links.mapValues(new CustomFunctionCountOne());
     }
 }

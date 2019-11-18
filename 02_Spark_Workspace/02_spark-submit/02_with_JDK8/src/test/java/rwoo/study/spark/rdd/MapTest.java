@@ -10,6 +10,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 public class MapTest {
     private JavaSparkContext sc;
     private List<String> inputList;
@@ -25,16 +27,12 @@ public class MapTest {
         inputList.add("I am a boy");
         inputList.add("You are a girl");
         inputRDD = sc.parallelize(inputList);
-        inputRDD.foreach(v -> System.out.println(v));
-//        You are a girl
-//        I am a boy
     }
 
     @After
     public void after() {
-        outputRDD.foreach(v -> System.out.println(v));
-//        you are a girl
-//        i am a boy
+        assertEquals("[I am a boy, You are a girl]", inputRDD.collect().toString());
+        assertEquals("[i am a boy, you are a girl]", outputRDD.collect().toString());
         sc.close();
     }
 
