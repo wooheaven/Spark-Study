@@ -6,18 +6,18 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import rwoo.study.spark.flatmapfunction.CustomFlatMapFunction;
+import rwoo.study.spark.function.CustomFunction2IndexSum;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class MapPartitionsTest {
+public class MapPartitionsWithIndexTest {
     private JavaSparkContext sc;
-    private List<Integer> inputList;
-    private JavaRDD<Integer> inputRDD;
-    private JavaRDD<Integer> outputRDD;
+    private List<String> inputList;
+    private JavaRDD<String> inputRDD;
+    private JavaRDD<String> outputRDD;
 
     @Before
     public void setUp() {
@@ -25,38 +25,38 @@ public class MapPartitionsTest {
                 .setMaster("local[*]")
                 .setAppName("MapTest"));
         inputList = new ArrayList<>();
-        inputList.add(1);
-        inputList.add(2);
-        inputList.add(3);
-        inputList.add(4);
-        inputList.add(5);
-        inputList.add(6);
-        inputList.add(7);
+        inputList.add("1");
+        inputList.add("2");
+        inputList.add("3");
+        inputList.add("4");
+        inputList.add("5");
+        inputList.add("6");
+        inputList.add("7");
         inputRDD = sc.parallelize(inputList, 3);
     }
 
     @After
     public void after() {
         assertEquals("[[1, 2], [3, 4], [5, 6, 7]]", inputRDD.glom().collect().toString());
-        assertEquals("[[3], [7], [18]]", outputRDD.glom().collect().toString());
+        assertEquals("[[0 : 3], [1 : 7], [2 : 18]]", outputRDD.glom().collect().toString());
         sc.close();
     }
 
     @Test
     public void testMapPartitions_with_Implicit() {
-        outputRDD = inputRDD.mapPartitions(partition -> {
-            List<Integer> partitionSum = new ArrayList<>();
+        outputRDD = inputRDD.mapPartitionsWithIndex((index, partition) -> {
             int sum = 0;
             while (partition.hasNext()) {
-                sum += partition.next();
+                sum += Integer.parseInt(partition.next());
             }
-            partitionSum.add(sum);
+            List<String> partitionSum = new ArrayList<>();
+            partitionSum.add(index + " : " + sum);
             return partitionSum.iterator();
-        });
+        }, false);
     }
 
     @Test
-    public void testMapPartitions_with_CustomFlatMapFunction() {
-        outputRDD = inputRDD.mapPartitions(new CustomFlatMapFunction());
+    public void testMapPartitions_with_CustomFunction2IndexSum() {
+        outputRDD = inputRDD.mapPartitionsWithIndex(new CustomFunction2IndexSum(), false);
     }
 }

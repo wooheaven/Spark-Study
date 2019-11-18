@@ -10,6 +10,8 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
+import static org.junit.Assert.assertEquals;
+
 public class FilterTest {
     private JavaSparkContext sc;
     private JavaRDD<String> words;
@@ -22,19 +24,12 @@ public class FilterTest {
                 .setAppName("FilterTest"));
         JavaRDD<String> lines = sc.textFile("src/test/resources/input/FilterTest/");
         words = lines.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
-        words.foreach(v -> System.out.println(v));
-//        I
-//        am
-//        a
-//        boy
     }
 
     @After
     public void after() {
-        words_filtered.foreach(v -> System.out.println(v));
-//        I
-//        am
-//        a
+        assertEquals("[I, am, a, Boy]", words.collect().toString());
+        assertEquals("[I, am, a]", words_filtered.collect().toString());
         sc.close();
     }
 

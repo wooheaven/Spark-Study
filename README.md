@@ -56,15 +56,11 @@
 ╚═3 Spark Document  
 ░░╠═1 RDD API doc  
 ░░║░╠═1 Java  
-░░║░║░╠═1 [Function](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function.html)  
-░░║░║░║░╚═1 [example : CustomFunction](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunction.java)  
-░░║░║░╠═2 [Function2](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function2.html)  
-░░║░║░║░╚═1 [example : CustomFunction2](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunction2.java)  
-░░║░║░╠═3 [PairFlatMapFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFlatMapFunction.html)  
+░░║░║░╠═1 [PairFlatMapFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFlatMapFunction.html)  
 ░░║░║░║░╚═1 [example : CustomPairFlatMapFunction](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/pairflatmapfunction/CustomPairFlatMapFunction.java)  
-░░║░║░╠═4 [PairFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFunction.html)  
+░░║░║░╠═2 [PairFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFunction.html)  
 ░░║░║░║░╚═1 [example : CustomPairFunction](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/pairfunction/CustomPairFunction.java)  
-░░║░║░╚═5 [Partitioner](https://spark.apache.org/docs/latest/api/java/org/apache/spark/Partitioner.html)  
+░░║░║░╚═3 [Partitioner](https://spark.apache.org/docs/latest/api/java/org/apache/spark/Partitioner.html)  
 ░░║░║░░░╚═1 [example : CustomPartitioner](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/partitioner/CustomPartitioner.java)  
 ░░║░╚═2 Scala  
 ░░║░░░╠═1 [flatMap](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@flatMap[U](f:T=%3ETraversableOnce[U])(implicitevidence$4:scala.reflect.ClassTag[U]):org.apache.spark.rdd.RDD[U])  
@@ -117,20 +113,28 @@
 ░░║░╚═1 [package org.apache.spark.api.java on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/package-summary.html)  
 ░░║░░░╠═1 [package function on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/package-summary.html)  
 ░░║░░░║░╠═1 interface  
-░░║░░░║░║░╚═1 [FlatMapFunction on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/FlatMapFunction.html)  
+░░║░░░║░║░╠═1 [FlatMapFunction on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/FlatMapFunction.html)  
+░░║░░░║░║░╠═2 [Function        on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function.html)  
+░░║░░░║░║░╚═3 [Function2       on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function2.html)  
 ░░║░░░║░╚═2 example implements  
-░░║░░░║░░░╚═1 [CustomFlatMapFunction implements FlatMapFunction example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/flatmapfunction/CustomFlatMapFunction.java)  
+░░║░░░║░░░╠═1 [CustomFlatMapFunction  implements FlatMapFunction example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/flatmapfunction/CustomFlatMapFunction.java)  
+░░║░░░║░░░╠═2 [CustomFunctionCountOne implements Function        example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunctionCountOne.java)  
+░░║░░░║░░░╚═3 CustomFunction2~ implements Function2  
+░░║░░░║░░░░░╠═1 [CustomFunction2IndexSum implements Function2 example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunction2IndexSum.java)  
+░░║░░░║░░░░░╚═2 [CustomFunction2Sum      implements Function2 example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunction2Sum.java)  
 ░░║░░░╚═2 [class JavaRDD on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html)  
 ░░║░░░░░╠═1 method  
-░░║░░░░░║░╠═1 [JavaRDD.filter        on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#filter-org.apache.spark.api.java.function.Function-)  
-░░║░░░░░║░╠═2 [JavaRDD.flatMap       on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#flatMap-org.apache.spark.api.java.function.FlatMapFunction-)  
-░░║░░░░░║░╠═3 [JavaRDD.map           on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#map-org.apache.spark.api.java.function.Function-)  
-░░║░░░░░║░╚═4 [JavaRDD.mapPartitions on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#mapPartitions-org.apache.spark.api.java.function.FlatMapFunction-)  
+░░║░░░░░║░╠═1 [JavaRDD.filter                 on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#filter-org.apache.spark.api.java.function.Function-)  
+░░║░░░░░║░╠═2 [JavaRDD.flatMap                on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#flatMap-org.apache.spark.api.java.function.FlatMapFunction-)  
+░░║░░░░░║░╠═3 [JavaRDD.map                    on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#map-org.apache.spark.api.java.function.Function-)  
+░░║░░░░░║░╠═4 [JavaRDD.mapPartitions          on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#mapPartitions-org.apache.spark.api.java.function.FlatMapFunction-)  
+░░║░░░░░║░╚═5 [JavaRDD.mapPartitionsWithIndex on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#mapPartitionsWithIndex-org.apache.spark.api.java.function.Function2-boolean-)  
 ░░║░░░░░╚═2 example  
-░░║░░░░░░░╠═1 [JavaRDD.filter        example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/FilterTest.java)  
-░░║░░░░░░░╠═2 [JavaRDD.flatMap       example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/FlatMapTest.java)  
-░░║░░░░░░░╠═3 [JavaRDD.map           example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapTest.java)  
-░░║░░░░░░░╚═4 [JavaRDD.mapPartitions example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapPartitionsTest.java)  
+░░║░░░░░░░╠═1 [JavaRDD.filter                 example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/FilterTest.java)  
+░░║░░░░░░░╠═2 [JavaRDD.flatMap                example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/FlatMapTest.java)  
+░░║░░░░░░░╠═3 [JavaRDD.map                    example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapTest.java)  
+░░║░░░░░░░╠═4 [JavaRDD.mapPartitions          example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapPartitionsTest.java)  
+░░║░░░░░░░╚═5 [JavaRDD.mapPartitionsWithIndex example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapPartitionsWithIndexTest.java)  
 ░░╚═6 Python : [Spark Python API (Sphinx)](https://spark.apache.org/docs/latest/api/python/index.html), [Spark Python API on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
 ░░░░╚═1 [package pyspark on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
 ░░░░░░╠═1 [package sql on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/)  
