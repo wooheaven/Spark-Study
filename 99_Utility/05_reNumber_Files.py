@@ -56,6 +56,7 @@ class Rename():
 
     def convert_str(self, path):
         path = str(path).replace('--', '-')
+        path = path.replace('_', '-')
         return path
 
 
