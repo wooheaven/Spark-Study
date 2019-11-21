@@ -14,17 +14,17 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class MapPartitionsTest {
+public class GetNumPartitionsTest {
     private JavaSparkContext sc;
     private List<Integer> inputList;
     private JavaRDD<Integer> inputRDD;
-    private JavaRDD<Integer> outputRDD;
+    private int numPartitions;
 
     @Before
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("MapPartitionsTest"));
+                .setAppName("MapTest"));
         inputList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7));
         inputRDD = sc.parallelize(inputList, 3);
     }
@@ -32,25 +32,12 @@ public class MapPartitionsTest {
     @After
     public void after() {
         assertEquals("[[1, 2], [3, 4], [5, 6, 7]]", inputRDD.glom().collect().toString());
-        assertEquals("[[3], [7], [18]]", outputRDD.glom().collect().toString());
+        assertEquals(3, numPartitions);
         sc.close();
     }
 
     @Test
-    public void testMapPartitions_with_Implicit() {
-        outputRDD = inputRDD.mapPartitions(partition -> {
-            List<Integer> partitionSum = new ArrayList<>();
-            int sum = 0;
-            while (partition.hasNext()) {
-                sum += partition.next();
-            }
-            partitionSum.add(sum);
-            return partitionSum.iterator();
-        });
-    }
-
-    @Test
-    public void testMapPartitions_with_CustomFlatMapFunction() {
-        outputRDD = inputRDD.mapPartitions(new CustomFlatMapFunction());
+    public void testGetNumPartitions() {
+        numPartitions = inputRDD.getNumPartitions();
     }
 }

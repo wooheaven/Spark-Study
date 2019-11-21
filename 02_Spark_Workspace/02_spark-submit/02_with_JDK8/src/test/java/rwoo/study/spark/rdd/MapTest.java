@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -23,9 +24,7 @@ public class MapTest {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
                 .setAppName("MapTest"));
-        inputList = new ArrayList<>();
-        inputList.add("I am a boy");
-        inputList.add("You are a girl");
+        inputList = new ArrayList<>(Arrays.asList("I am a boy", "You are a girl"));
         inputRDD = sc.parallelize(inputList);
     }
 

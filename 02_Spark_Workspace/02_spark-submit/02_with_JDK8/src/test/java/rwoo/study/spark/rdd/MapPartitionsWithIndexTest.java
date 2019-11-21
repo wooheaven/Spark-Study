@@ -9,6 +9,7 @@ import org.junit.Test;
 import rwoo.study.spark.function.CustomFunction2IndexSum;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -24,14 +25,7 @@ public class MapPartitionsWithIndexTest {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
                 .setAppName("MapTest"));
-        inputList = new ArrayList<>();
-        inputList.add("1");
-        inputList.add("2");
-        inputList.add("3");
-        inputList.add("4");
-        inputList.add("5");
-        inputList.add("6");
-        inputList.add("7");
+        inputList = new ArrayList<>(Arrays.asList("1", "2", "3", "4", "5", "6", "7"));
         inputRDD = sc.parallelize(inputList, 3);
     }
 
