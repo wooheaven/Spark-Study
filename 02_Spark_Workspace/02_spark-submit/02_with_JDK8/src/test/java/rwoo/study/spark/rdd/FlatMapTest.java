@@ -24,9 +24,7 @@ public class FlatMapTest {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
                 .setAppName("FlatMapTest"));
-        inputList = new ArrayList<>();
-        inputList.add("I am a boy");
-        inputList.add("You are a girl");
+        inputList = new ArrayList<>(Arrays.asList("I am a boy", "You are a girl"));
         inputRDD = sc.parallelize(inputList);
     }
 

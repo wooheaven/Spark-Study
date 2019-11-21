@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -25,14 +26,9 @@ public class CartesianTest {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
                 .setAppName("Cartesian"));
-        inputList = new ArrayList<>();
-        inputList.add("b");
-        inputList.add("a");
-        inputList.add("c");
+        inputList = new ArrayList<>(Arrays.asList("b", "a", "c"));
         inputHead = sc.parallelize(inputList);
-        inputList = new ArrayList<>();
-        inputList.add("1");
-        inputList.add("2");
+        inputList = new ArrayList<>(Arrays.asList("1","2"));
         inputTail = sc.parallelize(inputList);
     }
 
