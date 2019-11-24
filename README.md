@@ -81,7 +81,8 @@
 ░░║░░░░░║░╠═5 map(func)  
 ░░║░░░░░║░╠═6 mapPartitions(func)  
 ░░║░░░░░║░╠═7 mapPartitionsWithIndex(func)  
-░░║░░░░░║░╚═8 sample(withReplacement, fraction, seed)  
+░░║░░░░░║░╠═8 sample(withReplacement, fraction, seed)  
+░░║░░░░░║░╚═9 union(otherDataset)  
 ░░║░░░░░╚═2 [Actions](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions)  
 ░░║░░░░░░░╠═1 collect()  
 ░░║░░░░░░░╠═2 getNumPartitions()  
@@ -174,7 +175,8 @@
 ░░░░░░░░║░╠═8 [RDD.mapPartitionsWithIndex on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.mapPartitionsWithIndex)  
 ░░░░░░░░║░╠═9 [RDD.sample                 on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sample)  
 ░░░░░░░░║░╠═10 [RDD.sortBy                on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sortBy)  
-░░░░░░░░║░╚═11 [RDD.takeSample            on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.takeSample)  
+░░░░░░░░║░╠═11 [RDD.takeSample            on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.takeSample)  
+░░░░░░░░║░╚═12 [RDD.union                 on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.SparkContext.union)  
 ░░░░░░░░╚═4 example  
 ░░░░░░░░░░╠═1 [RDD.cartesian              on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/01_RDD.cartesian_example.ipynb)  
 ░░░░░░░░░░╠═2 [RDD.distinct               on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/02_RDD.distinct_example.ipynb)  
@@ -186,7 +188,8 @@
 ░░░░░░░░░░╠═8 [RDD.mapPartitionsWithIndex on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/08_RDD.mapPartitionsWithIndex_example.ipynb)  
 ░░░░░░░░░░╠═9 [RDD.sample                 on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/09_RDD.sample_example.ipynb)  
 ░░░░░░░░░░╠═10 [RDD.sortBy                on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/10_RDD.sortBy_example.ipynb)  
-░░░░░░░░░░╚═11 [RDD.takeSample            on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/11_RDD.takeSample_example.ipynb)  
+░░░░░░░░░░╠═11 [RDD.takeSample            on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/11_RDD.takeSample_example.ipynb)  
+░░░░░░░░░░╚═12 [RDD.union                 on Jupyter notebook](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/12_RDD.union_example.ipynb)  
 
 # Example of Spark
 
