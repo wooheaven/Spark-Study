@@ -7,36 +7,32 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 public class DistinctTest {
     private JavaSparkContext sc;
-    private List<Integer> inputList;
-    private JavaRDD<Integer> inputRDD;
-    private JavaRDD<Integer> outputRDD;
+    private JavaRDD<Integer> rddA;
+    private JavaRDD<Integer> rddB;
 
     @Before
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
                 .setAppName("DistinctTest"));
-        inputList = new ArrayList<>(Arrays.asList(1, 2, 3, 2));
-        inputRDD = sc.parallelize(inputList);
+        rddA = sc.parallelize(Arrays.asList(1, 2, 3, 2));
     }
 
     @After
     public void after() {
-        assertEquals("[1, 2, 3, 2]", inputRDD.collect().toString());
-        assertEquals("[1, 2, 3]", outputRDD.collect().toString());
+        assertEquals(Arrays.asList(1, 2, 3, 2), rddA.collect());
+        assertEquals(Arrays.asList(1, 2, 3), rddB.collect());
         sc.close();
     }
 
     @Test
     public void testDistinct() {
-        outputRDD = inputRDD.distinct();
+        rddB = rddA.distinct();
     }
 }
