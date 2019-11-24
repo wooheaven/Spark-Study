@@ -124,10 +124,12 @@
 ░░║░░░║░║░╚═3 [Function2       on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function2.html)  
 ░░║░░░║░╚═2 example implements  
 ░░║░░░║░░░╠═1 [CustomFlatMapFunction  implements FlatMapFunction example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/flatmapfunction/CustomFlatMapFunction.java)  
-░░║░░░║░░░╠═2 [CustomFunctionCountOne implements Function        example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunctionCountOne.java)  
+░░║░░░║░░░╠═2 CustomFunction~ implements Function  
+░░║░░░║░░░║░╠═1 [CustomFunctionCountOne    implements Function  example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunctionCountOne.java)  
+░░║░░░║░░░║░╚═2 [CustomFunctionToLowerCase implements Function  example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunctionToLowerCase.java)  
 ░░║░░░║░░░╚═3 CustomFunction2~ implements Function2  
-░░║░░░║░░░░░╠═1 [CustomFunction2IndexSum implements Function2 example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunction2IndexSum.java)  
-░░║░░░║░░░░░╚═2 [CustomFunction2Sum      implements Function2 example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunction2Sum.java)  
+░░║░░░║░░░░░╠═1 [CustomFunction2IndexSum   implements Function2 example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunction2IndexSum.java)  
+░░║░░░║░░░░░╚═2 [CustomFunction2Sum        implements Function2 example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/function/CustomFunction2Sum.java)  
 ░░║░░░╚═2 [class JavaRDD on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html)  
 ░░║░░░░░╠═1 method  
 ░░║░░░░░║░╠═1 [JavaRDD.cartesian              on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#cartesian-org.apache.spark.api.java.JavaRDDLike-)  
@@ -139,8 +141,9 @@
 ░░║░░░░░║░╠═7 [JavaRDD.mapPartitions          on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#mapPartitions-org.apache.spark.api.java.function.FlatMapFunction-)  
 ░░║░░░░░║░╠═8 [JavaRDD.mapPartitionsWithIndex on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#mapPartitionsWithIndex-org.apache.spark.api.java.function.Function2-boolean-)  
 ░░║░░░░░║░╠═9 [JavaRDD.sample                 on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#sample-boolean-double-long-)  
-░░║░░░░░║░╠═10 [JavaRDD.takeSample            on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#takeSample-boolean-int-long-)  
-░░║░░░░░║░╚═11 [JavaRDD.union                 on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#union-org.apache.spark.api.java.JavaRDD-)  
+░░║░░░░░║░╠═10 [JavaRDD.sortBy                on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#sortBy-org.apache.spark.api.java.function.Function-boolean-int-)  
+░░║░░░░░║░╠═11 [JavaRDD.takeSample            on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#takeSample-boolean-int-long-)  
+░░║░░░░░║░╚═12 [JavaRDD.union                 on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#union-org.apache.spark.api.java.JavaRDD-)  
 ░░║░░░░░╚═2 example  
 ░░║░░░░░░░╠═1 [JavaRDD.cartesian              example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/CartesianTest.java)  
 ░░║░░░░░░░╠═2 [JavaRDD.distinct               example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/DistinctTest.java)  
@@ -151,8 +154,9 @@
 ░░║░░░░░░░╠═7 [JavaRDD.mapPartitions          example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapPartitionsTest.java)  
 ░░║░░░░░░░╠═8 [JavaRDD.mapPartitionsWithIndex example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapPartitionsWithIndexTest.java)  
 ░░║░░░░░░░╠═9 [JavaRDD.sample                 example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/SampleTest.java)  
-░░║░░░░░░░╠═10 [JavaRDD.takeSample            example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TakeSampleTest.java)  
-░░║░░░░░░░╚═11 [JavaRDD.union                 example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/UnionTest.java)  
+░░║░░░░░░░╠═10 [JavaRDD.sortBy                example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/SortByTest.java)  
+░░║░░░░░░░╠═11 [JavaRDD.takeSample            example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TakeSampleTest.java)  
+░░║░░░░░░░╚═12 [JavaRDD.union                 example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/UnionTest.java)  
 ░░╚═6 Python : [Spark Python API (Sphinx)](https://spark.apache.org/docs/latest/api/python/index.html), [Spark Python API on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
 ░░░░╚═1 [package pyspark on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
 ░░░░░░╠═1 [package sql on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/)  
