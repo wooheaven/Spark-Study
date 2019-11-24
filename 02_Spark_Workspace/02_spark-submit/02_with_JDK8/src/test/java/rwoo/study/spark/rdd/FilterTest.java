@@ -14,8 +14,8 @@ import static org.junit.Assert.assertEquals;
 
 public class FilterTest {
     private JavaSparkContext sc;
-    private JavaRDD<String> words;
-    private JavaRDD<String> words_filtered;
+    private JavaRDD<String> rddA;
+    private JavaRDD<String> rddB;
 
     @Before
     public void setUp() {
@@ -23,24 +23,24 @@ public class FilterTest {
                 .setMaster("local[*]")
                 .setAppName("FilterTest"));
         JavaRDD<String> lines = sc.textFile("src/test/resources/input/FilterTest/");
-        words = lines.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
+        rddA = lines.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
     }
 
     @After
     public void after() {
-        assertEquals("[I, am, a, Boy]", words.collect().toString());
-        assertEquals("[I, am, a]", words_filtered.collect().toString());
+        assertEquals(Arrays.asList("I", "am", "a", "Boy"), rddA.collect());
+        assertEquals(Arrays.asList("I", "am", "a"), rddB.collect());
         sc.close();
     }
 
     @Test
     public void test_Filter_with_implicit() {
-        words_filtered = words.filter(word -> word.length() < 3);
+        rddB = rddA.filter(word -> word.length() < 3);
     }
 
     @Test
     public void testFilter_with_Explicit() {
         Function<String, Boolean> filter_function = word -> word.length() < 3;
-        words_filtered = words.filter(filter_function);
+        rddB = rddA.filter(filter_function);
     }
 }

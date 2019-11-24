@@ -15,28 +15,26 @@ import static org.junit.Assert.assertEquals;
 
 public class TakeSampleTest {
     private JavaSparkContext sc;
-    private List<Integer> inputList;
-    private JavaRDD<Integer> inputRDD;
-    private List<Integer> outputRDD;
+    private JavaRDD<Integer> rddA;
+    private List<Integer> rddB;
 
     @Before
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
                 .setAppName("SampleTest"));
-        inputList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
-        inputRDD = sc.parallelize(inputList);
+        rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
     }
 
     @After
     public void after() {
-        assertEquals(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), inputRDD.collect());
-        assertEquals(Arrays.asList(6, 4, 2, 3, 5), outputRDD);
+        assertEquals(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), rddA.collect());
+        assertEquals(Arrays.asList(6, 4, 2, 3, 5), rddB);
         sc.close();
     }
 
     @Test
     public void testSample() {
-        outputRDD = inputRDD.takeSample(false, 5, 3);
+        rddB = rddA.takeSample(false, 5, 3);
     }
 }

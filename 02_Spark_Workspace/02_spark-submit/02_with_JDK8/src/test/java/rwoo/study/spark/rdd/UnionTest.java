@@ -7,32 +7,36 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 
-public class GetNumPartitionsTest {
+public class UnionTest {
     private JavaSparkContext sc;
     private JavaRDD<Integer> rddA;
-    private int numPartitions;
+    private JavaRDD<Integer> rddB;
+    private JavaRDD<Integer> rddC;
 
     @Before
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("MapTest"));
-        rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 3);
+                .setAppName("SampleTest"));
+        rddA = sc.parallelize(Arrays.asList(1, 3, 5));
+        rddB = sc.parallelize(Arrays.asList(2, 4, 6));
     }
 
     @After
     public void after() {
-        assertEquals("[[1, 2], [3, 4], [5, 6, 7]]", rddA.glom().collect().toString());
-        assertEquals(3, numPartitions);
+        assertEquals(Arrays.asList(1, 3, 5), rddA.collect());
+        assertEquals(Arrays.asList(2, 4, 6), rddB.collect());
+        assertEquals(Arrays.asList(1, 3, 5, 2, 4, 6), rddC.collect());
         sc.close();
     }
 
     @Test
-    public void testGetNumPartitions() {
-        numPartitions = rddA.getNumPartitions();
+    public void testSample() {
+        rddC = rddA.union(rddB);
     }
 }

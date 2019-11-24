@@ -16,29 +16,27 @@ import static org.junit.Assert.assertEquals;
 
 public class MapPartitionsWithIndexTest {
     private JavaSparkContext sc;
-    private List<String> inputList;
-    private JavaRDD<String> inputRDD;
-    private JavaRDD<String> outputRDD;
+    private JavaRDD<String> rddA;
+    private JavaRDD<String> rddB;
 
     @Before
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
                 .setAppName("MapTest"));
-        inputList = new ArrayList<>(Arrays.asList("1", "2", "3", "4", "5", "6", "7"));
-        inputRDD = sc.parallelize(inputList, 3);
+        rddA = sc.parallelize(Arrays.asList("1", "2", "3", "4", "5", "6", "7"), 3);
     }
 
     @After
     public void after() {
-        assertEquals("[[1, 2], [3, 4], [5, 6, 7]]", inputRDD.glom().collect().toString());
-        assertEquals("[[0 : 3], [1 : 7], [2 : 18]]", outputRDD.glom().collect().toString());
+        assertEquals("[[1, 2], [3, 4], [5, 6, 7]]", rddA.glom().collect().toString());
+        assertEquals("[[0 : 3], [1 : 7], [2 : 18]]", rddB.glom().collect().toString());
         sc.close();
     }
 
     @Test
     public void testMapPartitions_with_Implicit() {
-        outputRDD = inputRDD.mapPartitionsWithIndex((index, partition) -> {
+        rddB = rddA.mapPartitionsWithIndex((index, partition) -> {
             int sum = 0;
             while (partition.hasNext()) {
                 sum += Integer.parseInt(partition.next());
@@ -51,6 +49,6 @@ public class MapPartitionsWithIndexTest {
 
     @Test
     public void testMapPartitions_with_CustomFunction2IndexSum() {
-        outputRDD = inputRDD.mapPartitionsWithIndex(new CustomFunction2IndexSum(), false);
+        rddB = rddA.mapPartitionsWithIndex(new CustomFunction2IndexSum(), false);
     }
 }
