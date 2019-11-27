@@ -114,7 +114,7 @@
 ░░║░░░░░╚═1 [source code : reduceByKey](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/ReduceByKeyTest.java)  
 ░░╠═5 Java : [Spark Java API (JavaDoc)](https://spark.apache.org/docs/latest/api/java/index.html)  
 ░░║░╚═1 [package org.apache.spark.api.java on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/package-summary.html)  
-░░║░░░╠═1 [package function on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/package-summary.html)  
+░░║░░░╠═1 [package function  on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/package-summary.html)  
 ░░║░░░║░╠═1 interface  
 ░░║░░░║░║░╠═1 [FlatMapFunction on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/FlatMapFunction.html)  
 ░░║░░░║░║░╠═2 [Function        on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function.html)  
@@ -135,10 +135,12 @@
 ░░║░░░╠═2 [class JavaPairRDD on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html)  
 ░░║░░░║░╠═1 method  
 ░░║░░░║░║░╠═1 [JavaPairRDD.groupByKey         on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#groupByKey--)  
-░░║░░░║░║░╚═2 [JavaPairRDD.mapToPair          on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#mapToPair-org.apache.spark.api.java.function.PairFunction-)  
+░░║░░░║░║░╠═2 [JavaPairRDD.mapToPair          on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#mapToPair-org.apache.spark.api.java.function.PairFunction-)  
+░░║░░░║░║░╚═3 [JavaPairRDD.sortByKey          on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#sortByKey-java.util.Comparator-boolean-int-)  
 ░░║░░░║░╚═2 example  
 ░░║░░░║░░░╠═1 [JavaPairRDD.groupByKey         example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/GroupByKeyTest.java)  
-░░║░░░║░░░╚═2 [JavaPairRDD.maptoPair          example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/MapToPairTest.java)  
+░░║░░░║░░░╠═2 [JavaPairRDD.maptoPair          example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/MapToPairTest.java)  
+░░║░░░║░░░╚═3 [JavaPairRDD.sortByKey          example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/SortByKeyTest.java)  
 ░░║░░░╚═3 [class JavaRDD     on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html)  
 ░░║░░░░░╠═1 method  
 ░░║░░░░░║░╠═1 [JavaRDD.cartesian              on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#cartesian-org.apache.spark.api.java.JavaRDDLike-)  
