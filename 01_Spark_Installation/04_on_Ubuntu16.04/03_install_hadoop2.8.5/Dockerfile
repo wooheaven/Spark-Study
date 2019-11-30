@@ -9,7 +9,7 @@ ENV HADOOP_CONF $HADOOP_HOME/etc/hadoop
 ENV HADOOP_COMMON_LIB_NATIVE_DIR $HADOOP_HOME/lib/native
 RUN echo $HADOOP_HOME && echo $HADOOP_COMMON_LIB_NATIVE_DIR
 
-ADD hadoop_bashrc.txt /root
+ADD 99_Utility/hadoop_bashrc.txt /root
 RUN cat /root/hadoop_bashrc.txt >> /root/.bashrc && \
     cat -n /root/.bashrc | tail -9
 

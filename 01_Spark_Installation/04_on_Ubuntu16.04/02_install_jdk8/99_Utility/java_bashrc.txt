@@ -1,0 +1,4 @@
+
+# JAVA
+JAVA_HOME=/usr/lib/jvm/jdk1.8.0_221
+PATH=$PATH:$JAVA_HOME/bin

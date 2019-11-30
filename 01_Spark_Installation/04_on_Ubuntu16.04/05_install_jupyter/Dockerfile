@@ -15,7 +15,7 @@ RUN pip install six --upgrade
 
 RUN pip install findspark jupyter
 
-ADD jupyter_bashrc.txt /root/
+ADD 99_Utility/jupyter_bashrc.txt /root/
 RUN cat /root/jupyter_bashrc.txt >> /root/.bashrc && \
     cat -n /root/.bashrc | tail -3
 
