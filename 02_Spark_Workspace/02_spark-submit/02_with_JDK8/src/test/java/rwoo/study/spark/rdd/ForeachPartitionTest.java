@@ -6,18 +6,19 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import rwoo.study.spark.voidfunction.CustomVoidfunctionAppendAndPrintWithElement;
+import rwoo.study.spark.voidfunction.CustomVoidfunctionAppendAndPrintWithIterator;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Iterator;
 
 import static org.junit.Assert.assertEquals;
 
-public class ForeachTest {
+public class ForeachPartitionTest {
     private JavaSparkContext sc;
     private JavaRDD<Integer> rddA;
-    private static final String fileName = "src/test/resources/input/ForeachTest/input.txt";
+    private static final String fileName = "src/test/resources/input/ForeachPartitionTest/input.txt";
 
     private static void deleteContents() throws IOException {
         FileWriter f = new FileWriter(fileName);
@@ -25,10 +26,15 @@ public class ForeachTest {
         f.close();
     }
 
-    private static void appendAndPrint(Integer v) throws IOException {
+    private static void appendAndPrint(Iterator<Integer> iter) throws IOException {
         FileWriter f = new FileWriter(fileName, true);
-        f.write("for each -> element = " + v + "\n");
-        System.out.println("for each -> element = " + v);
+        f.write("for each partition -> iterator = \n");
+        System.out.println("for each partition -> iterator = ");
+        while (iter.hasNext()) {
+            String element = iter.next().toString();
+            f.write("for each partition -> iterator -> element = " + element + "\n");
+            System.out.println("for each partition -> iterator -> element = " + element);
+        }
         f.close();
     }
 
@@ -37,7 +43,7 @@ public class ForeachTest {
         deleteContents();
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("JavaRDD.foreachTest"));
+                .setAppName("JavaRDD.foreachPartitionTest"));
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 3);
     }
 
@@ -54,14 +60,14 @@ public class ForeachTest {
     }
 
     @Test
-    public void testForeach() {
-        rddA.foreach(v -> {
-            appendAndPrint(v);
+    public void testForeachPartition() {
+        rddA.foreachPartition(iter -> {
+            appendAndPrint(iter);
         });
     }
 
     @Test
-    public void testForeach_with_CustomVoidfunction() {
-        rddA.foreach(new CustomVoidfunctionAppendAndPrintWithElement());
+    public void testForeachPartition_with_CustomVoidfunction() {
+        rddA.foreachPartition(new CustomVoidfunctionAppendAndPrintWithIterator());
     }
 }

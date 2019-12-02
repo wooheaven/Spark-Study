@@ -1,0 +1,10 @@
+for each partition -> iterator = 
+for each partition -> iterator -> element = 1
+for each partition -> iterator -> element = 2
+for each partition -> iterator = 
+for each partition -> iterator -> element = 3
+for each partition -> iterator -> element = 4
+for each partition -> iterator = 
+for each partition -> iterator -> element = 5
+for each partition -> iterator -> element = 6
+for each partition -> iterator -> element = 7
