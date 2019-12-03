@@ -1,1 +1,5 @@
-02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/voidfunction/CustomVoidfunctionAppendPrint.java -> 02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/voidfunction/CustomVoidfunctionAppendAndPrintWithElement.java
+03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/16_RDD.sample_example.ipynb -> 03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/17_RDD.sample_example.ipynb
+03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/17_RDD.sortBy_example.ipynb -> 03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/18_RDD.sortBy_example.ipynb
+03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/18_RDD.sortByKey_example.ipynb -> 03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/19_RDD.sortByKey_example.ipynb
+03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/19_RDD.takeSample_example.ipynb -> 03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/20_RDD.takeSample_example.ipynb
+03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/20_RDD.union_example.ipynb -> 03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/21_RDD.union_example.ipynb
