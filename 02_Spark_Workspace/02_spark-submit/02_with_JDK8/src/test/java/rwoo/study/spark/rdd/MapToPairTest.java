@@ -4,6 +4,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.PairFunction;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,8 +23,8 @@ public class MapToPairTest {
     @Before
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
-            .setMaster("local[*]")
-            .setAppName("MapToPairTest"));
+                .setMaster("local[*]")
+                .setAppName("MapToPairTest"));
         rddA = sc.textFile("src/test/resources/input/MapToPairTest/");
     }
 
@@ -40,6 +41,15 @@ public class MapToPairTest {
             String[] fields = v.split(" ");
             return new Tuple2<>(fields[0], fields[1]);
         });
+    }
+
+    @Test
+    public void test_MapToPair_with_Explicit() {
+        PairFunction<String, String, String> f = v -> {
+            String[] fields = v.split(" ");
+            return new Tuple2<>(fields[0], fields[1]);
+        };
+        rddB = rddA.mapToPair(f);
     }
 
     @Test

@@ -49,6 +49,18 @@ public class SortByTest {
     }
 
     @Test
+    public void testSortBy_with_Explicit() {
+        Function<String, String> f1 = v -> v;
+        rddC = rddB.sortBy(f1, true, rddB.partitions().size());
+        rddD = rddB.sortBy(f1, false, rddB.partitions().size());
+        Function<String, String> f3 = v -> v.toLowerCase();
+        rddE = rddB.sortBy(f3, true, rddB.partitions().size());
+
+        assertEquals(Arrays.asList("I", "You", "a", "a", "am", "are", "boy", "girl"), rddC.collect());
+        assertEquals(Arrays.asList("girl", "boy", "are", "am", "a", "a", "You", "I"), rddD.collect());
+    }
+
+    @Test
     public void testSortBy_with_CustomFunction() {
         rddE = rddB.sortBy(new CustomFunctionToLowerCase(), true, rddB.partitions().size());
     }

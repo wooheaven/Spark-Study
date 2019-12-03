@@ -5,6 +5,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.PairFlatMapFunction;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,8 +23,8 @@ public class FlatMapToPairTest {
     @Before
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
-            .setMaster("local[*]")
-            .setAppName("FlatMapToPairTest"));
+                .setMaster("local[*]")
+                .setAppName("FlatMapToPairTest"));
         JavaRDD<String> lines = sc.textFile("src/test/resources/input/FlatMapToPairTest/");
         links = lines.mapToPair(line -> {
             String[] parts = line.split(" ");
@@ -55,10 +56,22 @@ public class FlatMapToPairTest {
         ranks = links.flatMapToPair(items -> {
             List<Tuple2<String, Tuple2<String, Double>>> myContributions = new ArrayList<>();
             items._2().forEach(dest ->
-                myContributions.add(new Tuple2<>(items._1(), new Tuple2<>(dest, 1.0 / Iterables.size(items._2()))))
+                    myContributions.add(new Tuple2<>(items._1(), new Tuple2<>(dest, 1.0 / Iterables.size(items._2()))))
             );
             return myContributions.iterator();
         });
+    }
+
+    @Test
+    public void test_FlatMapToPair_with_Explicit() {
+        PairFlatMapFunction<Tuple2<String, Iterable<String>>, String, Tuple2<String, Double>> f = items -> {
+            List<Tuple2<String, Tuple2<String, Double>>> myContributions = new ArrayList<>();
+            items._2().forEach(dest ->
+                    myContributions.add(new Tuple2<>(items._1(), new Tuple2<>(dest, 1.0 / Iterables.size(items._2()))))
+            );
+            return myContributions.iterator();
+        };
+        ranks = links.flatMapToPair(f);
     }
 
     @Test
@@ -69,7 +82,7 @@ public class FlatMapToPairTest {
     @Test
     public void test_MapToPair() {
         JavaPairRDD<String, Tuple2<Iterable<String>, Double>> ranks_compare = links.mapToPair(items ->
-            new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())))
+                new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())))
         );
         ranks_compare.foreach(rank -> System.out.println(rank));
 //        (B,([A],1.0))
