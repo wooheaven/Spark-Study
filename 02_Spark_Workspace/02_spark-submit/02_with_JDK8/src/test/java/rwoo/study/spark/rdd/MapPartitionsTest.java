@@ -3,6 +3,7 @@ package rwoo.study.spark.rdd;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.FlatMapFunction;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +11,7 @@ import rwoo.study.spark.flatmapfunction.CustomFlatMapFunction;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -45,6 +47,20 @@ public class MapPartitionsTest {
             partitionSum.add(sum);
             return partitionSum.iterator();
         });
+    }
+
+    @Test
+    public void testMapPartitions_with_Explicit() {
+        FlatMapFunction<Iterator<Integer>, Integer> f = partition -> {
+            List<Integer> partitionSum = new ArrayList<>();
+            int sum = 0;
+            while (partition.hasNext()) {
+                sum += partition.next();
+            }
+            partitionSum.add(sum);
+            return partitionSum.iterator();
+        };
+        rddB = rddA.mapPartitions(f);
     }
 
     @Test

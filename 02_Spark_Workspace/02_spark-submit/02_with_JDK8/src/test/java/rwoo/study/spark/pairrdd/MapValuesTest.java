@@ -53,7 +53,7 @@ public class MapValuesTest implements Serializable {
 
     @Test
     public void test_MapValues_with_Explicit_Function() {
-        Function<Iterable<String>, Tuple2<String, Double>> f = (v -> new Tuple2<>(v.toString(), 1.0));
+        Function<Iterable<String>, Tuple2<String, Double>> f = v -> new Tuple2<>(v.toString(), 1.0);
         ranks = links.mapValues(f);
     }
 
