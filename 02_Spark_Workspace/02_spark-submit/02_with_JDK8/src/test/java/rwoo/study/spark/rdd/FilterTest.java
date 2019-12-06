@@ -34,7 +34,7 @@ public class FilterTest {
     }
 
     @Test
-    public void test_Filter_with_implicit() {
+    public void test_Filter_with_Implicit() {
         rddB = rddA.filter(word -> word.length() < 3);
     }
 
