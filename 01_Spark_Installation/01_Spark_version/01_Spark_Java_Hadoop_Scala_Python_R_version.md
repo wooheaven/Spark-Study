@@ -15,6 +15,8 @@
 |            |       |                 |                                                          |           2.10 is removed                |                          |      |
 | 2019.03.31 | 2.4.1 | 8+              |                                                          |      2.11 is deprecated                  |                          |      |
 |            |       |                 |                                                          | 2.12 is general available not experiment |                          |      |
+| 2019.09.01 | 2.4.4 | 8+              | pre-build 2.7, 2.6,                        user-provided | 2.12.x                                   | 2.7         3.4          | 3.1  |
+|            |       |                 |                                                          |                                          |                          |      |
 | ????.??.?? | 3.0   |                 |                                                          | 2.12                                     |                          |      |
 |            |       |                 |                                                          |      2.11 will be removed                |                          |      |
 
