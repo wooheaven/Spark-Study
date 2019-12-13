@@ -21,7 +21,7 @@ public class FilterTest {
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("FilterTest"));
+                .setAppName("JavaRDD.filter"));
         JavaRDD<String> lines = sc.textFile("src/test/resources/input/FilterTest/");
         rddA = lines.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
     }

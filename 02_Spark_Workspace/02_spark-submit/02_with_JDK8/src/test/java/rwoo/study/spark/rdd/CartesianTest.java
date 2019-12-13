@@ -22,7 +22,7 @@ public class CartesianTest {
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("Cartesian"));
+                .setAppName("JavaRDD.cartesian"));
         rddA = sc.parallelize(Arrays.asList("b", "a", "c"));
         rddB = sc.parallelize(Arrays.asList("1","2"));
     }

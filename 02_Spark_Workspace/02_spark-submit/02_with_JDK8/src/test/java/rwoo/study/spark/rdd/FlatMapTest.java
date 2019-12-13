@@ -20,7 +20,7 @@ public class FlatMapTest {
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("FlatMapTest"));
+                .setAppName("JavaRDD.flatMap"));
         rddA = sc.parallelize(Arrays.asList("I am a boy", "You are a girl"));
     }
 
