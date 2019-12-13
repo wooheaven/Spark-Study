@@ -21,7 +21,7 @@ public class FoldTest {
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("JavaRDD.fold Test"));
+                .setAppName("JavaRDD.fold"));
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 3);
     }
 

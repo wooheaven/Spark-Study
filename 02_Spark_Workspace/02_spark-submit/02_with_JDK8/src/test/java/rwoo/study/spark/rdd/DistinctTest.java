@@ -20,7 +20,7 @@ public class DistinctTest {
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("DistinctTest"));
+                .setAppName("JavaRDD.distinct"));
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 2));
     }
 
