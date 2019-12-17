@@ -25,7 +25,7 @@ public class MapPartitionsTest {
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("MapPartitionsTest"));
+                .setAppName("JavaRDD.mapPartitions"));
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 3);
     }
 

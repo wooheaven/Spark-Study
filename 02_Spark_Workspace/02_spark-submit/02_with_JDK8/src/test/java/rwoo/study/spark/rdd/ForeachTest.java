@@ -37,7 +37,7 @@ public class ForeachTest {
         deleteContents();
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("JavaRDD.foreachTest"));
+                .setAppName("JavaRDD.foreach"));
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 3);
     }
 
