@@ -43,7 +43,7 @@ public class ForeachPartitionTest {
         deleteContents();
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("JavaRDD.foreachPartitionTest"));
+                .setAppName("JavaRDD.foreachPartition"));
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 3);
     }
 

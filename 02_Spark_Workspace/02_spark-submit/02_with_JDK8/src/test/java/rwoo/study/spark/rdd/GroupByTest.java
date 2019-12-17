@@ -23,7 +23,7 @@ public class GroupByTest {
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("GroupByTest"));
+                .setAppName("JavaRDD.groupBy"));
         rddA = sc.parallelize(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
     }
 

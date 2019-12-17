@@ -21,7 +21,7 @@ public class IntersectionTest {
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("IntersectionTest"));
+                .setAppName("JavaRDD.intersection"));
         rddA = sc.parallelize(Arrays.asList(1, 3, 5));
         rddB = sc.parallelize(Arrays.asList(1, 4, 6));
     }

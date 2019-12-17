@@ -20,7 +20,7 @@ public class GetNumPartitionsTest {
     public void setUp() {
         sc = new JavaSparkContext(new SparkConf()
                 .setMaster("local[*]")
-                .setAppName("MapTest"));
+                .setAppName("JavaRDD.getNumPartitions"));
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 3);
     }
 
