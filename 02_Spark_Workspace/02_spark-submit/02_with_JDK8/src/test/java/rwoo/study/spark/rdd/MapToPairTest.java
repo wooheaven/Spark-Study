@@ -1,6 +1,5 @@
 package rwoo.study.spark.rdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -22,9 +21,7 @@ public class MapToPairTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("MapToPairTest"));
+        sc = new JavaSparkContext("local", "JavaRDD.mapToPair");
         rddA = sc.textFile("src/test/resources/input/MapToPairTest/");
     }
 

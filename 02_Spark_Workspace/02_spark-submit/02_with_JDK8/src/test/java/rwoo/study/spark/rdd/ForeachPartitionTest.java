@@ -1,6 +1,5 @@
 package rwoo.study.spark.rdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
@@ -16,9 +15,9 @@ import java.util.Iterator;
 import static org.junit.Assert.assertEquals;
 
 public class ForeachPartitionTest {
+    private static final String fileName = "src/test/resources/input/ForeachPartitionTest/input.txt";
     private JavaSparkContext sc;
     private JavaRDD<Integer> rddA;
-    private static final String fileName = "src/test/resources/input/ForeachPartitionTest/input.txt";
 
     private static void deleteContents() throws IOException {
         FileWriter f = new FileWriter(fileName);
@@ -41,9 +40,7 @@ public class ForeachPartitionTest {
     @Before
     public void setUp() throws IOException {
         deleteContents();
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("JavaRDD.foreachPartition"));
+        sc = new JavaSparkContext("local", "JavaRDD.foreachPartition");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 3);
     }
 

@@ -1,13 +1,11 @@
 package rwoo.study.spark.rdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
@@ -20,9 +18,7 @@ public class UnionTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("SampleTest"));
+        sc = new JavaSparkContext("local", "JavaRDD.union");
         rddA = sc.parallelize(Arrays.asList(1, 3, 5));
         rddB = sc.parallelize(Arrays.asList(2, 4, 6));
     }

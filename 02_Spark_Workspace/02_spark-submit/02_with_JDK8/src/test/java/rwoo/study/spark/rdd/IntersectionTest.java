@@ -1,6 +1,5 @@
 package rwoo.study.spark.rdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
@@ -19,9 +18,7 @@ public class IntersectionTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("JavaRDD.intersection"));
+        sc = new JavaSparkContext("local", "JavaRDD.intersection");
         rddA = sc.parallelize(Arrays.asList(1, 3, 5));
         rddB = sc.parallelize(Arrays.asList(1, 4, 6));
     }

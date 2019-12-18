@@ -1,6 +1,5 @@
 package rwoo.study.spark.rdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
@@ -19,9 +18,7 @@ public class GlomTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("JavaRDD.glom"));
+        sc = new JavaSparkContext("local", "JavaRDD.glom");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 3);
     }
 

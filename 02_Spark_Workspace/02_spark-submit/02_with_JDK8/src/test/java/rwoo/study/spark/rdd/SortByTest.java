@@ -1,6 +1,5 @@
 package rwoo.study.spark.rdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
@@ -23,9 +22,7 @@ public class SortByTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("SortByTest"));
+        sc = new JavaSparkContext("local", "JavaRDD.sortBy");
         rddA = sc.parallelize(Arrays.asList("I am a boy", "You are a girl"));
         rddB = rddA.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
     }

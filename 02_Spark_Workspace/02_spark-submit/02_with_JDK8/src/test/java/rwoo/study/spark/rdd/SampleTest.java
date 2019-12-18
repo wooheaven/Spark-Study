@@ -1,6 +1,5 @@
 package rwoo.study.spark.rdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
@@ -18,16 +17,14 @@ public class SampleTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("SampleTest"));
+        sc = new JavaSparkContext("local", "JavaRdd.sample");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
     }
 
     @After
     public void after() {
         assertEquals(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), rddA.collect());
-        assertEquals(Arrays.asList(1, 2, 5, 7, 9, 10), rddB.collect());
+        assertEquals(Arrays.asList(1, 7), rddB.collect());
         sc.close();
     }
 

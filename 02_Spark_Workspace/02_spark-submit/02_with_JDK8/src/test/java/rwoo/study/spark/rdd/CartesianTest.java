@@ -1,6 +1,5 @@
 package rwoo.study.spark.rdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -20,11 +19,9 @@ public class CartesianTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("JavaRDD.cartesian"));
+        sc = new JavaSparkContext("local", "JavaRDD.cartesian");
         rddA = sc.parallelize(Arrays.asList("b", "a", "c"));
-        rddB = sc.parallelize(Arrays.asList("1","2"));
+        rddB = sc.parallelize(Arrays.asList("1", "2"));
     }
 
     @After
