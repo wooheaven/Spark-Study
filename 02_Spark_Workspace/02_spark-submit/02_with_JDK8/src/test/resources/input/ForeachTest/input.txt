@@ -1,7 +1,7 @@
-for each -> element = 1
-for each -> element = 3
-for each -> element = 5
-for each -> element = 4
-for each -> element = 2
-for each -> element = 6
-for each -> element = 7
+num = 1
+num = 2
+num = 3
+num = 4
+num = 5
+num = 6
+num = 7

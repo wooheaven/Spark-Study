@@ -1,13 +1,11 @@
 package rwoo.study.spark.rdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,9 +18,7 @@ public class TakeSampleTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("SampleTest"));
+        sc = new JavaSparkContext("local", "JavaRDD.sample");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
     }
 

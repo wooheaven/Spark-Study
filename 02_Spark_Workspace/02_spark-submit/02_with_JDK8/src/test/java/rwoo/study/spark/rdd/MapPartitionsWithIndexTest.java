@@ -1,6 +1,5 @@
 package rwoo.study.spark.rdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function2;
@@ -23,9 +22,7 @@ public class MapPartitionsWithIndexTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("MapTest"));
+        sc = new JavaSparkContext("local", "JavaRDD.mapPartitionsWithIndex");
         rddA = sc.parallelize(Arrays.asList("1", "2", "3", "4", "5", "6", "7"), 3);
     }
 

@@ -1,6 +1,5 @@
 package rwoo.study.spark.rdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
@@ -19,9 +18,7 @@ public class FilterTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("JavaRDD.filter"));
+        sc = new JavaSparkContext("local", "JavaRDD.filter");
         JavaRDD<String> lines = sc.textFile("src/test/resources/input/FilterTest/");
         rddA = lines.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
     }

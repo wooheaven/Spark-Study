@@ -1,6 +1,5 @@
 package rwoo.study.spark.rdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
@@ -19,9 +18,7 @@ public class MapTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("JavaRDD.map"));
+        sc = new JavaSparkContext("local", "JavaRDD.map");
         rddA = sc.parallelize(Arrays.asList("b", "a", "c"));
     }
 

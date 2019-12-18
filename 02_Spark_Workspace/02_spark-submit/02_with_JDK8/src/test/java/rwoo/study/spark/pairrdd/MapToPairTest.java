@@ -36,9 +36,6 @@ public class MapToPairTest {
     @After
     public void after() {
         assertEquals("[(B,[A]), (D,[B, C]), (A,[C, D]), (C,[A])]", rddA.collect().toString());
-        assertEquals(
-                "[(B,([A],1.0)), (D,([B, C],0.5)), (A,([C, D],0.5)), (C,([A],1.0))]",
-                rddB.collect().toString());
         sc.close();
     }
 
@@ -47,6 +44,9 @@ public class MapToPairTest {
         rddB = rddA.mapToPair(items ->
                 new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())))
         );
+        assertEquals(
+                "[(B,([A],1.0)), (D,([B, C],0.5)), (A,([C, D],0.5)), (C,([A],1.0))]",
+                rddB.collect().toString());
     }
 
     @Test
@@ -55,11 +55,17 @@ public class MapToPairTest {
             return new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())));
         };
         rddB = rddA.mapToPair(f);
+        assertEquals(
+                "[(B,([A],1.0)), (D,([B, C],0.5)), (A,([C, D],0.5)), (C,([A],1.0))]",
+                rddB.collect().toString());
     }
 
     @Test
     public void test_MapToPair_with_CustomPairFunction() {
         rddB = rddA.mapToPair(new CustomPairFunctionDivideByItemSize());
+        assertEquals(
+                "[(B,([A],1.0)), (D,([B, C],0.5)), (A,([C, D],0.5)), (C,([A],1.0))]",
+                rddB.collect().toString());
     }
 
     @Test

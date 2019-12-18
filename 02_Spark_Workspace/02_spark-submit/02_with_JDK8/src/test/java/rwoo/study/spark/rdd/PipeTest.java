@@ -1,6 +1,5 @@
 package rwoo.study.spark.rdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
@@ -19,9 +18,7 @@ public class PipeTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("PipeTest"));
+        sc = new JavaSparkContext("local", "JavaRDD.pipe");
         rddA = sc.parallelize(Arrays.asList("b", "aB", "c", "De"), 2);
     }
 

@@ -7,29 +7,30 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class DistinctTest {
+public class TopTest {
     private JavaSparkContext sc;
     private JavaRDD<Integer> rddA;
-    private JavaRDD<Integer> rddB;
+    private List<Integer> result;
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.distinct");
-        rddA = sc.parallelize(Arrays.asList(1, 2, 3, 2));
+        sc = new JavaSparkContext("local", "JavaRDD.top");
+        rddA = sc.parallelize(Arrays.asList(1, 3, 1, 2, 3));
     }
 
     @After
     public void after() {
-        assertEquals(Arrays.asList(1, 2, 3, 2), rddA.collect());
-        assertEquals(Arrays.asList(1, 2, 3), rddB.collect());
+        assertEquals(Arrays.asList(1, 3, 1, 2, 3), rddA.collect());
+        assertEquals(Arrays.asList(3, 3, 2), result);
         sc.close();
     }
 
     @Test
-    public void testDistinct() {
-        rddB = rddA.distinct().sortBy(v -> v, true, rddA.getNumPartitions());
+    public void testTop() {
+        result = rddA.top(3);
     }
 }
