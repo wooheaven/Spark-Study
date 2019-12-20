@@ -2,17 +2,13 @@ package rwoo.study.spark.pairrdd;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
-import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
-import rwoo.study.spark.comparator.CustomComparatorLowerCase;
-import rwoo.study.spark.function.CustomFunctionToLowerCase;
 import scala.Tuple2;
 
-import java.util.Arrays;
+import java.io.Serializable;
 import java.util.Comparator;
 
 import static org.junit.Assert.assertEquals;
@@ -44,5 +40,12 @@ public class SortByKeyTest {
     @Test
     public void test_SortByKey_with_CustomComparator() {
         rddB = rddA.sortByKey(new CustomComparatorLowerCase(), true, 3);
+    }
+
+    static class CustomComparatorLowerCase implements Comparator<String>, Serializable {
+        @Override
+        public int compare(String o1, String o2) {
+            return o1.compareTo(o2);
+        }
     }
 }
