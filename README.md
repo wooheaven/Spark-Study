@@ -94,22 +94,21 @@
 ░░║░║░╚═5 [reduceByKey](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@reduceByKey(func:(V,V)=%3EV):org.apache.spark.rdd.RDD[(K,V)])  
 ░░║░║░░░╚═1 [example on spark-shell : reduceByKey](03_Spark_Document/04_Pair_RDD_functions_doc/01_for_Scala/05_reduceByKey_example.md)  
 ░░║░╚═2 Java  
-░░║░░░╠═1 [flatMapToPair](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#flatMapToPair-org.apache.spark.api.java.function.PairFlatMapFunction-)  
-░░║░░░║░╚═1 [source code : flatMapToPair](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/FlatMapToPairTest.java)  
-░░║░░░╠═2 [join](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#join-org.apache.spark.api.java.JavaPairRDD-)  
+░░║░░░╠═1 [join](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#join-org.apache.spark.api.java.JavaPairRDD-)  
 ░░║░░░║░╚═1 [source code : join](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/JoinTest.java)  
-░░║░░░╠═3 [mapValues](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#mapValues-org.apache.spark.api.java.function.Function-)  
+░░║░░░╠═2 [mapValues](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#mapValues-org.apache.spark.api.java.function.Function-)  
 ░░║░░░║░╚═1 [source code : mapValues](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/MapValuesTest.java)  
-░░║░░░╚═4 [partitionBy](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#partitionBy-org.apache.spark.Partitioner-)  
+░░║░░░╚═3 [partitionBy](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#partitionBy-org.apache.spark.Partitioner-)  
 ░░║░░░░░╚═1 [source code : partitionBy](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/PartitionByTest.java)  
 ░░╠═5 Java : [Spark Java API (JavaDoc)](https://spark.apache.org/docs/latest/api/java/index.html)  
-░░║░╚═1 [package org.apache.spark.api.java](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/package-summary.html) on JavaDoc  
-░░║░░░╠═1 [package function](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/package-summary.html) on JavaDoc  
+░░║░╚═1 package [org.apache.spark.api.java](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/package-summary.html) on JavaDoc  
+░░║░░░╠═1 package [function](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/package-summary.html) on JavaDoc  
 ░░║░░░║░╠═1 interface  
 ░░║░░░║░║░╠═1 [FlatMapFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/FlatMapFunction.html) on JavaDoc  
 ░░║░░░║░║░╠═2 [Function](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function.html) on JavaDoc  
 ░░║░░░║░║░╠═3 [Function2](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/Function2.html) on JavaDoc  
-░░║░░░║░║░╚═4 [PairFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFunction.html) on JavaDoc  
+░░║░░░║░║░╠═4 [PairFlatMapFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFlatMapFunction.html) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/FlatMapToPairTest.java#L87) on Implement : (FROM,[TOs]) --> (FROM, (TO,CONTRIBUTION))  
+░░║░░░║░║░╚═5 [PairFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFunction.html) on JavaDoc  
 ░░║░░░║░╚═2 example implements  
 ░░║░░░║░░░╠═1 CustomFlatMapFunction~ implements FlatMapFunction  
 ░░║░░░║░░░║░╚═1 [CustomFlatMapFunction              implements FlatMapFunction example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/flatmapfunction/CustomFlatMapFunction.java)  
@@ -126,17 +125,14 @@
 ░░║░░░║░░░╚═5 CustomVoidFunction~ implements VoidFunction  
 ░░║░░░║░░░░░╠═1 [CustomVoidFunctionAppendAndPrintWithElement  implements VoidFunction example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/voidfunction/CustomVoidfunctionAppendAndPrintWithElement.java)  
 ░░║░░░║░░░░░╚═2 [CustomVoidFunctionAppendAndPrintWithIterator implements VoidFunction example on Source](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/voidfunction/CustomVoidfunctionAppendAndPrintWithIterator.java)  
-░░║░░░╠═2 [class JavaPairRDD.class](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html) on JavaDoc  
-░░║░░░║░╠═1 method  
-░░║░░░║░║░╠═1 [JavaPairRDD.groupByKey on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#groupByKey--)  
-░░║░░░║░║░╠═2 [JavaPairRDD.mapToPair  on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#mapToPair-org.apache.spark.api.java.function.PairFunction-)  
-░░║░░░║░║░╠═3 [JavaPairRDD.sortByKey  on JavaDoc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#sortByKey-java.util.Comparator-boolean-int-)  
-░░║░░░║░║░╚═4 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#reduceByKey-org.apache.spark.api.java.function.Function2-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/ReduceByKeyTest.java) on JUnit Test of JavaPairRDD.reduceByKey  
-░░║░░░║░╚═2 example  
-░░║░░░║░░░╠═1 [JavaPairRDD.groupByKey example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/GroupByKeyTest.java)  
-░░║░░░║░░░╠═2 [JavaPairRDD.maptoPair  example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/MapToPairTest.java)  
-░░║░░░║░░░╚═3 [JavaPairRDD.sortByKey  example on JUnit Test](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/SortByKeyTest.java)  
-░░║░░░╚═3 [class JavaRDD.class](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html) on JavaDoc  
+░░║░░░╠═2 class [JavaPairRDD.class](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html) on JavaDoc  
+░░║░░░║░╚═1 method  
+░░║░░░║░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#flatMapToPair-org.apache.spark.api.java.function.PairFlatMapFunction-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/FlatMapToPairTest.java) on JUnit Test of JavaPairRDD.flatMapToPair  
+░░║░░░║░░░╠═2 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#groupByKey--) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/GroupByKeyTest.java) on JUnit Test of JavaPairRDD.groupByKey  
+░░║░░░║░░░╠═3 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#mapToPair-org.apache.spark.api.java.function.PairFunction-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/MapToPairTest.java) on JUnit Test of JavaPairRDD.maptoPair  
+░░║░░░║░░░╠═4 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#sortByKey-java.util.Comparator-boolean-int-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/SortByKeyTest.java) on JUnit Test of JavaPairRDD.sortByKey  
+░░║░░░║░░░╚═5 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#reduceByKey-org.apache.spark.api.java.function.Function2-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/ReduceByKeyTest.java) on JUnit Test of JavaPairRDD.reduceByKey  
+░░║░░░╚═3 class [JavaRDD.class](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html) on JavaDoc  
 ░░║░░░░░╚═1 method  
 ░░║░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#aggregate-U-org.apache.spark.api.java.function.Function2-org.apache.spark.api.java.function.Function2-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/AggregateTest.java) on JUnit Test of JavaRDD.aggregate  
 ░░║░░░░░░░╠═2 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#cartesian-org.apache.spark.api.java.JavaRDDLike-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/CartesianTest.java) on JUnit Test of JavaRDD.cartesian  
@@ -164,14 +160,11 @@
 ░░║░░░░░░░╠═24 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#top-int-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TopTest.java) on JUnit Test of JavaRDD.top  
 ░░║░░░░░░░╚═25 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#union-org.apache.spark.api.java.JavaRDD-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/UnionTest.java) on JUnit Test of JavaRDD.union  
 ░░╠═6 Python : [Spark Python API (Sphinx)](https://spark.apache.org/docs/latest/api/python/index.html), [Spark Python API on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
-░░║░╚═1 [package pyspark on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
-░░║░░░╠═1 [package sql on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/)  
-░░║░░░║░╚═1 [file session.py on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/session.html)  
-░░║░░░║░░░╠═1 [SparkSession on Sphinx](https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.SparkSession)  
-░░║░░░║░░░╠═2 [file session.py source on github](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/sql/session.py)  
-░░║░░░║░░░╚═3 method  
-░░║░░░║░░░░░╚═1 [monkey patch RDD.toDF source code](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/sql/session.py#L44) on Github, [example](03_Spark_Document/06_Python/01_package_pyspark/01_package_sql/01_file_session.py/05_example/01_RDD.toDF_example.ipynb) on Jupyter notebook of RDD.toDF  
-░░║░░░╚═2 [file rdd.py](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/rdd.html#RDD) on modules, [RDD](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD) on Sphinx, [source code](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/rdd.py) on github  
+░░║░╚═1 package [pyspark on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
+░░║░░░╠═1 package [sql on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/)  
+░░║░░░║░╚═1 file [session.py](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/session.html) on modules, [SparkSession](https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.SparkSession) doc on Sphinx, [source code](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/sql/session.py) on Github  
+░░║░░░║░░░╚═1 method [RDD.toDF](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/sql/session.py#L44) (monkey patch of RDD) source code on Github, [example](03_Spark_Document/06_Python/01_package_pyspark/01_package_sql/01_file_session.py/05_example/01_RDD.toDF_example.ipynb) on Jupyter notebook of RDD.toDF  
+░░║░░░╚═2 file [rdd.py](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/rdd.html#RDD) on modules, [RDD](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD) doc on Sphinx, [source code](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/rdd.py) on Github  
 ░░║░░░░░╚═1 method  
 ░░║░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.aggregate) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/01_RDD.aggregate.ipynb) on Jupyter notebook of RDD.aggregate  
 ░░║░░░░░░░╠═2 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.cartesian) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/02_RDD.cartesian_example.ipynb) on Jupyter notebook of RDD.cartesian  
@@ -200,9 +193,9 @@
 ░░║░░░░░░░╠═25 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.top) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/25_RDD.top_example.ipynb) on Jupyter notebook of RDD.top  
 ░░║░░░░░░░╚═26 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.SparkContext.union) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/26_RDD.union_example.ipynb) on Jupyter notebook of RDD.union  
 ░░╚═7 Scala : [Spark Scala API (Scaladoc)](https://spark.apache.org/docs/latest/api/scala/index.html#package)  
-░░░░╚═1 [package org.apache.spark on Github](https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark)  
-░░░░░░╚═1 [package rdd](https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark/rdd) on Github  
-░░░░░░░░╚═1 [RDD.scala](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD) on Scaladoc, [source code](https://github.com/apache/spark/blob/master/core/src/main/scala/org/apache/spark/rdd/RDD.scala) on Github  
+░░░░╚═1 package [org.apache.spark on Github](https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark)  
+░░░░░░╚═1 package [rdd](https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark/rdd) on Github  
+░░░░░░░░╚═1 class [RDD.scala](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD) on Scaladoc, [source code](https://github.com/apache/spark/blob/master/core/src/main/scala/org/apache/spark/rdd/RDD.scala) on Github  
 ░░░░░░░░░░╚═1 Concrete Value Members  
 ░░░░░░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@fold(zeroValue:T)(op:(T,T)=%3ET):T) on Scaladoc, [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/Fold.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_RDD/01_Concrete_Value_Members/01_RDD.fold_example.md) on spark-shell of RDD.fold  
 ░░░░░░░░░░░░╠═2 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@map[U](f:T=%3EU)(implicitevidence$3:scala.reflect.ClassTag[U]):org.apache.spark.rdd.RDD[U]) on Scaladoc, [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/Map.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_RDD/01_Concrete_Value_Members/02_RDD.map_example.md) on spark-shell of RDD.map  

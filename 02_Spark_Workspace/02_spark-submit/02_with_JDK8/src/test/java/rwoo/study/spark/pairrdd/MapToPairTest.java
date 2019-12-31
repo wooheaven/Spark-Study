@@ -1,7 +1,6 @@
 package rwoo.study.spark.pairrdd;
 
 import com.google.common.collect.Iterables;
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.PairFunction;
@@ -23,19 +22,17 @@ public class MapToPairTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("MapToPairTest"));
+        sc = new JavaSparkContext("local", "JavaPairRDD.mapToPair");
         rddA = sc.textFile("src/test/resources/input/MapToPairTest/")
                 .mapToPair(line -> {
                     String[] parts = line.split(" ");
-                    return new Tuple2<String, String>(parts[0], parts[1]);
-                }).groupByKey();
+                    return new Tuple2<>(parts[0], parts[1]);
+                }).groupByKey().sortByKey().cache();
     }
 
     @After
     public void after() {
-        assertEquals("[(B,[A]), (D,[B, C]), (A,[C, D]), (C,[A])]", rddA.collect().toString());
+        assertEquals("[(A,[C, D]), (B,[A]), (C,[A]), (D,[B, C])]", rddA.collect().toString());
         sc.close();
     }
 
@@ -43,9 +40,9 @@ public class MapToPairTest {
     public void test_MapToPair_with_Implicit() {
         rddB = rddA.mapToPair(items ->
                 new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())))
-        );
+        ).sortByKey().cache();
         assertEquals(
-                "[(B,([A],1.0)), (D,([B, C],0.5)), (A,([C, D],0.5)), (C,([A],1.0))]",
+                "[(A,([C, D],0.5)), (B,([A],1.0)), (C,([A],1.0)), (D,([B, C],0.5))]",
                 rddB.collect().toString());
     }
 
@@ -54,17 +51,17 @@ public class MapToPairTest {
         PairFunction<Tuple2<String, Iterable<String>>, String, Tuple2<Iterable<String>, Double>> f = items -> {
             return new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())));
         };
-        rddB = rddA.mapToPair(f);
+        rddB = rddA.mapToPair(f).sortByKey().cache();
         assertEquals(
-                "[(B,([A],1.0)), (D,([B, C],0.5)), (A,([C, D],0.5)), (C,([A],1.0))]",
+                "[(A,([C, D],0.5)), (B,([A],1.0)), (C,([A],1.0)), (D,([B, C],0.5))]",
                 rddB.collect().toString());
     }
 
     @Test
     public void test_MapToPair_with_CustomPairFunction() {
-        rddB = rddA.mapToPair(new CustomPairFunctionDivideByItemSize());
+        rddB = rddA.mapToPair(new CustomPairFunctionDivideByItemSize()).cache();
         assertEquals(
-                "[(B,([A],1.0)), (D,([B, C],0.5)), (A,([C, D],0.5)), (C,([A],1.0))]",
+                "[(A,([C, D],0.5)), (B,([A],1.0)), (C,([A],1.0)), (D,([B, C],0.5))]",
                 rddB.collect().toString());
     }
 
@@ -78,7 +75,7 @@ public class MapToPairTest {
             return myContributions.iterator();
         });
         assertEquals(
-                "[(B,(A,1.0)), (D,(B,0.5)), (D,(C,0.5)), (A,(C,0.5)), (A,(D,0.5)), (C,(A,1.0))]",
+                "[(A,(C,0.5)), (A,(D,0.5)), (B,(A,1.0)), (C,(A,1.0)), (D,(B,0.5)), (D,(C,0.5))]",
                 rddC.collect().toString()
         );
     }

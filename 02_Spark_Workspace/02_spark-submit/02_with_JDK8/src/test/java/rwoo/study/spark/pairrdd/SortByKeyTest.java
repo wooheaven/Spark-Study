@@ -1,6 +1,5 @@
 package rwoo.study.spark.pairrdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
@@ -20,9 +19,7 @@ public class SortByKeyTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("SortByTest"));
+        sc = new JavaSparkContext("local", "JavaPairRDD.sortByKey");
         rddA = sc.textFile("src/test/resources/input/SortByKeyTest/")
                 .mapToPair(line -> {
                     String[] fields = line.split(" ");
@@ -32,8 +29,8 @@ public class SortByKeyTest {
 
     @After
     public void after() {
-        assertEquals("[(A,2), (B,1), (f,7), (C,4), (D,2), (e,5)]", rddA.collect().toString());
-        assertEquals("[(A,2), (B,1), (C,4), (D,2), (e,5), (f,7)]", rddB.collect().toString());
+        assertEquals("[(b,1), (E,4), (a,2), (c,3), (D,3)]", rddA.collect().toString());
+        assertEquals("[(a,2), (b,1), (c,3), (D,3), (E,4)]", rddB.collect().toString());
         sc.close();
     }
 
@@ -45,7 +42,7 @@ public class SortByKeyTest {
     static class CustomComparatorLowerCase implements Comparator<String>, Serializable {
         @Override
         public int compare(String o1, String o2) {
-            return o1.compareTo(o2);
+            return o1.toLowerCase().compareTo(o2.toLowerCase());
         }
     }
 }
