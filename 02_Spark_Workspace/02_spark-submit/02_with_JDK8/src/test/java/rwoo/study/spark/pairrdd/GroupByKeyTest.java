@@ -1,6 +1,5 @@
 package rwoo.study.spark.pairrdd;
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
@@ -17,9 +16,7 @@ public class GroupByKeyTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext(new SparkConf()
-                .setMaster("local[*]")
-                .setAppName("GroupByKeyTest"));
+        sc = new JavaSparkContext("local", "JavaPairRDD.groupByKey");
         rddA = sc.textFile("src/test/resources/input/MapToPairTest/")
                 .mapToPair(line -> {
                     String[] parts = line.split(" ");
@@ -30,7 +27,7 @@ public class GroupByKeyTest {
     @After
     public void after() {
         assertEquals("[(A,C), (A,D), (B,A), (C,A), (D,B), (D,C)]", rddA.collect().toString());
-        assertEquals("[(B,[A]), (D,[B, C]), (A,[C, D]), (C,[A])]", rddB.collect().toString());
+        assertEquals("[(A,[C, D]), (B,[A]), (C,[A]), (D,[B, C])]", rddB.sortByKey().collect().toString());
         sc.close();
     }
 
