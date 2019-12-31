@@ -77,9 +77,10 @@
 ░░║░░░░░░░╠═6 getNumPartitions()  
 ░░║░░░░░░░╠═7 saveAsTextFile(path)  
 ░░║░░░░░░░╠═8 reduce(func)  
-░░║░░░░░░░╠═9 takeOrdered(n, [ordering])  
-░░║░░░░░░░╠═10 takeSample(withReplacement, num, [seed])  
-░░║░░░░░░░╚═11 top(n, [ordering])  
+░░║░░░░░░░╠═9 take(n)  
+░░║░░░░░░░╠═10 takeOrdered(n, [ordering])  
+░░║░░░░░░░╠═11 takeSample(withReplacement, num, [seed])  
+░░║░░░░░░░╚═12 top(n, [ordering])  
 ░░╠═4 Pair RDD functions doc  
 ░░║░╠═1 Scala  
 ░░║░║░╠═1 [flatMapValues](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@flatMapValues[U](f:V=%3ETraversableOnce[U]):org.apache.spark.rdd.RDD[(K,U)])  
@@ -157,10 +158,11 @@
 ░░║░░░░░░░╠═18 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#reduce-org.apache.spark.api.java.function.Function2-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/ReduceTest.java) on JUnit Test of JavaRDD.reduce  
 ░░║░░░░░░░╠═19 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#sample-boolean-double-long-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/SampleTest.java) on JUnit Test of JavaRDD.sample  
 ░░║░░░░░░░╠═20 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#sortBy-org.apache.spark.api.java.function.Function-boolean-int-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/SortByTest.java) on JUnit Test of JavaRDD.sortBy  
-░░║░░░░░░░╠═21 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#takeOrdered-int-java.util.Comparator-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TakeOrderedTest.java) on JUnit Test of JavaRDD.takeOrdered  
-░░║░░░░░░░╠═22 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#takeSample-boolean-int-long-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TakeSampleTest.java) on JUnit Test of JavaRDD.takeSample  
-░░║░░░░░░░╠═23 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#top-int-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TopTest.java) on JUnit Test of JavaRDD.top  
-░░║░░░░░░░╚═24 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#union-org.apache.spark.api.java.JavaRDD-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/UnionTest.java) on JUnit Test of JavaRDD.union  
+░░║░░░░░░░╠═21 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#take-int-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TakeTest.java) on JUnit Test of JavaRDD.take  
+░░║░░░░░░░╠═22 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#takeOrdered-int-java.util.Comparator-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TakeOrderedTest.java) on JUnit Test of JavaRDD.takeOrdered  
+░░║░░░░░░░╠═23 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#takeSample-boolean-int-long-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TakeSampleTest.java) on JUnit Test of JavaRDD.takeSample  
+░░║░░░░░░░╠═24 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#top-int-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TopTest.java) on JUnit Test of JavaRDD.top  
+░░║░░░░░░░╚═25 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#union-org.apache.spark.api.java.JavaRDD-) on JavaDoc, [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/UnionTest.java) on JUnit Test of JavaRDD.union  
 ░░╠═6 Python : [Spark Python API (Sphinx)](https://spark.apache.org/docs/latest/api/python/index.html), [Spark Python API on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
 ░░║░╚═1 [package pyspark on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
 ░░║░░░╠═1 [package sql on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/)  
