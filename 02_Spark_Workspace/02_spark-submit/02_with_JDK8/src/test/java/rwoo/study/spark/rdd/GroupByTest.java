@@ -7,7 +7,6 @@ import org.apache.spark.api.java.function.Function;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import rwoo.study.spark.function.CustomFunctionThreeGroup;
 
 import java.util.Arrays;
 
@@ -44,6 +43,13 @@ public class GroupByTest {
 
     @Test
     public void testGroupBy_with_CustomFunction() {
-        rddB = rddA.groupBy(new CustomFunctionThreeGroup());
+        rddB = rddA.groupBy(new CustomFunction());
+    }
+
+    static class CustomFunction implements Function<Integer, Integer> {
+        @Override
+        public Integer call(Integer v) throws Exception {
+            return v % 3;
+        }
     }
 }

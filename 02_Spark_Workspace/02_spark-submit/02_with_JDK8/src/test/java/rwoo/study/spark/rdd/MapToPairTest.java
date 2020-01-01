@@ -7,7 +7,6 @@ import org.apache.spark.api.java.function.PairFunction;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import rwoo.study.spark.pairfunction.CustomPairFunctionDivideBySpace;
 import scala.Tuple2;
 
 import java.util.Arrays;
@@ -51,6 +50,23 @@ public class MapToPairTest {
 
     @Test
     public void test_MapToPair_with_CustomPairFunction() {
-        rddB = rddA.mapToPair(new CustomPairFunctionDivideBySpace());
+        rddB = rddA.mapToPair(new CustomPairFunction());
+    }
+
+    /*
+      STRING -> (KEY, VALUE)
+      "A C", -> (A,C),
+      "A D", -> (A,D),
+      "B A", -> (B,A),
+      "C A", -> (C,A),
+      "D B", -> (D,B),
+      "D C"  -> (D,C)
+     */
+    static class CustomPairFunction implements PairFunction<String, String, String> {
+        @Override
+        public Tuple2<String, String> call(String v) throws Exception {
+            String[] fields = v.split(" ");
+            return new Tuple2<>(fields[0], fields[1]);
+        }
     }
 }

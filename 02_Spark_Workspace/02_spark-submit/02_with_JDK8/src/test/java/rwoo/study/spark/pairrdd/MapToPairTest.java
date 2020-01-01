@@ -7,7 +7,6 @@ import org.apache.spark.api.java.function.PairFunction;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import rwoo.study.spark.pairfunction.CustomPairFunctionDivideByItemSize;
 import scala.Tuple2;
 
 import java.util.ArrayList;
@@ -59,7 +58,7 @@ public class MapToPairTest {
 
     @Test
     public void test_MapToPair_with_CustomPairFunction() {
-        rddB = rddA.mapToPair(new CustomPairFunctionDivideByItemSize()).cache();
+        rddB = rddA.mapToPair(new CustomPairFunction()).cache();
         assertEquals(
                 "[(A,([C, D],0.5)), (B,([A],1.0)), (C,([A],1.0)), (D,([B, C],0.5))]",
                 rddB.collect().toString());
@@ -78,5 +77,19 @@ public class MapToPairTest {
                 "[(A,(C,0.5)), (A,(D,0.5)), (B,(A,1.0)), (C,(A,1.0)), (D,(B,0.5)), (D,(C,0.5))]",
                 rddC.collect().toString()
         );
+    }
+
+    /*
+    (FROM, [TOs]) --> (FROM, ([TOs], CONTRIBUTION))
+    (A,[C, D]),   --> (A,([C, D],0.5)),
+    (B,[A]),      --> (B,([A],1.0)),
+    (C,[A]),      --> (C,([A],1.0)),
+    (D,[B, C])    --> (D,([B, C],0.5))
+     */
+    static class CustomPairFunction implements PairFunction<Tuple2<String, Iterable<String>>, String, Tuple2<Iterable<String>, Double>> {
+        @Override
+        public Tuple2<String, Tuple2<Iterable<String>, Double>> call(Tuple2<String, Iterable<String>> items) throws Exception {
+            return new Tuple2<>(items._1(), new Tuple2<>(items._2(), 1.0 / Iterables.size(items._2())));
+        }
     }
 }

@@ -6,7 +6,6 @@ import org.apache.spark.api.java.function.Function;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import rwoo.study.spark.function.CustomFunctionToLowerCase;
 
 import java.util.Arrays;
 
@@ -59,6 +58,13 @@ public class SortByTest {
 
     @Test
     public void testSortBy_with_CustomFunction() {
-        rddE = rddB.sortBy(new CustomFunctionToLowerCase(), true, rddB.partitions().size());
+        rddE = rddB.sortBy(new CustomFunction(), true, rddB.partitions().size());
+    }
+
+    static class CustomFunction implements Function<String, String> {
+        @Override
+        public String call(String v) throws Exception {
+            return v.toLowerCase();
+        }
     }
 }

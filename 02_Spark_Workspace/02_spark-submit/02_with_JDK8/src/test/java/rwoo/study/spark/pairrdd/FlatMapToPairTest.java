@@ -77,12 +77,12 @@ public class FlatMapToPairTest {
         assertEquals("[(A,([C, D],0.5)), (B,([A],1.0)), (C,([A],1.0)), (D,([B, C],0.5))]", ranks_compare.collect().toString());
     }
 
-    /**
-     * (FROM,[TOs]) --> (FROM, (TO,CONTRIBUTION))
-     * (A,[C, D]),  --> (A,(C,0.5)), (A,(D,0.5)),
-     * (B,[A]),     --> (B,(A,1.0)),
-     * (C,[A]),     --> (C,(A,1.0)),
-     * (D,[B, C])   --> (D,(B,0.5)), (D,(C,0.5))
+    /*
+     (FROM,[TOs]) --> (FROM, (TO,CONTRIBUTION))
+     (A,[C, D]),  --> (A,(C,0.5)), (A,(D,0.5)),
+     (B,[A]),     --> (B,(A,1.0)),
+     (C,[A]),     --> (C,(A,1.0)),
+     (D,[B, C])   --> (D,(B,0.5)), (D,(C,0.5))
      */
     static class CustomPairFlatMapFunction implements PairFlatMapFunction<Tuple2<String, Iterable<String>>, String, Tuple2<String, Double>> {
         @Override
