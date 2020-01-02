@@ -2,10 +2,10 @@ package rwoo.study.spark.rdd;
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.VoidFunction;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import rwoo.study.spark.voidfunction.CustomVoidfunctionAppendAndPrintWithIterator;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -65,6 +65,21 @@ public class ForeachPartitionTest {
 
     @Test
     public void testForeachPartition_with_CustomVoidfunction() {
-        rddA.foreachPartition(new CustomVoidfunctionAppendAndPrintWithIterator());
+        rddA.foreachPartition(new CustomVoidFunction());
+    }
+
+    static class CustomVoidFunction implements VoidFunction<Iterator<Integer>> {
+        @Override
+        public void call(Iterator<Integer> iter) throws Exception {
+            FileWriter f = new FileWriter("src/test/resources/input/ForeachPartitionTest/input.txt", true);
+            f.write("for each partition -> iterator = \n");
+            System.out.println("for each partition -> iterator = ");
+            while (iter.hasNext()) {
+                String element = iter.next().toString();
+                f.write("for each partition -> iterator -> element = " + element + "\n");
+                System.out.println("for each partition -> iterator -> element = " + element);
+            }
+            f.close();
+        }
     }
 }

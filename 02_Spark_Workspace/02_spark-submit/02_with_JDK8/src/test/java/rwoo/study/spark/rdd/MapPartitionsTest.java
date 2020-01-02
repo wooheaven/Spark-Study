@@ -6,7 +6,6 @@ import org.apache.spark.api.java.function.FlatMapFunction;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import rwoo.study.spark.flatmapfunction.CustomFlatMapFunction;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -63,5 +62,24 @@ public class MapPartitionsTest {
     @Test
     public void testMapPartitions_with_CustomFlatMapFunction() {
         rddB = rddA.mapPartitions(new CustomFlatMapFunction());
+    }
+
+    /*
+    [PARTITIONS] of RDD -> [SUM of PARTITIONS] of RDD
+    [1, 2],             -> [3]
+    [3, 4],             -> [7]
+    [5, 6, 7]           -> [18]
+     */
+    static class CustomFlatMapFunction implements FlatMapFunction<Iterator<Integer>, Integer> {
+        @Override
+        public Iterator<Integer> call(Iterator<Integer> partition) throws Exception {
+            List<Integer> partitionSum = new ArrayList<>();
+            int sum = 0;
+            while (partition.hasNext()) {
+                sum += partition.next();
+            }
+            partitionSum.add(sum);
+            return partitionSum.iterator();
+        }
     }
 }

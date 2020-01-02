@@ -8,7 +8,6 @@ import org.apache.spark.api.java.function.Function2;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import rwoo.study.spark.function.CustomFunction2Sum;
 import scala.Tuple2;
 
 import java.util.ArrayList;
@@ -58,7 +57,14 @@ public class ReduceByKeyTest {
     }
 
     @Test
-    public void test_ReduceByKey_with_CustomFunction2() {
-        ranks = contributions.reduceByKey(new CustomFunction2Sum()).sortByKey();
+    public void test_ReduceByKey_with_CustomFunction() {
+        ranks = contributions.reduceByKey(new CustomFunction()).sortByKey();
+    }
+
+    static class CustomFunction implements Function2<Double, Double, Double> {
+        @Override
+        public Double call(Double x, Double y) throws Exception {
+            return x + y;
+        }
     }
 }

@@ -6,7 +6,6 @@ import org.apache.spark.api.java.function.Function2;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import rwoo.study.spark.function.CustomFunction2IndexSum;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -61,7 +60,26 @@ public class MapPartitionsWithIndexTest {
     }
 
     @Test
-    public void testMapPartitions_with_CustomFunction2IndexSum() {
-        rddB = rddA.mapPartitionsWithIndex(new CustomFunction2IndexSum(), false);
+    public void testMapPartitions_with_CustomFunction2() {
+        rddB = rddA.mapPartitionsWithIndex(new CustomFunction(), false);
+    }
+
+    /*
+     [PARTITIONS] of RDD -> [SUM of PARTITIONS] of RDD
+     [1, 2],             -> [3]
+     [3, 4],             -> [7]
+     [5, 6, 7]           -> [18]
+     */
+    static class CustomFunction implements Function2<Integer, Iterator<String>, Iterator<String>> {
+        @Override
+        public Iterator<String> call(Integer splitIndex, Iterator<String> partition) throws Exception {
+            int sum = 0;
+            while (partition.hasNext()) {
+                sum += Integer.parseInt(partition.next());
+            }
+            List<String> partitionSum = new ArrayList<>();
+            partitionSum.add(splitIndex + " : " + sum);
+            return partitionSum.iterator();
+        }
     }
 }

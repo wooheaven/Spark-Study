@@ -2,10 +2,10 @@ package rwoo.study.spark.rdd;
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.VoidFunction;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import rwoo.study.spark.voidfunction.CustomVoidfunctionAppendAndPrintWithElement;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -59,6 +59,20 @@ public class ForeachTest {
 
     @Test
     public void testForeach_with_CustomVoidfunction() {
-        rddA.foreach(new CustomVoidfunctionAppendAndPrintWithElement());
+        rddA.foreach(new CustomVoidFunction());
+    }
+
+    static class CustomVoidFunction implements VoidFunction<Integer> {
+        private static void append(Integer v) throws IOException {
+            FileWriter f = new FileWriter("src/test/resources/input/ForeachTest/input.txt", true);
+            f.write("num = " + v + "\n");
+            f.close();
+        }
+
+        @Override
+        public void call(Integer v) throws Exception {
+            append(v);
+            System.out.println(v);
+        }
     }
 }
