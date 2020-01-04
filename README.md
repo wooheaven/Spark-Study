@@ -52,35 +52,36 @@
 ░░║░╚═1 [RDD paper in Korean](03_Spark_Document/02_RDD_paper/01_Resilient_Distributed_Datasets_Essay_to_Korean.md)  
 ░░╠═3 [RDD programming guide](https://spark.apache.org/docs/latest/rdd-programming-guide.html)  
 ░░║░╚═1 [RDD](https://spark.apache.org/docs/latest/rdd-programming-guide.html#resilient-distributed-datasets-rdds)  
-░░║░░░╚═1 [RDD Operations](https://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-operations)  
-░░║░░░░░╠═1 [Transformations](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations)  
-░░║░░░░░║░╠═1 cartesian(otherDataset)  
-░░║░░░░░║░╠═2 distinct([numPartitions]))  
-░░║░░░░░║░╠═3 flatMap(func)  
-░░║░░░░░║░╠═4 glom()  
-░░║░░░░░║░╠═5 groupBy()  
-░░║░░░░░║░╠═6 groupByKey([numPartitions])  
-░░║░░░░░║░╠═7 intersection(otherDataset)  
-░░║░░░░░║░╠═8 map(func)  
-░░║░░░░░║░╠═9 mapPartitions(func)  
-░░║░░░░░║░╠═10 mapPartitionsWithIndex(func)  
-░░║░░░░░║░╠═11 pipe(command, [envVars])  
-░░║░░░░░║░╠═12 sample(withReplacement, fraction, seed)  
-░░║░░░░░║░╠═13 sortByKey([ascending], [numPartitions])  
-░░║░░░░░║░╚═14 union(otherDataset)  
-░░║░░░░░╚═2 [Actions](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions)  
-░░║░░░░░░░╠═1 aggregate(zeroValue, seqOp, combOp)  
-░░║░░░░░░░╠═2 collect()  
-░░║░░░░░░░╠═3 fold(zeroValue, op)  
-░░║░░░░░░░╠═4 foreach(func)  
-░░║░░░░░░░╠═5 foreachPartition(func)  
-░░║░░░░░░░╠═6 getNumPartitions()  
-░░║░░░░░░░╠═7 saveAsTextFile(path)  
-░░║░░░░░░░╠═8 reduce(func)  
-░░║░░░░░░░╠═9 take(n)  
-░░║░░░░░░░╠═10 takeOrdered(n, [ordering])  
-░░║░░░░░░░╠═11 takeSample(withReplacement, num, [seed])  
-░░║░░░░░░░╚═12 top(n, [ordering])  
+░░║░░░╠═1 [RDD Operations](https://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-operations)  
+░░║░░░║░╠═1 [Transformations](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations)  
+░░║░░░║░║░╠═1 cartesian(otherDataset)  
+░░║░░░║░║░╠═2 distinct([numPartitions]))  
+░░║░░░║░║░╠═3 flatMap(func)  
+░░║░░░║░║░╠═4 glom()  
+░░║░░░║░║░╠═5 groupBy()  
+░░║░░░║░║░╠═6 groupByKey([numPartitions])  
+░░║░░░║░║░╠═7 intersection(otherDataset)  
+░░║░░░║░║░╠═8 map(func)  
+░░║░░░║░║░╠═9 mapPartitions(func)  
+░░║░░░║░║░╠═10 mapPartitionsWithIndex(func)  
+░░║░░░║░║░╠═11 pipe(command, [envVars])  
+░░║░░░║░║░╠═12 sample(withReplacement, fraction, seed)  
+░░║░░░║░║░╠═13 sortByKey([ascending], [numPartitions])  
+░░║░░░║░║░╚═14 union(otherDataset)  
+░░║░░░║░╚═2 [Actions](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions)  
+░░║░░░║░░░╠═1 aggregate(zeroValue, seqOp, combOp)  
+░░║░░░║░░░╠═2 collect()  
+░░║░░░║░░░╠═3 fold(zeroValue, op)  
+░░║░░░║░░░╠═4 foreach(func)  
+░░║░░░║░░░╠═5 foreachPartition(func)  
+░░║░░░║░░░╠═6 getNumPartitions()  
+░░║░░░║░░░╠═7 saveAsTextFile(path)  
+░░║░░░║░░░╠═8 reduce(func)  
+░░║░░░║░░░╠═9 take(n)  
+░░║░░░║░░░╠═10 takeOrdered(n, [ordering])  
+░░║░░░║░░░╠═11 takeSample(withReplacement, num, [seed])  
+░░║░░░║░░░╚═12 top(n, [ordering])  
+░░║░░░╚═2 [RDD Persistemce](https://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-persistence)  
 ░░╠═4 Pair RDD functions doc  
 ░░║░╠═1 Scala  
 ░░║░║░╠═1 [flatMapValues](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@flatMapValues[U](f:V=%3ETraversableOnce[U]):org.apache.spark.rdd.RDD[(K,U)])  
@@ -126,73 +127,77 @@
 ░░║░░░╚═3 class [JavaRDD.class](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html)  
 ░░║░░░░░╚═1 method  
 ░░║░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaPairRDD.html#aggregate-U-org.apache.spark.api.java.function.Function2-org.apache.spark.api.java.function.Function2-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/AggregateTest.java) of JavaRDD.aggregate  
-░░║░░░░░░░╠═2 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#cartesian-org.apache.spark.api.java.JavaRDDLike-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/CartesianTest.java) of JavaRDD.cartesian  
-░░║░░░░░░░╠═3 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#distinct--), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/DistinctTest.java) of JavaRDD.distinct  
-░░║░░░░░░░╠═4 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#filter-org.apache.spark.api.java.function.Function-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/FilterTest.java) of JavaRDD.filter  
-░░║░░░░░░░╠═5 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#flatMap-org.apache.spark.api.java.function.FlatMapFunction-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/FlatMapTest.java) of JavaRDD.flatMap  
-░░║░░░░░░░╠═6 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#fold-T-org.apache.spark.api.java.function.Function2-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/FoldTest.java) of JavaRDD.fold  
-░░║░░░░░░░╠═7 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#foreach-org.apache.spark.api.java.function.VoidFunction-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/ForeachTest.java) of JavaRDD.foreach  
-░░║░░░░░░░╠═8 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#foreachPartition-org.apache.spark.api.java.function.VoidFunction-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/ForeachPartitionTest.java) of JavaRDD.foreachPartition  
-░░║░░░░░░░╠═9 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#getNumPartitions--), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/GetNumPartitionsTest.java) of JavaRDD.getNumPartitions  
-░░║░░░░░░░╠═10 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#glom--), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/GlomTest.java) of JavaRDD.glom  
-░░║░░░░░░░╠═11 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#groupBy-org.apache.spark.api.java.function.Function-int-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/GroupByTest.java) of JavaRDD.groupBy  
-░░║░░░░░░░╠═12 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#intersection-org.apache.spark.api.java.JavaRDD-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/IntersectionTest.java) of JavaRDD.intersection  
-░░║░░░░░░░╠═13 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#map-org.apache.spark.api.java.function.Function-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapTest.java) of JavaRDD.map  
-░░║░░░░░░░╠═14 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#mapPartitions-org.apache.spark.api.java.function.FlatMapFunction-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapPartitionsTest.java) of JavaRDD.mapPartitions  
-░░║░░░░░░░╠═15 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#mapPartitionsWithIndex-org.apache.spark.api.java.function.Function2-boolean-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapPartitionsWithIndexTest.java) of JavaRDD.mapPartitionsWithIndex  
-░░║░░░░░░░╠═16 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#mapToPair-org.apache.spark.api.java.function.PairFunction-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapToPairTest.java) of JavaRDD.maptoPair  
-░░║░░░░░░░╠═17 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#pipe-java.lang.String-), [example argument error](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/PipeTest.java) of JavaRDD.pipe  
-░░║░░░░░░░╠═18 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#reduce-org.apache.spark.api.java.function.Function2-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/ReduceTest.java) of JavaRDD.reduce  
-░░║░░░░░░░╠═19 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#sample-boolean-double-long-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/SampleTest.java) of JavaRDD.sample  
-░░║░░░░░░░╠═20 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#sortBy-org.apache.spark.api.java.function.Function-boolean-int-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/SortByTest.java) of JavaRDD.sortBy  
-░░║░░░░░░░╠═21 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#take-int-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TakeTest.java) of JavaRDD.take  
-░░║░░░░░░░╠═22 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#takeOrdered-int-java.util.Comparator-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TakeOrderedTest.java) of JavaRDD.takeOrdered  
-░░║░░░░░░░╠═23 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#takeSample-boolean-int-long-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TakeSampleTest.java) of JavaRDD.takeSample  
-░░║░░░░░░░╠═24 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#top-int-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TopTest.java) of JavaRDD.top  
-░░║░░░░░░░╚═25 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#union-org.apache.spark.api.java.JavaRDD-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/UnionTest.java) of JavaRDD.union  
-░░╠═6 Python : [Spark Python API (Sphinx)](https://spark.apache.org/docs/latest/api/python/index.html), [Spark Python API on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
-░░║░╚═1 package [pyspark on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/)  
-░░║░░░╠═1 package [sql on modules](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/)  
-░░║░░░║░╚═1 file [session.py](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/session.html) on modules, [SparkSession](https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.SparkSession) doc on Sphinx, [source code](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/sql/session.py) on Github  
-░░║░░░║░░░╚═1 method [RDD.toDF](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/sql/session.py#L44) (monkey patch of RDD) source code on Github, [example](03_Spark_Document/06_Python/01_package_pyspark/01_package_sql/01_file_session.py/05_example/01_RDD.toDF_example.ipynb) on Jupyter notebook of RDD.toDF  
-░░║░░░╚═2 file [rdd.py](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/rdd.html#RDD) on modules, [RDD](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD) doc on Sphinx, [source code](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/rdd.py) on Github  
+░░║░░░░░░░╠═2 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#cache--), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/pairrdd/FlatMapToPairTest.java#L32) of JavaRDD.cache  
+░░║░░░░░░░╠═3 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#cartesian-org.apache.spark.api.java.JavaRDDLike-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/CartesianTest.java) of JavaRDD.cartesian  
+░░║░░░░░░░╠═4 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#distinct--), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/DistinctTest.java) of JavaRDD.distinct  
+░░║░░░░░░░╠═5 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#filter-org.apache.spark.api.java.function.Function-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/FilterTest.java) of JavaRDD.filter  
+░░║░░░░░░░╠═6 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#flatMap-org.apache.spark.api.java.function.FlatMapFunction-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/FlatMapTest.java) of JavaRDD.flatMap  
+░░║░░░░░░░╠═7 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#fold-T-org.apache.spark.api.java.function.Function2-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/FoldTest.java) of JavaRDD.fold  
+░░║░░░░░░░╠═8 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#foreach-org.apache.spark.api.java.function.VoidFunction-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/ForeachTest.java) of JavaRDD.foreach  
+░░║░░░░░░░╠═9 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#foreachPartition-org.apache.spark.api.java.function.VoidFunction-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/ForeachPartitionTest.java) of JavaRDD.foreachPartition  
+░░║░░░░░░░╠═10 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#getNumPartitions--), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/GetNumPartitionsTest.java) of JavaRDD.getNumPartitions  
+░░║░░░░░░░╠═11 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#glom--), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/GlomTest.java) of JavaRDD.glom  
+░░║░░░░░░░╠═12 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#groupBy-org.apache.spark.api.java.function.Function-int-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/GroupByTest.java) of JavaRDD.groupBy  
+░░║░░░░░░░╠═13 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#intersection-org.apache.spark.api.java.JavaRDD-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/IntersectionTest.java) of JavaRDD.intersection  
+░░║░░░░░░░╠═14 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#map-org.apache.spark.api.java.function.Function-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapTest.java) of JavaRDD.map  
+░░║░░░░░░░╠═15 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#mapPartitions-org.apache.spark.api.java.function.FlatMapFunction-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapPartitionsTest.java) of JavaRDD.mapPartitions  
+░░║░░░░░░░╠═16 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#mapPartitionsWithIndex-org.apache.spark.api.java.function.Function2-boolean-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapPartitionsWithIndexTest.java) of JavaRDD.mapPartitionsWithIndex  
+░░║░░░░░░░╠═17 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#mapToPair-org.apache.spark.api.java.function.PairFunction-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/MapToPairTest.java) of JavaRDD.maptoPair  
+░░║░░░░░░░╠═18 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#pipe-java.lang.String-), [example argument error](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/PipeTest.java) of JavaRDD.pipe  
+░░║░░░░░░░╠═19 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#reduce-org.apache.spark.api.java.function.Function2-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/ReduceTest.java) of JavaRDD.reduce  
+░░║░░░░░░░╠═20 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#sample-boolean-double-long-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/SampleTest.java) of JavaRDD.sample  
+░░║░░░░░░░╠═21 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#sortBy-org.apache.spark.api.java.function.Function-boolean-int-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/SortByTest.java) of JavaRDD.sortBy  
+░░║░░░░░░░╠═22 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#take-int-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TakeTest.java) of JavaRDD.take  
+░░║░░░░░░░╠═23 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#takeOrdered-int-java.util.Comparator-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TakeOrderedTest.java) of JavaRDD.takeOrdered  
+░░║░░░░░░░╠═24 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#takeSample-boolean-int-long-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TakeSampleTest.java) of JavaRDD.takeSample  
+░░║░░░░░░░╠═25 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#top-int-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/TopTest.java) of JavaRDD.top  
+░░║░░░░░░░╚═26 [doc](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/JavaRDD.html#union-org.apache.spark.api.java.JavaRDD-), [example](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/rdd/UnionTest.java) of JavaRDD.union  
+░░╠═6 Python API [doc](https://spark.apache.org/docs/latest/api/python/)  
+░░║░╚═1 package pyspark [doc](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/) on modules, [source code](https://github.com/apache/spark/tree/v2.4.4/python/pyspark) on Github  
+░░║░░░╠═1 package sql [doc](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/) on modules  
+░░║░░░║░╚═1 file session.py [doc](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/sql/session.html) on modules and [source code](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/sql/session.py) on Github, class SparkSession [doc](https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.SparkSession)  
+░░║░░░║░░░╚═1 method RDD.toDF (monkey patch of RDD) [source code](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/sql/session.py#L44) on Github, [example](03_Spark_Document/06_Python/01_package_pyspark/01_package_sql/01_file_session.py/05_example/01_RDD.toDF_example.ipynb) on Jupyter notebook  
+░░║░░░╚═2 file rdd.py [doc](https://spark.apache.org/docs/latest/api/python/_modules/pyspark/rdd.html#RDD) on modules and [source code](https://github.com/apache/spark/blob/v2.4.4/python/pyspark/rdd.py) on Github, class RDD [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD)  
 ░░║░░░░░╚═1 method  
-░░║░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.aggregate) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/01_RDD.aggregate.ipynb) on Jupyter notebook of RDD.aggregate  
-░░║░░░░░░░╠═2 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.cartesian) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/02_RDD.cartesian_example.ipynb) on Jupyter notebook of RDD.cartesian  
-░░║░░░░░░░╠═3 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.distinct) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/03_RDD.distinct_example.ipynb) on Jupyter notebook of RDD.distinct  
-░░║░░░░░░░╠═4 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.filter) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/04_RDD.filter_example.ipynb) on Jupyter notebook of RDD.filter  
-░░║░░░░░░░╠═5 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.flatMap) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/05_RDD.flatMap_example.ipynb) on Jupyter notebook of RDD.flatMap  
-░░║░░░░░░░╠═6 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.fold) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/06_RDD.fold_example.ipynb) on Jupyter notebook of RDD.fold  
-░░║░░░░░░░╠═7 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.foreach) on Sphinx, [example can't work](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/07_RDD.foreach_example.ipynb) on Jupyter notebook of RDD.foreach  
-░░║░░░░░░░╠═8 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.foreachPartition) on Sphinx, [example can't work](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/08_RDD.foreachPartition_example.ipynb) on Jupyter notebook of RDD.foreachPartition  
-░░║░░░░░░░╠═9 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.getNumPartitions) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/09_RDD.getNumPartitions_example.ipynb) on Jupyter notebook of RDD.getNumPartitions  
-░░║░░░░░░░╠═10 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.glom) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/10_RDD.glom_example.ipynb) on Jupyter notebook of RDD.glom  
-░░║░░░░░░░╠═11 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.groupBy) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/11_RDD.groupBy_example.ipynb) on Jupyter notebook of RDD.groupBy  
-░░║░░░░░░░╠═12 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.groupByKey) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/12_RDD.groupByKey_example.ipynb) on Jupyter notebook of RDD.groupByKey  
-░░║░░░░░░░╠═13 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.intersection) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/13_RDD.itersection_example.ipynb) on Jupyter notebook of RDD.intersection  
-░░║░░░░░░░╠═14 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.map) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/14_RDD.map_example.ipynb) on Jupyter notebook of RDD.map  
-░░║░░░░░░░╠═15 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.mapPartitions) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/15_RDD.mapPartitions_example.ipynb) on Jupyter notebook of RDD.mapPartitions  
-░░║░░░░░░░╠═16 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.mapPartitionsWithIndex) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/16_RDD.mapPartitionsWithIndex_example.ipynb) on Jupyter notebook of RDD.mapPartitionsWithIndex  
-░░║░░░░░░░╠═17 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.pipe) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/17_RDD.pipe_example.ipynb) on Jupyter notebook of RDD.pipe  
-░░║░░░░░░░╠═18 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.reduce) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/18_RDD.reduce_example.ipynb) on Jupyter notebook of RDD.reduce  
-░░║░░░░░░░╠═19 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sample) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/19_RDD.sample_example.ipynb) on Jupyter notebook of RDD.sample  
-░░║░░░░░░░╠═20 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sortBy) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/20_RDD.sortBy_example.ipynb) on Jupyter notebook of RDD.sortBy  
-░░║░░░░░░░╠═21 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sortByKey) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/21_RDD.sortByKey_example.ipynb) on Jupyter notebook of RDD.sortByKey  
-░░║░░░░░░░╠═22 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.take) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/22_RDD.take_example.ipynb) on Jupyter notebook of RDD.take  
-░░║░░░░░░░╠═23 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.takeOrdered) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/23_RDD.takeOrdered_example.ipynb) on Jupyter notebook of RDD.takeOrdered  
-░░║░░░░░░░╠═24 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.takeSample) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/24_RDD.takeSample_example.ipynb) on Jupyter notebook of RDD.takeSample  
-░░║░░░░░░░╠═25 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.top) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/25_RDD.top_example.ipynb) on Jupyter notebook of RDD.top  
-░░║░░░░░░░╚═26 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.SparkContext.union) on Sphinx, [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/26_RDD.union_example.ipynb) on Jupyter notebook of RDD.union  
-░░╚═7 Scala : [Spark Scala API (Scaladoc)](https://spark.apache.org/docs/latest/api/scala/index.html#package)  
-░░░░╚═1 package [org.apache.spark on Github](https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark)  
-░░░░░░╚═1 package [rdd](https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark/rdd) on Github  
-░░░░░░░░╚═1 class [RDD.scala](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD) on Scaladoc, [source code](https://github.com/apache/spark/blob/master/core/src/main/scala/org/apache/spark/rdd/RDD.scala) on Github  
+░░║░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.aggregate), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/01_RDD.aggregate.ipynb) on Jupyter notebook of RDD.aggregate  
+░░║░░░░░░░╠═2 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.cache), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/02_RDD.cache_examle.ipynb) on Jupyter notebook of RDD.cache  
+░░║░░░░░░░╠═3 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.cartesian), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/03_RDD.cartesian_example.ipynb) on Jupyter notebook of RDD.cartesian  
+░░║░░░░░░░╠═4 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.distinct), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/04_RDD.distinct_example.ipynb) on Jupyter notebook of RDD.distinct  
+░░║░░░░░░░╠═5 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.filter), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/05_RDD.filter_example.ipynb) on Jupyter notebook of RDD.filter  
+░░║░░░░░░░╠═6 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.flatMap), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/06_RDD.flatMap_example.ipynb) on Jupyter notebook of RDD.flatMap  
+░░║░░░░░░░╠═7 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.flatMapValues), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/02_RDD.cache_examle.ipynb) on Jupyter notebook of RDD.flatMapValue  
+░░║░░░░░░░╠═8 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.fold), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/08_RDD.fold_example.ipynb) on Jupyter notebook of RDD.fold  
+░░║░░░░░░░╠═9 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.foreach), [example can't work](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/09_RDD.foreach_example.ipynb) on Jupyter notebook of RDD.foreach  
+░░║░░░░░░░╠═10 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.foreachPartition), [example can't work](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/10_RDD.foreachPartition_example.ipynb) on Jupyter notebook of RDD.foreachPartition  
+░░║░░░░░░░╠═11 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.getNumPartitions), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/11_RDD.getNumPartitions_example.ipynb) on Jupyter notebook of RDD.getNumPartitions  
+░░║░░░░░░░╠═12 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.glom), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/12_RDD.glom_example.ipynb) on Jupyter notebook of RDD.glom  
+░░║░░░░░░░╠═13 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.groupBy), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/13_RDD.groupBy_example.ipynb) on Jupyter notebook of RDD.groupBy  
+░░║░░░░░░░╠═14 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.groupByKey), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/14_RDD.groupByKey_example.ipynb) on Jupyter notebook of RDD.groupByKey  
+░░║░░░░░░░╠═15 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.intersection), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/15_RDD.itersection_example.ipynb) on Jupyter notebook of RDD.intersection  
+░░║░░░░░░░╠═16 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.map), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/16_RDD.map_example.ipynb) on Jupyter notebook of RDD.map  
+░░║░░░░░░░╠═17 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.mapPartitions), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/17_RDD.mapPartitions_example.ipynb) on Jupyter notebook of RDD.mapPartitions  
+░░║░░░░░░░╠═18 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.mapPartitionsWithIndex), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/18_RDD.mapPartitionsWithIndex_example.ipynb) on Jupyter notebook of RDD.mapPartitionsWithIndex  
+░░║░░░░░░░╠═19 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.pipe), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/19_RDD.pipe_example.ipynb) on Jupyter notebook of RDD.pipe  
+░░║░░░░░░░╠═20 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.reduce), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/20_RDD.reduce_example.ipynb) on Jupyter notebook of RDD.reduce  
+░░║░░░░░░░╠═21 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sample), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/21_RDD.sample_example.ipynb) on Jupyter notebook of RDD.sample  
+░░║░░░░░░░╠═22 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sortBy), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/22_RDD.sortBy_example.ipynb) on Jupyter notebook of RDD.sortBy  
+░░║░░░░░░░╠═23 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.sortByKey), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/23_RDD.sortByKey_example.ipynb) on Jupyter notebook of RDD.sortByKey  
+░░║░░░░░░░╠═24 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.take), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/24_RDD.take_example.ipynb) on Jupyter notebook of RDD.take  
+░░║░░░░░░░╠═25 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.takeOrdered), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/25_RDD.takeOrdered_example.ipynb) on Jupyter notebook of RDD.takeOrdered  
+░░║░░░░░░░╠═26 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.takeSample), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/26_RDD.takeSample_example.ipynb) on Jupyter notebook of RDD.takeSample  
+░░║░░░░░░░╠═27 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.RDD.top), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/27_RDD.top_example.ipynb) on Jupyter notebook of RDD.top  
+░░║░░░░░░░╚═28 [doc](https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.SparkContext.union), [example](03_Spark_Document/06_Python/01_package_pyspark/02_file_rdd.py/03_example/28_RDD.union_example.ipynb) on Jupyter notebook of RDD.union  
+░░╚═7 Scala API [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.package)  
+░░░░╚═1 package org.apache.spark [source code](https://github.com/apache/spark/tree/v2.4.4/core/src/main/scala/org/apache/spark) on Github  
+░░░░░░╚═1 package rdd [source code](https://github.com/apache/spark/tree/v2.4.4/core/src/main/scala/org/apache/spark/rdd) on Github  
+░░░░░░░░╚═1 class RDD [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD), [source code](https://github.com/apache/spark/tree/v2.4.4/core/src/main/scala/org/apache/spark/rdd/RDD.scala) on Github  
 ░░░░░░░░░░╚═1 Concrete Value Members  
-░░░░░░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@fold(zeroValue:T)(op:(T,T)=%3ET):T) on Scaladoc, [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/Fold.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_RDD/01_Concrete_Value_Members/01_RDD.fold_example.md) on spark-shell of RDD.fold  
-░░░░░░░░░░░░╠═2 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@map[U](f:T=%3EU)(implicitevidence$3:scala.reflect.ClassTag[U]):org.apache.spark.rdd.RDD[U]) on Scaladoc, [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/Map.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_RDD/01_Concrete_Value_Members/02_RDD.map_example.md) on spark-shell of RDD.map  
-░░░░░░░░░░░░╠═3 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@take(num:Int):Array[T]) on Scaladoc, [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/Take.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_RDD/01_Concrete_Value_Members/03_RDD.take_example.md) on spark-shell of RDD.take  
-░░░░░░░░░░░░╠═4 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@takeOrdered(num:Int)(implicitord:Ordering[T]):Array[T]) on Scaladoc, [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/TakeOrdered.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_RDD/01_Concrete_Value_Members/04_RDD.takeOrdered_example.md) on spark-shell of RDD.takeOrdered  
-░░░░░░░░░░░░╚═5 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@top(num:Int)(implicitord:Ordering[T]):Array[T]) on Scaladoc, [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/Top.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_RDD/01_Concrete_Value_Members/05_RDD.top_example.md) on spark-shell of RDD.top  
+░░░░░░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@cache():RDD.this.type), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/Cache.scala#L15) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_RDD/01_Concrete_Value_Members/01_RDD.cache_example.md) on spark-shell of RDD.cache  
+░░░░░░░░░░░░╠═2 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@fold(zeroValue:T)(op:(T,T)=%3ET):T), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/Fold.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_RDD/01_Concrete_Value_Members/02_RDD.fold_example.md) on spark-shell of RDD.fold  
+░░░░░░░░░░░░╠═3 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@map[U](f:T=%3EU)(implicitevidence$3:scala.reflect.ClassTag[U]):org.apache.spark.rdd.RDD[U]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/Map.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_RDD/01_Concrete_Value_Members/03_RDD.map_example.md) on spark-shell of RDD.map  
+░░░░░░░░░░░░╠═4 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@take(num:Int):Array[T]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/Take.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_RDD/01_Concrete_Value_Members/04_RDD.take_example.md) on spark-shell of RDD.take  
+░░░░░░░░░░░░╠═5 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@takeOrdered(num:Int)(implicitord:Ordering[T]):Array[T]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/TakeOrdered.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_RDD/01_Concrete_Value_Members/05_RDD.takeOrdered_example.md) on spark-shell of RDD.takeOrdered  
+░░░░░░░░░░░░╚═6 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@top(num:Int)(implicitord:Ordering[T]):Array[T]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/Top.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_RDD/01_Concrete_Value_Members/06_RDD.top_example.md) on spark-shell of RDD.top  
 
 # Example of Spark
 
