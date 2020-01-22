@@ -9,7 +9,7 @@ object TakeTest {
 
   def main(args: Array[String]): Unit = {
     log.setLevel(Level.INFO)
-    val sc = new SparkContext("local", "RDD.take")
+    val sc = new SparkContext("local[*]", "RDD.take")
     val rddA = sc.parallelize(List(1, 2, 3, 2, 3, 10))
     rddA.take(4).foreach(println)
   }

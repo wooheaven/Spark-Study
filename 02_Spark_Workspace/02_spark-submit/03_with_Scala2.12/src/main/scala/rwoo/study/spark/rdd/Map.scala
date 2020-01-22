@@ -14,7 +14,7 @@ object MapTest {
     val rddA = sc.parallelize(List("b", "a", "c"))
     val result = rddA.map(v => (v, 1))
     result.foreach(tuple => {
-        log.info("map result element " + tuple.toString())
+      log.info("map result element " + tuple.toString())
     })
   }
 }

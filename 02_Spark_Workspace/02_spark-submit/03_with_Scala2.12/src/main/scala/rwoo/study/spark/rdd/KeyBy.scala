@@ -9,7 +9,7 @@ object KeyByTest {
 
   def main(args: Array[String]): Unit = {
     log.setLevel(Level.INFO)
-    val sc = new SparkContext("local", "RDD.keyBy")
+    val sc = new SparkContext("local[*]", "RDD.keyBy")
     val rddA = sc.parallelize(Array("John", "Fred", "Anna", "James"))
     val rddB = rddA.keyBy(x => x.charAt(0)).sortByKey()
     rddB.foreach(println)

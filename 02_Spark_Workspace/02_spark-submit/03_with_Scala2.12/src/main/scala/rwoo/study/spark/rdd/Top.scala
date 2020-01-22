@@ -9,7 +9,7 @@ object TopTest {
 
   def main(args: Array[String]): Unit = {
     log.setLevel(Level.INFO)
-    val sc = new SparkContext("local", "RDD.top")
+    val sc = new SparkContext("local[*]", "RDD.top")
     val rddA = sc.parallelize(List(1, 2, 3, 2, 3, 10))
     rddA.top(3).foreach(println)
     rddA.top(3)(new StringOrdering).foreach(println)
