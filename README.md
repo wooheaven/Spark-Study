@@ -39,10 +39,7 @@
 ║░░░╚═2 [Pi Estimation](02_Spark_Workspace/03_pyspark/02_Pi_Estimation/01_Pi_Estimation.ipynb)  
 ╚═3 Spark Document  
 ░░╠═1 RDD API doc  
-░░║░╠═1 Java  
-░░║░║░╚═1 [PairFlatMapFunction](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/function/PairFlatMapFunction.html)  
-░░║░║░░░╚═1 [example : CustomPairFlatMapFunction](02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/main/java/rwoo/study/spark/pairflatmapfunction/CustomPairFlatMapFunction.java)  
-░░║░╚═2 Scala  
+░░║░╚═1 Scala  
 ░░║░░░╚═1 [flatMap](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@flatMap[U](f:T=%3ETraversableOnce[U])(implicitevidence$4:scala.reflect.ClassTag[U]):org.apache.spark.rdd.RDD[U])  
 ░░║░░░░░╠═1 [example on spark-shell : flatMap case map](03_Spark_Document/01_RDD_API_doc/02_Scala/01_flatMap/01_flatMap_case_map_example.md)  
 ░░║░░░░░╚═2 [example on spark-shell : flatMap](03_Spark_Document/01_RDD_API_doc/02_Scala/01_flatMap/02_flatMap_example.md)  
