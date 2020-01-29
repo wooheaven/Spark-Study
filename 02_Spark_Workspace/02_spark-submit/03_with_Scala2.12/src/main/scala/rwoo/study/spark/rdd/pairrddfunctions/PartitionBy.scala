@@ -1,4 +1,4 @@
-package rwoo.study.spark.rdd
+package rwoo.study.spark.rdd.pairrddfunctions
 
 import org.apache.log4j
 import org.apache.log4j.Level
