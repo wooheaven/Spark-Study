@@ -9,7 +9,7 @@ object PartitionByTest {
 
   def main(args: Array[String]): Unit = {
     log.setLevel(Level.INFO)
-    val sc = new SparkContext("local[*]", "RDD.partitionBy")
+    val sc = new SparkContext("local[*]", "PairRDDFunctions.partitionBy")
     val rddA = sc.parallelize(Array("James", "Fred", "Anna", "John")).keyBy(x => x.charAt(0)).sortByKey()
     val rddB = rddA.partitionBy(new HashPartitioner(2))
     val rddC = rddA.partitionBy(new Partitioner() {
