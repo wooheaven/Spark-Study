@@ -9,7 +9,7 @@ object JoinTest {
 
   def main(args: Array[String]): Unit = {
     log.setLevel(Level.INFO)
-    val sc = new SparkContext("local[*]", "RDD.join")
+    val sc = new SparkContext("local[*]", "PairRDDFunctions.join")
     val rddA = sc.parallelize(List(("A", 2), ("B", 2)))
     val rddB = sc.parallelize(List(("B", 3), ("C", 3)))
 
