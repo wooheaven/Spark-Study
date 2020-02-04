@@ -58,13 +58,14 @@
 ░░║░░░║░║░╠═13 map(func)  
 ░░║░░░║░║░╠═14 mapPartitions(func)  
 ░░║░░░║░║░╠═15 mapPartitionsWithIndex(func)  
-░░║░░░║░║░╠═16 partitionBy(numPartitions)  
-░░║░░░║░║░╠═17 pipe(command, [envVars])  
-░░║░░░║░║░╠═18 reduceByKey(func, [numPartitions])  
-░░║░░░║░║░╠═19 sample(withReplacement, fraction, seed)  
-░░║░░░║░║░╠═20 sortByKey([ascending], [numPartitions])  
-░░║░░░║░║░╠═21 union(otherDataset)  
-░░║░░░║░║░╚═22 zip(other)  
+░░║░░░║░║░╠═16 mapValues(func)  
+░░║░░░║░║░╠═17 partitionBy(numPartitions)  
+░░║░░░║░║░╠═18 pipe(command, [envVars])  
+░░║░░░║░║░╠═19 reduceByKey(func, [numPartitions])  
+░░║░░░║░║░╠═20 sample(withReplacement, fraction, seed)  
+░░║░░░║░║░╠═21 sortByKey([ascending], [numPartitions])  
+░░║░░░║░║░╠═22 union(otherDataset)  
+░░║░░░║░║░╚═23 zip(other)  
 ░░║░░░║░╚═2 [Actions](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions)  
 ░░║░░░║░░░╠═1 aggregate(zeroValue, seqOp, combOp)  
 ░░║░░░║░░░╠═2 collect()  
@@ -81,9 +82,9 @@
 ░░║░░░╚═2 [RDD Persistemce](https://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-persistence)  
 ░░╠═3 Pair RDD functions doc  
 ░░║░╚═1 Scala  
-░░║░░░╠═1 [mapValues](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@mapValues[U](f:V=%3EU):org.apache.spark.rdd.RDD[(K,U)])  
-░░║░░░║░╚═1 [example on spark-shell : mapValues](03_Spark_Document/04_Pair_RDD_functions_doc/01_for_Scala/04_mapValues_example.md)  
-░░║░░░╚═2 [reduceByKey](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@reduceByKey(func:(V,V)=%3EV):org.apache.spark.rdd.RDD[(K,V)])  
+																																															   
+																																						
+░░║░░░╚═1 [reduceByKey](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@reduceByKey(func:(V,V)=%3EV):org.apache.spark.rdd.RDD[(K,V)])  
 ░░║░░░░░╚═1 [example on spark-shell : reduceByKey](03_Spark_Document/04_Pair_RDD_functions_doc/01_for_Scala/05_reduceByKey_example.md)  
 ░░╠═4 Java : [Spark Java API (JavaDoc)](https://spark.apache.org/docs/latest/api/java/index.html)  
 ░░║░╚═1 package [org.apache.spark.api.java](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/package-summary.html)  
@@ -194,7 +195,8 @@
 ░░░░░░░░║░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@flatMapValues[U](f:V=%3ETraversableOnce[U]):org.apache.spark.rdd.RDD[(K,U)]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/FlatMapValues.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_PairRDDFunctions/01_Value_Members/01_PairRDDFunctions.flatMapValues_example.md) on spark-shell of PairRDDFunctions.flatMapValues  
 ░░░░░░░░║░░░╠═2 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@groupByKey():org.apache.spark.rdd.RDD[(K,Iterable[V])]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/GroupByKey.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_PairRDDFunctions/01_Value_Members/02_PairRDDFunctions.groupByKey_example.md) on spark-shell of PairRDDFunctions.groupByKey  
 ░░░░░░░░║░░░╠═3 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@join[W](other:org.apache.spark.rdd.RDD[(K,W)]):org.apache.spark.rdd.RDD[(K,(V,W))]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/Join.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_PairRDDFunctions/01_Value_Members/03_PairRDDFunctions.join_example.md) on spark-shell of PairRDDFunctions.join  
-░░░░░░░░║░░░╚═4 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@partitionBy(partitioner:org.apache.spark.Partitioner):org.apache.spark.rdd.RDD[(K,V)]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/PartitionBy.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_PairRDDFunctions/01_Value_Members/04_PairRDDFunctions.partitionBy_example.md) on spark-shell of PairRDDFunctions.partitionBy  
+░░░░░░░░║░░░╠═4 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@mapValues[U](f:V=%3EU):org.apache.spark.rdd.RDD[(K,U)]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/MapValues.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_PairRDDFunctions/01_Value_Members/04_PairRDDFunctions.mapValues_example.md) on spark-shell of PairRDDFunctions.mapValues  
+░░░░░░░░║░░░╚═5 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@partitionBy(partitioner:org.apache.spark.Partitioner):org.apache.spark.rdd.RDD[(K,V)]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/PartitionBy.scala) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/01_class_PairRDDFunctions/01_Value_Members/05_PairRDDFunctions.partitionBy_example.md) on spark-shell of PairRDDFunctions.partitionBy  
 ░░░░░░░░╚═2 class RDD [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD), [source code](https://github.com/apache/spark/tree/v2.4.4/core/src/main/scala/org/apache/spark/rdd/RDD.scala) on Github  
 ░░░░░░░░░░╚═1 Concrete Value Members  
 ░░░░░░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@cache():RDD.this.type), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/Cache.scala#L15) on spark-submit, [example](03_Spark_Document/07_Scala/01_package_org.apache.spark/01_package_rdd/02_class_RDD/01_Concrete_Value_Members/01_RDD.cache_example.md) on spark-shell of RDD.cache  
