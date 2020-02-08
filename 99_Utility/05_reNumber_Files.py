@@ -57,6 +57,7 @@ class Rename():
     def convert_str(self, path):
         path = str(path).replace('--', '-')
         path = path.replace('_', '-')
+        path = path.replace('.md', '-')
         return path
 
 
