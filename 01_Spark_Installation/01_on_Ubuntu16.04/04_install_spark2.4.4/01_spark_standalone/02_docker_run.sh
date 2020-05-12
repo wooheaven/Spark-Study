@@ -1,1 +1,1 @@
-docker run -it --name spark ubuntu:16.04_4th_spark_standalone
+docker run -it --name spark_standalone ubuntu:16.04_4th_spark_standalone
