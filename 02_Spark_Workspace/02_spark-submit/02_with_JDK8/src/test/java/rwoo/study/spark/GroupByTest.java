@@ -18,7 +18,7 @@ public class GroupByTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "GroupBy");
+        sc = new JavaSparkContext("local[*]", "GroupBy");
     }
 
     @After

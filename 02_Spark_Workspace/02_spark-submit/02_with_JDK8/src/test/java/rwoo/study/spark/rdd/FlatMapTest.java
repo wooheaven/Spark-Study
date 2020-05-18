@@ -17,7 +17,7 @@ public class FlatMapTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.flatMap");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.flatMap");
         rddA = sc.parallelize(Arrays.asList("I am a boy", "You are a girl"));
     }
 

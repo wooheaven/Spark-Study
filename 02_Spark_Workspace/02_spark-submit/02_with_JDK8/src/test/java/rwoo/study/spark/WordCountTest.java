@@ -16,7 +16,7 @@ public class WordCountTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "WordCount");
+        sc = new JavaSparkContext("local[*]", "WordCount");
     }
 
     @After

@@ -19,7 +19,7 @@ public class ReduceTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.reduce");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.reduce");
         rddA = sc.parallelize(Arrays.asList(1, 3, 5));
     }
 

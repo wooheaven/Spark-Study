@@ -18,7 +18,7 @@ public class GlomTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.glom");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.glom");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 3);
     }
 

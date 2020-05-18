@@ -19,7 +19,7 @@ public class UnionTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.union");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.union");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3), 2);
         rddB = sc.parallelize(Arrays.asList(3, 4), 2);
     }

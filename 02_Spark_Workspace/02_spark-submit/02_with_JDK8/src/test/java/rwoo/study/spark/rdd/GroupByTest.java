@@ -19,7 +19,7 @@ public class GroupByTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.groupBy");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.groupBy");
         rddA = sc.parallelize(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
     }
 

@@ -24,7 +24,7 @@ public class FlatMapToPairTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaPairRDD.flatMapToPair");
+        sc = new JavaSparkContext("local[*]", "JavaPairRDD.flatMapToPair");
         JavaRDD<String> lines = sc.textFile("src/test/resources/input/FlatMapToPairTest/");
         links = lines.mapToPair(line -> {
             String[] parts = line.split(" ");

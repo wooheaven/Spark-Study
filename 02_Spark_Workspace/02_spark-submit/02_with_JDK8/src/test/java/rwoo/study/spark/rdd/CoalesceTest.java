@@ -19,7 +19,7 @@ public class CoalesceTest {
 
     @Before
     public void before() {
-        sc = new JavaSparkContext("local", "JavaRDD.coalesce");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.coalesce");
         rddA = sc.parallelize(Arrays.asList("a", "b", "c"), 3);
     }
 

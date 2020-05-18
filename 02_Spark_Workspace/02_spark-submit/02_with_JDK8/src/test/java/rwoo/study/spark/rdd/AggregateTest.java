@@ -19,7 +19,7 @@ public class AggregateTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.aggregate");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.aggregate");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 3);
     }
 

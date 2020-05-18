@@ -16,7 +16,7 @@ public class GroupByKeyTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaPairRDD.groupByKey");
+        sc = new JavaSparkContext("local[*]", "JavaPairRDD.groupByKey");
         rddA = sc.textFile("src/test/resources/input/MapToPairTest/")
                 .mapToPair(line -> {
                     String[] parts = line.split(" ");

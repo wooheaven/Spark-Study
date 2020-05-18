@@ -20,7 +20,7 @@ public class MapToPairTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.mapToPair");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.mapToPair");
         rddA = sc.textFile("src/test/resources/input/MapToPairTest/");
     }
 

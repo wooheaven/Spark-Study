@@ -14,7 +14,7 @@ public class CollectTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "Collect");
+        sc = new JavaSparkContext("local[*]", "Collect");
     }
 
     @After

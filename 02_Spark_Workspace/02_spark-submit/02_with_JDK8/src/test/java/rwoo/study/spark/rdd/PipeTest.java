@@ -18,7 +18,7 @@ public class PipeTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.pipe");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.pipe");
         rddA = sc.parallelize(Arrays.asList("b", "aB", "c", "De"), 2);
     }
 

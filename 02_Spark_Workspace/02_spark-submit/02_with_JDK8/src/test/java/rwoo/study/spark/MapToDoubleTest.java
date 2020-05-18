@@ -16,7 +16,7 @@ public class MapToDoubleTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "MapToDouble");
+        sc = new JavaSparkContext("local[*]", "MapToDouble");
     }
 
     @After

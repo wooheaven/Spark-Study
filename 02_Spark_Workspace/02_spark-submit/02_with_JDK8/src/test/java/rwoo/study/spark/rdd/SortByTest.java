@@ -21,7 +21,7 @@ public class SortByTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.sortBy");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.sortBy");
         rddA = sc.parallelize(Arrays.asList("I am a boy", "You are a girl"));
         rddB = rddA.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
     }
