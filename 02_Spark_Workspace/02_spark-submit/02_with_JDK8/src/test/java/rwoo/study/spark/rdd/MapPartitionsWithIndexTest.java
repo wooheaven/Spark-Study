@@ -21,7 +21,7 @@ public class MapPartitionsWithIndexTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.mapPartitionsWithIndex");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.mapPartitionsWithIndex");
         rddA = sc.parallelize(Arrays.asList("1", "2", "3", "4", "5", "6", "7"), 3);
     }
 

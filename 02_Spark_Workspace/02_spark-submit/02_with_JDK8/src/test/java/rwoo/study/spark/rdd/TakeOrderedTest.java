@@ -20,7 +20,7 @@ public class TakeOrderedTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.takeOrdered");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.takeOrdered");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 2, 3, 10));
     }
 

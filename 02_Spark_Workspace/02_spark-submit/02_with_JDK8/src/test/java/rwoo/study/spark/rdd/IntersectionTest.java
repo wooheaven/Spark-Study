@@ -18,7 +18,7 @@ public class IntersectionTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.intersection");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.intersection");
         rddA = sc.parallelize(Arrays.asList(1, 3, 5));
         rddB = sc.parallelize(Arrays.asList(1, 4, 6));
     }

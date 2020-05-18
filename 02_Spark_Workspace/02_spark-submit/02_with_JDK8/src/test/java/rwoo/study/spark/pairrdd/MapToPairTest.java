@@ -21,7 +21,7 @@ public class MapToPairTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaPairRDD.mapToPair");
+        sc = new JavaSparkContext("local[*]", "JavaPairRDD.mapToPair");
         rddA = sc.textFile("src/test/resources/input/MapToPairTest/")
                 .mapToPair(line -> {
                     String[] parts = line.split(" ");

@@ -22,7 +22,7 @@ public class ReduceByKeyTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaPairRDD.reduceByKey");
+        sc = new JavaSparkContext("local[*]", "JavaPairRDD.reduceByKey");
         JavaRDD<String> lines = sc.textFile("src/test/resources/input/ReduceByKeyTest/");
         JavaPairRDD<String, Iterable<String>> links = lines.mapToPair(line -> {
             String[] parts = line.split(" ");

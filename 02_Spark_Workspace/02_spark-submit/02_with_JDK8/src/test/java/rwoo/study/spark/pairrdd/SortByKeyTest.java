@@ -19,7 +19,7 @@ public class SortByKeyTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaPairRDD.sortByKey");
+        sc = new JavaSparkContext("local[*]", "JavaPairRDD.sortByKey");
         rddA = sc.textFile("src/test/resources/input/SortByKeyTest/")
                 .mapToPair(line -> {
                     String[] fields = line.split(" ");

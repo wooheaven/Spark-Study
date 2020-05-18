@@ -31,7 +31,7 @@ public class JoinTest implements Serializable {
         left.add(new Tuple2<>("B", 2));
         right.add(new Tuple2<>("B", 3));
         right.add(new Tuple2<>("C", 3));
-        sc = new JavaSparkContext("local", "JavaPairRDD.join");
+        sc = new JavaSparkContext("local[*]", "JavaPairRDD.join");
         leftRdd = sc.parallelizePairs(left);
         rightRdd = sc.parallelizePairs(right);
     }

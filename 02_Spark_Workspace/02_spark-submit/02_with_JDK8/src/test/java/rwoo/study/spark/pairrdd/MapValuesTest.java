@@ -20,7 +20,7 @@ public class MapValuesTest implements Serializable {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaPairRDD.mapValues");
+        sc = new JavaSparkContext("local[*]", "JavaPairRDD.mapValues");
         JavaRDD<String> lines = sc.textFile("src/test/resources/input/MapValuesTest/");
         links = lines.mapToPair(line -> {
             String[] parts = line.split(" ");

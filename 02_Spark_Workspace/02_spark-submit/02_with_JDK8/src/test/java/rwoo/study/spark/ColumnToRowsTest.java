@@ -17,7 +17,7 @@ public class ColumnToRowsTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "ColumnToRows");
+        sc = new JavaSparkContext("local[*]", "ColumnToRows");
     }
 
     @After

@@ -17,7 +17,7 @@ public class FlatMapToDoubleTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "FlatMapToDouble");
+        sc = new JavaSparkContext("local[*]", "FlatMapToDouble");
     }
 
     @After

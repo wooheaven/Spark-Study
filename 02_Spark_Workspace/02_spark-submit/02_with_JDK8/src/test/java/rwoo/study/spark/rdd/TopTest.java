@@ -20,7 +20,7 @@ public class TopTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.top");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.top");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 2, 3, 10));
     }
 

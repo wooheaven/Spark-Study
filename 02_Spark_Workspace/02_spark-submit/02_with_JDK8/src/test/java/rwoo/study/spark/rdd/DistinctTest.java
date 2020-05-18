@@ -17,7 +17,7 @@ public class DistinctTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.distinct");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.distinct");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 2));
     }
 

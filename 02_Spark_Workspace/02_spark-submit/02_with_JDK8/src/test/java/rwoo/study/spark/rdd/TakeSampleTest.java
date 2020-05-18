@@ -18,7 +18,7 @@ public class TakeSampleTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.sample");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.sample");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
     }
 

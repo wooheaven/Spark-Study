@@ -18,7 +18,7 @@ public class MapTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.map");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.map");
         rddA = sc.parallelize(Arrays.asList("b", "a", "c"));
     }
 

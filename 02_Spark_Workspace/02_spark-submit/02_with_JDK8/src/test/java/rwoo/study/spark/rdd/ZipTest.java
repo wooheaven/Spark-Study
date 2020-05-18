@@ -19,7 +19,7 @@ public class ZipTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.zip");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.zip");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3));
         rddB = rddA.map(x -> x * x);
     }

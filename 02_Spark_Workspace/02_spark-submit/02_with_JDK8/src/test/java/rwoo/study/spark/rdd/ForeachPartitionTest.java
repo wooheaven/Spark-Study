@@ -40,7 +40,7 @@ public class ForeachPartitionTest {
     @Before
     public void setUp() throws IOException {
         deleteContents();
-        sc = new JavaSparkContext("local", "JavaRDD.foreachPartition");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.foreachPartition");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 3);
     }
 

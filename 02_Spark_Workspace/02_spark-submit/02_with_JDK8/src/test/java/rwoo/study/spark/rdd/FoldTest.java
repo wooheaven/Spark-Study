@@ -18,7 +18,7 @@ public class FoldTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local", "JavaRDD.fold");
+        sc = new JavaSparkContext("local[*]", "JavaRDD.fold");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 3);
     }
 
