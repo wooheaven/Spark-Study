@@ -2,31 +2,21 @@ package rwoo.study.spark.rdd.rdd
 
 import org.apache.spark.SparkContext
 
-object AggregateTest {
+object AggregateKeepValuesTest {
 
   def main(args: Array[String]): Unit = {
-    val list = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    var sum = 0
-    var product = 1
-    for (v <- list) {
-      sum = sum + v
-      product = product * v
-      println(v, sum, product)
-    }
-
     val sc = new SparkContext("local[*]", "RDD.aggregate")
     val a = sc.parallelize(Array(1, 2, 3, 4, 5, 6, 7, 8, 9), 3)
 
-    def initialValue = (0, 1)
+    def initialValue = (Array[Int](), 0)
 
-    def seqOp = (data: (Int, Int), item: Int)
-    => (data._1 + item, data._2 * item)
+    def seqOp = (data: (Array[Int], Int), item: Int)
+    => (data._1 :+ item, data._2 + item)
 
-    def combOp = (d1: (Int, Int), d2: (Int, Int))
-    => (d1._1 + d2._1, d1._2 * d2._2)
+    def combOp = (d1: (Array[Int], Int), d2: (Array[Int], Int))
+    => (d1._1.union(d2._1), d1._2 + d2._2)
 
     val b = a.aggregate(initialValue)(seqOp, combOp)
-
     println(customToString(a.glom().collect()))
     println(customToString2(b))
 
@@ -35,8 +25,8 @@ object AggregateTest {
       str.mkString("{\n\t", ",\n\t", "\n}")
     }
 
-    def customToString2(a: (Int, Int)): String = {
-      val str = a._1.toString() + " : " + a._2.toString()
+    def customToString2(a: (Array[Int], Int)): String = {
+      val str = a._1.mkString("[", ",", "]") + " : " + a._2.toString()
       str
     }
   }

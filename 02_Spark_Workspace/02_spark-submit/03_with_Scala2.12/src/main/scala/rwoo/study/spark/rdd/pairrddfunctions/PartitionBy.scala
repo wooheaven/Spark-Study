@@ -1,14 +1,10 @@
 package rwoo.study.spark.rdd.pairrddfunctions
 
-import org.apache.log4j
-import org.apache.log4j.Level
 import org.apache.spark.{HashPartitioner, Partitioner, SparkContext}
 
 object PartitionByTest {
-  val log = log4j.LogManager.getLogger(getClass.getName)
 
   def main(args: Array[String]): Unit = {
-    log.setLevel(Level.INFO)
     val sc = new SparkContext("local[*]", "PairRDDFunctions.partitionBy")
     val rddA = sc.parallelize(Array("James", "Fred", "Anna", "John")).keyBy(x => x.charAt(0)).sortByKey()
     val rddB = rddA.partitionBy(new HashPartitioner(2))

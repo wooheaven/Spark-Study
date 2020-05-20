@@ -1,14 +1,10 @@
 package rwoo.study.spark.rdd.pairrddfunctions
 
-import org.apache.log4j
-import org.apache.log4j.Level
 import org.apache.spark.SparkContext
 
 object FlatMapValuesTest {
-  val log = log4j.LogManager.getLogger(getClass.getName)
 
   def main(args: Array[String]): Unit = {
-    log.setLevel(Level.INFO)
     val sc = new SparkContext("local[*]", "PairRDDFunctions.flatMapValues")
     val rddA = sc.parallelize(List(("A", List("C", "D")), ("C", List("A")), ("D", List("B", "C")), ("B", List("A"))))
     val rddB = rddA.flatMapValues(x => x)
