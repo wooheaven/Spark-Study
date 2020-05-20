@@ -1,14 +1,10 @@
 package rwoo.study.spark.rdd.pairrddfunctions
 
-import org.apache.log4j
-import org.apache.log4j.Level
 import org.apache.spark.SparkContext
 
 object JoinTest {
-  val log = log4j.LogManager.getLogger(getClass.getName)
 
   def main(args: Array[String]): Unit = {
-    log.setLevel(Level.INFO)
     val sc = new SparkContext("local[*]", "PairRDDFunctions.join")
     val rddA = sc.parallelize(List(("A", 2), ("B", 2)))
     val rddB = sc.parallelize(List(("B", 3), ("C", 3)))
