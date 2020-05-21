@@ -19,7 +19,7 @@ public class CartesianTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local[*]", "JavaRDD.cartesian");
+        sc = new JavaSparkContext("local[*]", "JavaRDDLike.cartesian");
         rddA = sc.parallelize(Arrays.asList("b", "a", "c"));
         rddB = sc.parallelize(Arrays.asList("1", "2"));
     }

@@ -16,7 +16,7 @@ public class CollectTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local[*]", "JavaRDD.collect");
+        sc = new JavaSparkContext("local[*]", "JavaRDDLike.collect");
         inputRDD = sc.parallelize(Arrays.asList(1, 2, 3), 2);
     }
 
