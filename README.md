@@ -70,16 +70,21 @@
 ░░║░░░║░╚═2 [Actions](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions)  
 ░░║░░░║░░░╠═1 aggregate(zeroValue, seqOp, combOp)  
 ░░║░░░║░░░╠═2 collect()  
-░░║░░░║░░░╠═3 fold(zeroValue, op)  
-░░║░░░║░░░╠═4 foreach(func)  
-░░║░░░║░░░╠═5 foreachPartition(func)  
-░░║░░░║░░░╠═6 getNumPartitions()  
-░░║░░░║░░░╠═7 saveAsTextFile(path)  
-░░║░░░║░░░╠═8 reduce(func)  
-░░║░░░║░░░╠═9 take(n)  
-░░║░░░║░░░╠═10 takeOrdered(n, [ordering])  
-░░║░░░║░░░╠═11 takeSample(withReplacement, num, [seed])  
-░░║░░░║░░░╚═12 top(n, [ordering])  
+░░║░░░║░░░╠═3 countByKey()  
+░░║░░░║░░░╠═4 fold(zeroValue, op)  
+░░║░░░║░░░╠═5 foreach(func)  
+░░║░░░║░░░╠═6 foreachPartition(func)  
+░░║░░░║░░░╠═7 getNumPartitions()  
+░░║░░░║░░░╠═8 max(key=None)  
+░░║░░░║░░░╠═9 mean()  
+░░║░░░║░░░╠═10 saveAsTextFile(path)  
+░░║░░░║░░░╠═11 stdev()  
+░░║░░░║░░░╠═12 sum()  
+░░║░░░║░░░╠═13 reduce(func)  
+░░║░░░║░░░╠═14 take(n)  
+░░║░░░║░░░╠═15 takeOrdered(n, [ordering])  
+░░║░░░║░░░╠═16 takeSample(withReplacement, num, [seed])  
+░░║░░░║░░░╚═17 top(n, [ordering])  
 ░░║░░░╚═2 [RDD Persistemce](https://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-persistence)  
 ░░╠═3 Java : [Spark Java API (JavaDoc)](https://spark.apache.org/docs/latest/api/java/index.html)  
 ░░║░╚═1 package [org.apache.spark.api.java](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/package-summary.html)  
@@ -212,12 +217,13 @@
 ░░░░░░░░║░░░╚═3 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.DoubleRDDFunctions@sum():Double), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/doublerddfunctions/Sum.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/01_class_DoubleRDDFunctions/01_Value_Members/03_DoubleRDDFunctions.sum_example.md) on spark-shell of DoubleRDDFunctions.sum  
 ░░░░░░░░╠═2 class PairRDDFunctions [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions), [source code](https://github.com/apache/spark/blob/master/core/src/main/scala/org/apache/spark/rdd/PairRDDFunctions.scala) on Github  
 ░░░░░░░░║░╚═1 Value Members  
-░░░░░░░░║░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@flatMapValues[U](f:V=%3ETraversableOnce[U]):org.apache.spark.rdd.RDD[(K,U)]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/FlatMapValues.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/02_class_PairRDDFunctions/01_Value_Members/01_PairRDDFunctions.flatMapValues_example.md) on spark-shell of PairRDDFunctions.flatMapValues  
-░░░░░░░░║░░░╠═2 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@groupByKey():org.apache.spark.rdd.RDD[(K,Iterable[V])]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/GroupByKey.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/02_class_PairRDDFunctions/01_Value_Members/02_PairRDDFunctions.groupByKey_example.md) on spark-shell of PairRDDFunctions.groupByKey  
-░░░░░░░░║░░░╠═3 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@join[W](other:org.apache.spark.rdd.RDD[(K,W)]):org.apache.spark.rdd.RDD[(K,(V,W))]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/Join.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/02_class_PairRDDFunctions/01_Value_Members/03_PairRDDFunctions.join_example.md) on spark-shell of PairRDDFunctions.join  
-░░░░░░░░║░░░╠═4 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@mapValues[U](f:V=%3EU):org.apache.spark.rdd.RDD[(K,U)]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/MapValues.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/02_class_PairRDDFunctions/01_Value_Members/04_PairRDDFunctions.mapValues_example.md) on spark-shell of PairRDDFunctions.mapValues  
-░░░░░░░░║░░░╠═5 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@partitionBy(partitioner:org.apache.spark.Partitioner):org.apache.spark.rdd.RDD[(K,V)]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/PartitionBy.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/02_class_PairRDDFunctions/01_Value_Members/05_PairRDDFunctions.partitionBy_example.md) on spark-shell of PairRDDFunctions.partitionBy  
-░░░░░░░░║░░░╚═6 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@reduceByKey(func:(V,V)=%3EV):org.apache.spark.rdd.RDD[(K,V)]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/ReduceByKey.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/02_class_PairRDDFunctions/01_Value_Members/06_PairRDDFunctions.reduceByKey_example.md) on spark-shell of PairRDDFunctions.reduceByKey  
+░░░░░░░░║░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@countByKey():scala.collection.Map[K,Long]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/CountByKey.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/02_class_PairRDDFunctions/01_Value_Members/01_PairRDDFunctions.countByKey_example.md) on spark-shell of PairRDDFunctions.countByKey  
+░░░░░░░░║░░░╠═2 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@flatMapValues[U](f:V=%3ETraversableOnce[U]):org.apache.spark.rdd.RDD[(K,U)]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/FlatMapValues.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/02_class_PairRDDFunctions/01_Value_Members/02_PairRDDFunctions.flatMapValues_example.md) on spark-shell of PairRDDFunctions.flatMapValues  
+░░░░░░░░║░░░╠═3 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@groupByKey():org.apache.spark.rdd.RDD[(K,Iterable[V])]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/GroupByKey.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/02_class_PairRDDFunctions/01_Value_Members/03_PairRDDFunctions.groupByKey_example.md) on spark-shell of PairRDDFunctions.groupByKey  
+░░░░░░░░║░░░╠═4 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@join[W](other:org.apache.spark.rdd.RDD[(K,W)]):org.apache.spark.rdd.RDD[(K,(V,W))]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/Join.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/02_class_PairRDDFunctions/01_Value_Members/04_PairRDDFunctions.join_example.md) on spark-shell of PairRDDFunctions.join  
+░░░░░░░░║░░░╠═5 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@mapValues[U](f:V=%3EU):org.apache.spark.rdd.RDD[(K,U)]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/MapValues.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/02_class_PairRDDFunctions/01_Value_Members/05_PairRDDFunctions.mapValues_example.md) on spark-shell of PairRDDFunctions.mapValues  
+░░░░░░░░║░░░╠═6 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@partitionBy(partitioner:org.apache.spark.Partitioner):org.apache.spark.rdd.RDD[(K,V)]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/PartitionBy.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/02_class_PairRDDFunctions/01_Value_Members/06_PairRDDFunctions.partitionBy_example.md) on spark-shell of PairRDDFunctions.partitionBy  
+░░░░░░░░║░░░╚═7 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions@reduceByKey(func:(V,V)=%3EV):org.apache.spark.rdd.RDD[(K,V)]), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/pairrddfunctions/ReduceByKey.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/02_class_PairRDDFunctions/01_Value_Members/07_PairRDDFunctions.reduceByKey_example.md) on spark-shell of PairRDDFunctions.reduceByKey  
 ░░░░░░░░╚═3 class RDD [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD), [source code](https://github.com/apache/spark/blob/master/core/src/main/scala/org/apache/spark/rdd/RDD.scala) on Github  
 ░░░░░░░░░░╚═1 Concrete Value Members  
 ░░░░░░░░░░░░╠═1 [doc](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD@aggregate[U](zeroValue:U)(seqOp:(U,T)=%3EU,combOp:(U,U)=%3EU)(implicitevidence$31:scala.reflect.ClassTag[U]):U), [example](02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/rdd/Aggregate.scala) on spark-submit, [example](03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/03_class_RDD/01_Concrete_Value_Members/01_RDD.aggregate_example.md) on spark-shell of RDD.aggregate : sum and product of values  
