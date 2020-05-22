@@ -6,6 +6,7 @@ target/
 *.tar.gz
 *.tgz
 **/src/test/resources/output/*
+**/src/main/resources/**
 
 # Created by https://www.gitignore.io/api/java,scala,linux,maven,spark,python,intellij,apachehadoop,jupyternotebooks
 # Edit at https://www.gitignore.io/?templates=java,scala,linux,maven,spark,python,intellij,apachehadoop,jupyternotebooks
