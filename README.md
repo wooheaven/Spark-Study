@@ -85,7 +85,7 @@
 ░░║░░░║░║░╠═15 takeOrdered(n, [ordering])  
 ░░║░░░║░║░╠═16 takeSample(withReplacement, num, [seed])  
 ░░║░░░║░║░╚═17 top(n, [ordering])  
-░░║░░░║░╚═3 [Table](03_Spark_Document/02_RDD_programming_guide/01_RDD/01_Operations/03_table/01_rdd_table.html), [Rendered](https://htmlpreview.github.io/?https://github.com/wooheaven/Spark-Study/03_Spark_Document/02_RDD_programming_guide/01_RDD/01_Operations/03_table/01_rdd_table.html)  
+░░║░░░║░╚═3 [Table](03_Spark_Document/02_RDD_programming_guide/01_RDD/01_Operations/03_table/01_rdd_table.html), [Rendered](https://htmlpreview.github.io/?https://github.com/wooheaven/Spark-Study/blob/master/03_Spark_Document/02_RDD_programming_guide/01_RDD/01_Operations/03_table/01_rdd_table.html)  
 ░░║░░░╚═2 [RDD Persistemce](https://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-persistence)  
 ░░╠═3 Java : [Spark Java API (JavaDoc)](https://spark.apache.org/docs/latest/api/java/index.html)  
 ░░║░╚═1 package [org.apache.spark.api.java](https://spark.apache.org/docs/latest/api/java/org/apache/spark/api/java/package-summary.html)  
