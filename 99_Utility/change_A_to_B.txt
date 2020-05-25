@@ -1,1 +1,1 @@
-02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/javardd/ReduceTest.java -> 02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/javarddlike/ReduceTest.java
+03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/03_class_RDD/01_Concrete_Value_Members/08_RDD.flatMapCase_example.md -> 03_Spark_Document/05_Scala/01_package_org.apache.spark/01_package_rdd/03_class_RDD/01_Concrete_Value_Members/08_RDD.flatMapWithCase_example.md
