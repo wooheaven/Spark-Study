@@ -1,4 +1,4 @@
-package rwoo.study.spark.javardd;
+package rwoo.study.spark.javarddlike;
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -27,6 +27,12 @@ public class MapPartitionsTest {
 
     @After
     public void after() {
+    /*
+    [PARTITIONS] of RDD -> [SUM of PARTITIONS] of RDD
+    [1, 2],             -> [3]
+    [3, 4],             -> [7]
+    [5, 6, 7]           -> [18]
+     */
         assertEquals("[[1, 2], [3, 4], [5, 6, 7]]", rddA.glom().collect().toString());
         assertEquals("[[3], [7], [18]]", rddB.glom().collect().toString());
         sc.close();
@@ -64,13 +70,7 @@ public class MapPartitionsTest {
         rddB = rddA.mapPartitions(new CustomFlatMapFunction());
     }
 
-    /*
-    [PARTITIONS] of RDD -> [SUM of PARTITIONS] of RDD
-    [1, 2],             -> [3]
-    [3, 4],             -> [7]
-    [5, 6, 7]           -> [18]
-     */
-    static class CustomFlatMapFunction implements FlatMapFunction<Iterator<Integer>, Integer> {
+    private static class CustomFlatMapFunction implements FlatMapFunction<Iterator<Integer>, Integer> {
         @Override
         public Iterator<Integer> call(Iterator<Integer> partition) throws Exception {
             List<Integer> partitionSum = new ArrayList<>();
