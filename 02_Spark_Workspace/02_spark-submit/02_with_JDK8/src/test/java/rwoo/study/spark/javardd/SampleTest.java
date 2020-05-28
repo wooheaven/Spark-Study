@@ -24,7 +24,7 @@ public class SampleTest {
     @After
     public void after() {
         assertEquals(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), rddA.collect());
-        assertEquals(Arrays.asList(1, 7), rddB.collect());
+        assertEquals(Arrays.asList(1, 2, 5, 7, 9, 10), rddB.collect());
         sc.close();
     }
 

@@ -5,7 +5,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.spark_project.guava.collect.Ordering;
+import com.google.common.collect.Ordering;
 
 import java.io.Serializable;
 import java.util.Arrays;

@@ -1,6 +1,7 @@
 package rwoo.study.spark;
 
 
+import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -13,10 +14,12 @@ import java.util.Arrays;
 
 public class WordCountTest {
     private JavaSparkContext sc;
+    private SparkConf sparkConf;
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local[*]", "WordCount");
+        sparkConf = new SparkConf().setMaster("local[*]").setAppName("WordCount");
+        sc = new JavaSparkContext(sparkConf);
     }
 
     @After

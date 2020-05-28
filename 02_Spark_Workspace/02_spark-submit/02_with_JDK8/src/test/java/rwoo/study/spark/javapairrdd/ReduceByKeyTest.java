@@ -1,6 +1,6 @@
 package rwoo.study.spark.javapairrdd;
 
-import avro.shaded.com.google.common.collect.Iterables;
+import com.google.common.collect.Iterables;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
