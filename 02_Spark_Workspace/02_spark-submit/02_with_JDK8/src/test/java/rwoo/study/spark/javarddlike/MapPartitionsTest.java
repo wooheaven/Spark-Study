@@ -21,7 +21,7 @@ public class MapPartitionsTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local[*]", "JavaRDD.mapPartitions");
+        sc = new JavaSparkContext("local[*]", "JavaRDDLike.mapPartitions");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 3);
     }
 

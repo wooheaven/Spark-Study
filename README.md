@@ -60,7 +60,7 @@
 ░░║░░░║░║░╠═14 mapPartitions(func)  
 ░░║░░░║░║░╠═15 mapPartitionsWithIndex(func)  
 ░░║░░░║░║░╠═16 mapValues(func)  
-░░║░░░║░║░╠═17 partitionBy(numPartitions)  
+░░║░░░║░║░╠═17 partitionBy(numPartitions, partitionFunc)  
 ░░║░░░║░║░╠═18 pipe(command, [envVars])  
 ░░║░░░║░║░╠═19 reduceByKey(func, [numPartitions])  
 ░░║░░░║░║░╠═20 sample(withReplacement, fraction, seed)  

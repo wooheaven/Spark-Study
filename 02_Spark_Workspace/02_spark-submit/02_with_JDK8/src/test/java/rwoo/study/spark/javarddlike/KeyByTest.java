@@ -18,7 +18,7 @@ public class KeyByTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local[*]", "JavaRDD.keyBy");
+        sc = new JavaSparkContext("local[*]", "JavaRDDLike.keyBy");
         rddA = sc.parallelize(Arrays.asList("John", "Fred", "Anna", "James"));
     }
 
