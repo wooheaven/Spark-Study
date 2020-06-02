@@ -19,4 +19,7 @@ res3: Array[(String, (Int, Option[Int]))] = Array((B,(2,Some(3))), (A,(2,None)))
 
 scala> rddLeft.rightOuterJoin(rddRight).collect()
 res4: Array[(String, (Option[Int], Int))] = Array((B,(Some(2),3)), (C,(None,3)))
+
+scala> rddLeft.fullOuterJoin(rddRight).collect
+res5: Array[(String, (Option[Int], Option[Int]))] = Array((B,(Some(2),Some(3))), (A,(Some(2),None)), (C,(None,Some(3))))
 ```
