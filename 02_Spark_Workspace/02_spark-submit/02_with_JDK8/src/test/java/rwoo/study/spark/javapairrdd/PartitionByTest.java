@@ -83,7 +83,7 @@ public class PartitionByTest {
         return result;
     }
 
-    static class CustomPartitioner extends Partitioner {
+    private static class CustomPartitioner extends Partitioner {
 
         private int numParts;
 

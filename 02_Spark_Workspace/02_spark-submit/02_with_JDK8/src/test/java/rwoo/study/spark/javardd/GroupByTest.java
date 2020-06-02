@@ -46,7 +46,7 @@ public class GroupByTest {
         rddB = rddA.groupBy(new CustomFunction());
     }
 
-    static class CustomFunction implements Function<Integer, Integer> {
+    private static class CustomFunction implements Function<Integer, Integer> {
         @Override
         public Integer call(Integer v) throws Exception {
             return v % 3;

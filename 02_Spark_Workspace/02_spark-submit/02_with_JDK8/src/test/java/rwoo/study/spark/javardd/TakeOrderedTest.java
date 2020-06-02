@@ -42,7 +42,7 @@ public class TakeOrderedTest {
         assertEquals("[1, 10, 2]", result.toString());
     }
 
-    static class CustomComparatorToString implements Comparator<Integer>, Serializable {
+    private static class CustomComparatorToString implements Comparator<Integer>, Serializable {
         @Override
         public int compare(Integer a, Integer b) {
             return a.toString().compareTo(b.toString());
