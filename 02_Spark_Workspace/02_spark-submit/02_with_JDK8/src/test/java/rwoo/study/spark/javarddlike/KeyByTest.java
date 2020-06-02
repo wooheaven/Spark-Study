@@ -1,4 +1,4 @@
-package rwoo.study.spark.javardd;
+package rwoo.study.spark.javarddlike;
 
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
