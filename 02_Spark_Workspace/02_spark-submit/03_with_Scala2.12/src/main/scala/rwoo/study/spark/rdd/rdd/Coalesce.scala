@@ -1,4 +1,4 @@
-package rwoo.study.spark.rdd
+package rwoo.study.spark.rdd.rdd
 
 import org.apache.spark.SparkContext
 
@@ -9,6 +9,8 @@ object CoalesceTest {
     val rddA = sc.parallelize(List(1, 2, 3, 2, 3, 10), 3)
     println(customToString(rddA.glom().collect()))
     println(customToString(rddA.coalesce(2).glom().collect()))
+    println(customToString(rddA.coalesce(4).glom().collect()))
+    println(customToString(rddA.repartition(4).glom().collect()))
   }
 
   def customToString(a: Array[Array[Int]]): String = {

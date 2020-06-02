@@ -62,7 +62,7 @@ public class MapToPairTest {
       "D B", -> (D,B),
       "D C"  -> (D,C)
      */
-    static class CustomPairFunction implements PairFunction<String, String, String> {
+    private static class CustomPairFunction implements PairFunction<String, String, String> {
         @Override
         public Tuple2<String, String> call(String v) throws Exception {
             String[] fields = v.split(" ");

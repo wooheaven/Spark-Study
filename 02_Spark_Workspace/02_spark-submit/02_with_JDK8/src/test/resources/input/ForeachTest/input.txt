@@ -1,7 +1,7 @@
-num = 5
-num = 3
 num = 1
+num = 3
+num = 5
+num = 2
 num = 6
 num = 4
 num = 7
-num = 2
