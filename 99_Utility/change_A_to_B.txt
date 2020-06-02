@@ -1,1 +1,2 @@
-02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/Coalesce.scala -> 02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/rdd/Coalesce.scala
+02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/javardd/KeyByTest.java -> 02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/javarddlike/KeyByTest.java
+02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/KeyBy.scala -> 02_Spark_Workspace/02_spark-submit/03_with_Scala2.12/src/main/scala/rwoo/study/spark/rdd/rdd/KeyBy.scala
