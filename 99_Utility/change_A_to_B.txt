@@ -1,1 +1,1 @@
-02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/javardd/GetNumPartitionsTest.java -> 02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/javarddlike/GetNumPartitionsTest.java
+02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/javardd/AggregateKeepValuesTest.java -> 02_Spark_Workspace/02_spark-submit/02_with_JDK8/src/test/java/rwoo/study/spark/javarddlike/AggregateKeepValuesTest.java
