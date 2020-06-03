@@ -1,4 +1,4 @@
-package rwoo.study.spark.javardd;
+package rwoo.study.spark.javarddlike;
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -17,7 +17,7 @@ public class GetNumPartitionsTest {
 
     @Before
     public void setUp() {
-        sc = new JavaSparkContext("local[*]", "JavaRDD.getNumPartitions");
+        sc = new JavaSparkContext("local[*]", "JavaRDDLike.getNumPartitions");
         rddA = sc.parallelize(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 3);
     }
 
