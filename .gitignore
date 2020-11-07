@@ -7,6 +7,7 @@ target/
 *.tgz
 **/src/test/resources/**
 **/src/main/resources/**
+.env
 
 # Created by https://www.gitignore.io/api/java,scala,linux,maven,spark,python,intellij,apachehadoop,jupyternotebooks
 # Edit at https://www.gitignore.io/?templates=java,scala,linux,maven,spark,python,intellij,apachehadoop,jupyternotebooks

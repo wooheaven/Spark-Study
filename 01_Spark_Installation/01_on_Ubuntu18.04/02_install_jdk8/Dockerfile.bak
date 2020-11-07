@@ -1,0 +1,12 @@
+FROM ubuntu:18.04_1st_ssh
+
+RUN mkdir /usr/lib/jvm
+ADD jdk-8u221-linux-x64.tar.gz /usr/lib/jvm
+RUN ls -als /usr/lib/jvm
+
+ADD 99_Utility/java_bashrc.txt /root/
+RUN cat /root/java_bashrc.txt >> /root/.bashrc && \
+    cat -n /root/.bashrc | tail -3
+
+ADD 99_Utility/*.sh /root/
+RUN chmod +x /root/*.sh
